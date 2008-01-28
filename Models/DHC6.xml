@@ -491,6 +491,20 @@
         <object-name>Rrdoor.glass</object-name>
     </animation>
 
+    <animation>
+        <type>select</type>
+        <object-name>Rrdoor.frt.001</object-name>
+        <object-name>Rrdoor.frt</object-name>
+        <object-name>Rrdoor.rear.001</object-name>
+        <object-name>Rrdoor.rear</object-name>
+        <object-name>Rrdoor.glass</object-name>
+        <condition>
+            <not>
+            <property>sim/model/remove-doors</property>
+            </not>
+        </condition>
+    </animation>
+
 <!--    Controls Surfaces    -->
 
     <animation>
