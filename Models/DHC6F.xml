@@ -506,6 +506,59 @@
 
     <animation>
         <type>rotate</type>
+        <object-name>Yoke</object-name>
+        <object-name>Yoke1</object-name>
+        <object-name>Yoke2</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>10.0</factor>
+        <center>
+            <x-m>-3.663</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.401</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke1</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>40.0</factor>
+        <center>
+            <x-m>-3.644</x-m>
+            <y-m>-0.516</y-m>
+            <z-m>0.267</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke2</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>40.0</factor>
+        <center>
+            <x-m>-3.644</x-m>
+            <y-m>0.491</y-m>
+            <z-m>0.267</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
         <object-name>Elevator</object-name>
         <property>controls/flight/elevator</property>
         <factor>15.0</factor>
