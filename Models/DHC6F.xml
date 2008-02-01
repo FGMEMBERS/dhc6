@@ -216,6 +216,17 @@
     </model>
 
     <model>
+        <name>Pilot cover</name>
+        <path>Aircraft/dhc6/Models/plate.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>-0.333</y-m>
+            <z-m>0.247</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
         <name>CoPilot Airspeed</name>
         <path>Aircraft/dhc6/Models/Instruments/asi.xml</path>
         <offsets>
@@ -292,6 +303,28 @@
         </offsets>
     </model>
 
+    <model>
+        <name>CoPilot cover1</name>
+        <path>Aircraft/dhc6/Models/plate.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.321</y-m>
+            <z-m>0.357</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>CoPilot cover2</name>
+        <path>Aircraft/dhc6/Models/plate.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.321</y-m>
+            <z-m>0.247</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
 <!--center panel-->
 
     <model>
@@ -300,7 +333,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.154</y-m>
-            <z-m>0.427</z-m>
+            <z-m>0.447</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -311,7 +344,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.074</y-m>
-            <z-m>0.427</z-m>
+            <z-m>0.447</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -322,7 +355,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.154</y-m>
-            <z-m>0.355</z-m>
+            <z-m>0.375</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -333,7 +366,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.074</y-m>
-            <z-m>0.355</z-m>
+            <z-m>0.375</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -344,7 +377,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.154</y-m>
-            <z-m>0.283</z-m>
+            <z-m>0.303</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -355,7 +388,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.074</y-m>
-            <z-m>0.283</z-m>
+            <z-m>0.303</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -366,7 +399,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.154</y-m>
-            <z-m>0.211</z-m>
+            <z-m>0.231</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -377,7 +410,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.074</y-m>
-            <z-m>0.211</z-m>
+            <z-m>0.231</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -388,7 +421,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.224</y-m>
-            <z-m>0.355</z-m>
+            <z-m>0.375</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -399,7 +432,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.355</z-m>
+            <z-m>0.375</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -410,7 +443,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.224</y-m>
-            <z-m>0.298</z-m>
+            <z-m>0.318</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -421,7 +454,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.298</z-m>
+            <z-m>0.318</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -432,7 +465,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.224</y-m>
-            <z-m>0.240</z-m>
+            <z-m>0.260</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -443,7 +476,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.240</z-m>
+            <z-m>0.260</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -454,7 +487,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.224</y-m>
-            <z-m>0.170</z-m>
+            <z-m>0.190</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -465,7 +498,7 @@
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.170</z-m>
+            <z-m>0.190</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -503,6 +536,30 @@
     </animation>
 
 <!--    Controls Surfaces    -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>RHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.025</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>LHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.025</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <animation>
         <type>rotate</type>
