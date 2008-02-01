@@ -7,6 +7,7 @@
     <animation>
         <name>Exterior</name>
       <object-name>fuselage</object-name>
+      <object-name>fuselage.004</object-name>
       <object-name>longnose</object-name>
       <object-name>Spinners</object-name>
       <object-name>RHdoor</object-name>
@@ -15,6 +16,7 @@
       <object-name>Rrdoor.frt</object-name>
       <object-name>Baggage.door</object-name>
       <object-name>wings</object-name>
+      <object-name>wingbrace</object-name>
       <object-name>R.aileron</object-name>
       <object-name>R.flap</object-name>
       <object-name>L.flap</object-name>
