@@ -574,6 +574,47 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>flash</type>
+        <object-name>RHLNDlight</object-name>
+        <center>
+            <x-m>-1.017</x-m>
+            <y-m>3.744</y-m>
+            <z-m>1.128</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
+        <type>flash</type>
+        <object-name>LHLNDlight</object-name>
+        <center>
+            <x-m>-1.017</x-m>
+            <y-m>-3.744</y-m>
+            <z-m>1.128</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>2</max>
+    </animation>
 <!--    Wipers   -->
 
     <animation>
