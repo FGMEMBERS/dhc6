@@ -100,6 +100,9 @@ Jan 2008 Syd Adams
             <engine n="1">
                 <generator>false</generator>
             </engine>
+            <wipers>
+            <wiper-switch type = "bool">0</wiper-switch>
+            </wipers>
         </electric>
 
         <lighting>

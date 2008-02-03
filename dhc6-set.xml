@@ -66,6 +66,13 @@ Jan 2008 Syd Adams
                     </binding>
                 </item>
                 <item>
+                    <label>Wipers On/Off</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/electric/wipers/wiper-switch</property>
+                    </binding>
+                </item>
+                <item>
                     <label>Open tow-hook</label>
                     <binding>
                         <command>property-assign</command>

@@ -540,6 +540,148 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>select</type>
+        <object-name>navlights</object-name>
+        <condition>
+            <not-equals>
+            <property>systems/electrical/outputs/nav-lights</property>
+            <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>beacon</object-name>
+        <condition>
+            <not-equals>
+            <property>systems/electrical/outputs/beacon</property>
+            <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>RHLNDlight</object-name>
+        <object-name>LHLNDlight</object-name>
+        <condition>
+            <not-equals>
+            <property>systems/electrical/outputs/landing-lights</property>
+            <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+<!--    Wipers   -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper</object-name>
+        <object-name>RHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>90.0</factor>
+        <center>
+            <x-m>-4.122</x-m>
+            <y-m>0.400</y-m>
+            <z-m>0.5225</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper.arm</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>90.0</factor>
+        <center>
+            <x-m>-4.140</x-m>
+            <y-m>0.360</y-m>
+            <z-m>0.540</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>-90.0</factor>
+        <center>
+            <x-m>-3.939</x-m>
+            <y-m>0.171</y-m>
+            <z-m>0.737</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHwiper</object-name>
+        <object-name>LHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>-90.0</factor>
+        <center>
+            <x-m>-4.122</x-m>
+            <y-m>-0.400</y-m>
+            <z-m>0.5225</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>-0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHwiper.arm</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>-90.0</factor>
+        <center>
+            <x-m>-4.140</x-m>
+            <y-m>-0.360</y-m>
+            <z-m>0.540</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>-0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>90.0</factor>
+        <center>
+            <x-m>-3.939</x-m>
+            <y-m>-0.171</y-m>
+            <z-m>0.737</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>-0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+
 <!--    Controls Surfaces    -->
 
     <animation>
@@ -931,6 +1073,92 @@
 
     <animation>
         <type>rotate</type>
+        <object-name>Lnd.toggle</object-name>
+        <property>controls/lighting/landing-lights</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.914</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Taxi.toggle</object-name>
+        <property>controls/lighting/taxi-lights</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.914</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Nav.toggle</object-name>
+        <property>controls/lighting/nav-lights</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.914</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Bcn.toggle</object-name>
+        <property>controls/lighting/beacon</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.914</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Strb.toggle</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.914</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
         <object-name>LHthrottle</object-name>
         <property>controls/engines/engine[0]/throttle</property>
         <factor>9.0</factor>
@@ -1112,6 +1340,73 @@
         </binding>
         </action>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Lnd.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/landing-lights</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Taxi.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/taxi-lights</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Nav.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/nav-lights</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Bcn.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/beacon</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Strb.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/strobe</property>
+        </binding>
+        </action>
+    </animation>
+
+
 
 
 <!--    GEAR    -->

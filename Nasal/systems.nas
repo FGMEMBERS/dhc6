@@ -1,5 +1,9 @@
 ####	DHC6 systems	####
 aircraft.livery.init("Aircraft/dhc6/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+var wiper_switch = props.globals.getNode("controls/electric/wipers/wiper-switch", 1);
+aircraft.light.new("controls/electric/wipers", [1.0, 1.00], wiper_switch);
+var wipers = aircraft.door.new("controls/electric/wipers", 1,0);
+
 var pph1 = 0.0;
 var pph2 = 0.0;
 var fuel_density=0.0;
@@ -19,11 +23,13 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("controls/gear/water-rudder-down",0);
     setprop("controls/gear/water-rudder-pos",0);
+    setprop("controls/electric/wipers",0);
+    setprop("controls/electric/wiper-pos",0);
     print("system  ...Check");
+    setprop("controls/engines/engine/condition",0);
     setprop("controls/engines/engine/condition",0);
     setprop("controls/engines/engine[1]/condition",0);
     setprop(Oiltemp1,getprop("environment/temperature-degc"));
-    setprop(Oiltemp2,getprop("environment/temperature-degc"));
     settimer(update_systems, 2);
     });
 
@@ -116,6 +122,13 @@ var update_systems = func {
         setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
     flight_meter();
     oil_temp();
+
+if(getprop("controls/electric/wipers/state")){
+    wipers.open();
+    }else{
+    wipers.close();
+    }
+
     if(getprop("controls/engines/engine[0]/cutoff")){
         setprop("controls/engines/engine[0]/condition",0);
         setprop("engines/engine[0]/running",0);
@@ -142,6 +155,7 @@ var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
+
 
 var oil_temp = func{
 var Air_temp= getprop("environment/temperature-degc");

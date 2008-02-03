@@ -104,11 +104,11 @@ alternator2 = Alternator.new("/engines/engine[1]/n2",50.0,28.0,60.0);
 setlistener("/sim/signals/fdm-initialized", func {
     setprop(BattVolts,0);
     setprop("controls/electric/ammeter-switch",0);
+    setprop("controls/electric/wipers/wiper-switch",0);
     setprop("controls/electric/external-power",0);
     setprop("controls/anti-ice/prop-heat",0);
     setprop("controls/anti-ice/pitot-heat",0);
-    setprop("controls/lighting/landing-lights[0]",0);
-    setprop("controls/lighting/landing-lights[1]",0);
+    setprop("controls/lighting/landing-lights",0);
     setprop("controls/lighting/beacon",0);
     setprop("controls/lighting/nav-lights",0);
     setprop("controls/lighting/cabin-lights",0);
@@ -216,27 +216,27 @@ electrical_bus = func() {
         setprop(outPut~"fuel-pump",bus_volts);
     }
 
+    srvc=0+getprop("controls/electric/wipers/wiper-switch");
+    load +=srvc;
+    setprop(outPut~"wipers",bus_volts * srvc);
+
     srvc=0+getprop("controls/anti-ice/pitot-heat");
     load +=srvc;
     setprop(outPut~"pitot-heat",bus_volts * srvc);
 
-    srvc=0+getprop("controls/lighting/landing-lights[0]");
+    srvc=0+getprop("controls/lighting/landing-lights");
     load +=srvc;
-    setprop(outPut~"landing-lights[0]",bus_volts * srvc);
+    setprop(outPut~"landing-lights",bus_volts * srvc);
 
-    srvc=0+getprop("controls/lighting/landing-lights[1]");
-    load +=srvc;
-    setprop(outPut~"landing-lights[1]",bus_volts * srvc);
-
-    srvc=0+getprop("controls/lighting/landing-lights[1]");
+    srvc=0+getprop("controls/lighting/cabin-lights");
     load +=srvc;
     setprop(outPut~"cabin-lights",bus_volts * getprop("controls/lighting/cabin-lights"));
 
-    srvc=0+getprop("controls/lighting/landing-lights[1]");
+    srvc=0+getprop("controls/lighting/wing-lights");
     load +=srvc;
     setprop(outPut~"wing-lights",bus_volts * getprop("controls/lighting/wing-lights"));
 
-    srvc=0+getprop("controls/lighting/landing-lights[1]");
+    srvc=0+getprop("controls/lighting/nav-lights");
     load +=srvc;
     setprop(outPut~"nav-lights",bus_volts * getprop("controls/lighting/nav-lights"));
 
