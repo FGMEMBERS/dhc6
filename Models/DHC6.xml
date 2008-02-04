@@ -1118,7 +1118,7 @@
         <property>controls/lighting/landing-lights</property>
         <factor>30.0</factor>
         <center>
-            <x-m>-2.914</x-m>
+            <x-m>-2.897</x-m>
             <y-m>0</y-m>
             <z-m>0.958</z-m>
         </center>
@@ -1135,7 +1135,7 @@
         <property>controls/lighting/taxi-lights</property>
         <factor>30.0</factor>
         <center>
-            <x-m>-2.914</x-m>
+            <x-m>-2.897</x-m>
             <y-m>0</y-m>
             <z-m>0.958</z-m>
         </center>
@@ -1152,7 +1152,7 @@
         <property>controls/lighting/nav-lights</property>
         <factor>30.0</factor>
         <center>
-            <x-m>-2.914</x-m>
+            <x-m>-2.897</x-m>
             <y-m>0</y-m>
             <z-m>0.958</z-m>
         </center>
@@ -1169,7 +1169,7 @@
         <property>controls/lighting/beacon</property>
         <factor>30.0</factor>
         <center>
-            <x-m>-2.914</x-m>
+            <x-m>-2.897</x-m>
             <y-m>0</y-m>
             <z-m>0.958</z-m>
         </center>
@@ -1186,7 +1186,7 @@
         <property>controls/lighting/strobe</property>
         <factor>30.0</factor>
         <center>
-            <x-m>-2.914</x-m>
+            <x-m>-2.897</x-m>
             <y-m>0</y-m>
             <z-m>0.958</z-m>
         </center>
@@ -1196,6 +1196,58 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Batt.toggle</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-3.066</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHgen.toggle</object-name>
+        <property>controls/electric/engine[0]/generator</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-3.066</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHgen.toggle</object-name>
+        <property>controls/electric/engine[1]/generator</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-3.066</x-m>
+            <y-m>0</y-m>
+            <z-m>0.958</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
 
 
     <animation>
@@ -1524,6 +1576,45 @@
             <y>0</y>
             <z>0.996</z>
         </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Batt.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/battery-switch</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LHgen.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[0]/generator</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RHgen.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[1]/generator</property>
+        </binding>
+        </action>
     </animation>
 
 </PropertyList>
