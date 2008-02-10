@@ -119,7 +119,7 @@ var wipers_on = func{
     }
     
     if(!WiperSwitch.getValue()){
-    if(wiper_pos <=0.0){return;}else {w_fctr =-1;}
+    if(wiper_pos <=0.0)return;
     }
     var wiper_time = getprop("/sim/time/delta-realtime-sec");
     wiper_pos += (wiper_time * w_fctr);
