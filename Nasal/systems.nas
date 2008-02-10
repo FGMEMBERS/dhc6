@@ -1,13 +1,12 @@
 ####	DHC6 systems	####
 aircraft.livery.init("Aircraft/dhc6/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
-var wiper_switch = props.globals.getNode("controls/electric/wipers/wiper-switch", 1);
-aircraft.light.new("controls/electric/wipers", [1.0, 1.00], wiper_switch);
-var wipers = aircraft.door.new("controls/electric/wipers", 1,0);
-
+var w_fctr=0;
 var pph1 = 0.0;
 var pph2 = 0.0;
 var fuel_density=0.0;
 var ViewNum = 0.0;
+var WiperPos = props.globals.getNode("controls/electric/wipers/position-norm");
+var WiperSwitch = props.globals.getNode("controls/electric/wipers/switch");
 S_volume = "sim/sound/E_volume";
 C_volume = "sim/sound/cabin";
 var Oiltemp1="engines/engine[0]/oil-temp-c";
@@ -22,8 +21,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("controls/gear/water-rudder-down",0);
     setprop("controls/gear/water-rudder-pos",0);
-    setprop("controls/electric/wipers",0);
-    setprop("controls/electric/wiper-pos",0);
+    setprop(,0);
     print("system  ...Check");
     setprop("controls/engines/engine/condition",0);
     setprop("controls/engines/engine/condition",0);
@@ -71,6 +69,7 @@ setlistener("/gear/gear[1]/wow", func(gr){
     }else{FHmeter.start();}
 },0,0);
 
+
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
 setprop("controls/electric/engine[1]/generator",1);
@@ -111,6 +110,22 @@ setprop("engines/engine[0]/running",0);
 setprop("engines/engine[1]/running",0);
 }
 
+var wipers_on = func{
+    var wiper_pos=WiperPos.getValue();
+    if(wiper_pos >= 1.000) {
+    w_fctr =-1;
+    }else{
+    if(wiper_pos <= 0.000) w_fctr =1;
+    }
+    
+    if(!WiperSwitch.getValue()){
+    if(wiper_pos <=0.0){return;}else {w_fctr =-1;}
+    }
+    var wiper_time = getprop("/sim/time/delta-realtime-sec");
+    wiper_pos += (wiper_time * w_fctr);
+    WiperPos.setValue(wiper_pos);
+}
+
 var update_systems = func {
         var power = getprop("/controls/switches/master-panel");
         pph1 = getprop("/engines/engine[0]/fuel-flow-gph");
@@ -121,12 +136,7 @@ var update_systems = func {
         setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
     flight_meter();
     oil_temp();
-
-if(getprop("controls/electric/wipers/state")){
-    wipers.open();
-    }else{
-    wipers.close();
-    }
+    wipers_on();
 
     if(getprop("controls/engines/engine[0]/cutoff")){
         setprop("controls/engines/engine[0]/condition",0);

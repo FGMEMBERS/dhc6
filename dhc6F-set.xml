@@ -61,7 +61,7 @@ Jan 2008 Syd Adams
                     <label>Wipers On/Off</label>
                     <binding>
                         <command>property-toggle</command>
-                        <property>controls/electric/wipers/wiper-switch</property>
+                        <property>controls/electric/wipers/switch</property>
                     </binding>
                 </item>
                 <item>
