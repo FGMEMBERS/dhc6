@@ -14,7 +14,6 @@ var Oiltemp1="engines/engine[0]/oil-temp-c";
 var Oiltemp2="engines/engine[1]/oil-temp-c";
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
-FHmeter.stop();
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop(S_volume,0.3);
