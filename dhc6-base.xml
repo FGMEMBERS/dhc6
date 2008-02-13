@@ -111,13 +111,13 @@ Jan 2008 Syd Adams
             <engine n="0">
                 <condition>0</condition>
                 <cutoff>0</cutoff>
-                <condition-lever>0</condition-lever>
+                <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
             </engine>
             <engine n="1">
                 <condition>0</condition>
                 <cutoff>0</cutoff>
-                <condition-lever>0</condition-lever>
+                <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
             </engine>
         </engines>
