@@ -100,10 +100,6 @@ Jan 2008 Syd Adams
             <engine n="1">
                 <generator>false</generator>
             </engine>
-            <wipers>
-            <switch type = "bool">0</switch>
-            <position-norm type = "double">0</position-norm>
-            </wipers>
         </electric>
 
         <lighting>
@@ -188,52 +184,5 @@ Jan 2008 Syd Adams
         <use-cloud-turbulence>true</use-cloud-turbulence>
         </turbulence>
     </environment>
-
-    <input>
-        <keyboard>
-            <key n="77">
-                <name>M</name>
-                <desc>condition lever leaner.</desc>
-                <repeatable type="bool">true</repeatable>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>controls/engines/engine[0]/condition-lever</property>
-                    <step>-0.01</step>
-                    <min>0</min>
-                    <max>1.0</max>
-                    <wrap>0</wrap>
-                </binding>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>controls/engines/engine[1]/condition-lever</property>
-                    <step>-0.01</step>
-                    <min>0</min>
-                    <max>1.0</max>
-                    <wrap>0</wrap>
-                </binding>
-            </key>
-           <key n="109">
-                <name>m</name>
-                <desc>condition lever richer</desc>
-                <repeatable type="bool">true</repeatable>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>controls/engines/engine[0]/condition-lever</property>
-                    <step>0.01</step>
-                    <min>0</min>
-                    <max>1.0</max>
-                    <wrap>0</wrap>
-                </binding>
-                <binding>
-                    <command>property-adjust</command>
-                    <property>controls/engines/engine[1]/condition-lever</property>
-                    <step>0.01</step>
-                    <min>0</min>
-                    <max>1.0</max>
-                    <wrap>0</wrap>
-                </binding>
-            </key>
-        </keyboard>
-    </input>
 
 </PropertyList>

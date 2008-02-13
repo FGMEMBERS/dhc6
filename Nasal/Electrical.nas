@@ -104,7 +104,6 @@ alternator2 = Alternator.new("/engines/engine[1]/n2",50.0,28.0,60.0);
 setlistener("/sim/signals/fdm-initialized", func {
     setprop(BattVolts,0);
     setprop("controls/electric/ammeter-switch",0);
-    setprop("controls/electric/wipers/wiper-switch",0);
     setprop("controls/electric/external-power",0);
     setprop("controls/anti-ice/prop-heat",0);
     setprop("controls/anti-ice/pitot-heat",0);
@@ -216,9 +215,7 @@ electrical_bus = func() {
         setprop(outPut~"fuel-pump",bus_volts);
     }
 
-    srvc=0+getprop("controls/electric/wipers/wiper-switch");
-    load +=srvc;
-    setprop(outPut~"wipers",bus_volts * srvc);
+    setprop(outPut~"wipers",bus_volts);
 
     srvc=0+getprop("controls/anti-ice/pitot-heat");
     load +=srvc;

@@ -2,14 +2,14 @@
 
 <PropertyList>
 
-<path>dhc-6F.ac</path>
+<path>dhc-6S.ac</path>
 
     <animation>
-        <name>ExteriorF</name>
+        <name>Exterior</name>
       <object-name>fuselage</object-name>
-      <object-name>fuselage.005</object-name>
+      <object-name>fuselage.004</object-name>
+      <object-name>longnose</object-name>
       <object-name>Spinners</object-name>
-      <object-name>bluntnose</object-name>
       <object-name>RHdoor</object-name>
       <object-name>LHdoor</object-name>
       <object-name>Rrdoor.rear</object-name>
@@ -32,24 +32,13 @@
       <object-name>RHstrut</object-name>
     </animation>
 
-   <animation>
+    <animation>
         <type>material</type>
-         <object-name>ExteriorF</object-name>
+         <object-name>Exterior</object-name>
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
         <texture>paint1.rgb</texture>
     </animation>
-
-    <model>
-        <name>Gear CTL</name>
-        <path>Aircraft/dhc6/Models/Instruments/gear-ctl.xml</path>
-        <offsets>
-            <x-m>-3.936</x-m>
-            <y-m>-0.200</y-m>
-            <z-m>0.062</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
 
     <model>
         <name>Flap Gauge</name>
@@ -539,6 +528,20 @@
 
     <animation>
         <type>select</type>
+        <object-name>Rrdoor.frt.001</object-name>
+        <object-name>Rrdoor.frt</object-name>
+        <object-name>Rrdoor.rear.001</object-name>
+        <object-name>Rrdoor.rear</object-name>
+        <object-name>Rrdoor.glass</object-name>
+        <condition>
+            <not>
+            <property>sim/model/remove-doors</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>navlights</object-name>
         <condition>
             <not-equals>
@@ -612,7 +615,6 @@
         <min>0.5</min>
         <max>2</max>
     </animation>
-
 <!--    Wipers   -->
 
     <animation>
@@ -719,7 +721,6 @@
             <z>0.687</z>
         </axis>
     </animation>
-
 
 
 <!--    Controls Surfaces    -->
@@ -1351,206 +1352,6 @@
         </axis>
     </animation>
 
-<!-- Gear -->
-
-    <animation>
-        <type>translate</type>
-        <object-name>LHWheel</object-name>
-        <property>gear/gear[6]/compression-m</property>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>RHWheel</object-name>
-        <property>gear/gear[7]/compression-m</property>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>LHWheel</object-name>
-        <property>gear/gear[6]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.5</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>-1</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>RHWheel</object-name>
-        <property>gear/gear[7]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.5</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>-1</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>LHuprRam</object-name>
-        <object-name>LHlwrRam</object-name>
-        <object-name>LHfrtWheel</object-name>
-        <property>gear/gear[4]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.2100</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>-0.342</x>
-            <y>0</y>
-            <z>-0.940</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>LHlwrRam</object-name>
-        <object-name>LHfrtWheel</object-name>
-        <property>gear/gear[4]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.3900</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>-0.342</x>
-            <y>0</y>
-            <z>-0.940</z>
-        </axis>
-    </animation>
-
-<animation>
-        <type>rotate</type>
-        <object-name>LHfrtWheel</object-name>
-        <property>gear/gear[4]/compression-m</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>0.2</ind><dep>60.0</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.785</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.756</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>RHuprRam</object-name>
-        <object-name>RHlwrRam</object-name>
-        <object-name>RHfrtWheel</object-name>
-        <property>gear/gear[5]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.2100</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>-0.342</x>
-            <y>0</y>
-            <z>-0.940</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>RHlwrRam</object-name>
-        <object-name>RHfrtWheel</object-name>
-        <property>gear/gear[5]/position-norm</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>0.3900</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.72</x-m>
-            <y-m>-1.75</y-m>
-            <z-m>-1.579</z-m>
-        </center>
-        <axis>
-            <x>-0.342</x>
-            <y>0</y>
-            <z>-0.940</z>
-        </axis>
-    </animation>
-
-<animation>
-        <type>rotate</type>
-        <object-name>RHfrtWheel</object-name>
-        <property>gear/gear[5]/compression-m</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>0.2</ind><dep>60.0</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>-4.785</x-m>
-            <y-m>1.75</y-m>
-            <z-m>-1.756</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
 <!-- hotspots -->
 
     <animation>
@@ -1696,6 +1497,89 @@
             <property>controls/lighting/strobe</property>
         </binding>
         </action>
+    </animation>
+
+
+
+
+<!--    GEAR    -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>FrtStrut</object-name>
+        <object-name>FrtWheel</object-name>
+        <object-name>FrtSki</object-name>
+        <property>gear/gear[0]/compression-m</property>
+        <factor>1.0</factor>
+        <axis>
+            <x>0.087</x>
+            <y>0</y>
+            <z>0.996</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Lwheel</object-name>
+        <object-name>Lski</object-name>
+        <object-name>LHstrut</object-name>
+        <property>gear/gear[1]/compression-m</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.5</ind><dep>25.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.134</x-m>
+            <y-m>-0.923</y-m>
+            <z-m>-0.810</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Rwheel</object-name>
+        <object-name>Rski</object-name>
+        <object-name>RHstrut</object-name>
+        <property>gear/gear[2]/compression-m</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.5</ind><dep>25.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.134</x-m>
+            <y-m>0.923</y-m>
+            <z-m>-0.810</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FrtStrut</object-name>
+        <object-name>FrtWheel</object-name>
+        <object-name>FrtSki</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>-30.0</factor>
+        <center>
+            <x-m>-4.410</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.744</z-m>
+        </center>
+        <axis>
+            <x>0.087</x>
+            <y>0</y>
+            <z>0.996</z>
+        </axis>
     </animation>
 
     <animation>

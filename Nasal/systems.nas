@@ -5,14 +5,60 @@ var pph1 = 0.0;
 var pph2 = 0.0;
 var fuel_density=0.0;
 var ViewNum = 0.0;
-var WiperPos = props.globals.getNode("controls/electric/wipers/position-norm");
-var WiperSwitch = props.globals.getNode("controls/electric/wipers/switch");
 S_volume = "sim/sound/E_volume";
 C_volume = "sim/sound/cabin";
 var Oiltemp1="engines/engine[0]/oil-temp-c";
 var Oiltemp2="engines/engine[1]/oil-temp-c";
-
+Wiper=[];
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
+
+#usage :     var wiper = Wiper.new(wiper property , wiper power source (separate from on off switch));
+#
+#    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/outputs/wiper");
+
+var Wiper = {
+    new : func {
+        m = { parents : [Wiper] };
+        m.direction = 0;
+        m.delay_count = 0;
+        m.spd_factor = 0;
+        m.node = props.globals.getNode(arg[0],1);
+        m.power = props.globals.getNode(arg[1],1);
+        if(m.power.getValue()==nil)m.power.setDoubleValue(0);
+        m.spd = m.node.getNode("arc-sec",1);
+        if(m.spd.getValue()==nil)m.spd.setDoubleValue(1);
+        m.delay = m.node.getNode("delay-sec",1);
+        if(m.delay.getValue()==nil)m.delay.setDoubleValue(0);
+        m.position = m.node.getNode("position-norm", 1);
+        m.position.setDoubleValue(0);
+        m.switch = m.node.getNode("switch", 1);
+        if (m.switch.getValue() == nil)m.switch.setBoolValue(0);
+        return m;
+    },
+    active: func{
+    if(me.power.getValue()<=5)return;
+    var spd_factor = 1/me.spd.getValue();
+    var pos = me.position.getValue();
+    if(!me.switch.getValue()){
+        if(pos <= 0.000)return;
+        }
+    if(pos >=1.000){
+        me.direction=-1;
+        }elsif(pos <=0.000){
+        me.direction=0;
+        me.delay_count+=getprop("/sim/time/delta-realtime-sec");
+        if(me.delay_count >= me.delay.getValue()){
+            me.delay_count=0;
+            me.direction=1;
+            }
+        }
+    var wiper_time = spd_factor*getprop("/sim/time/delta-realtime-sec");
+    pos +=(wiper_time * me.direction);
+    me.position.setValue(pos);
+    }
+};
+
+    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/outputs/wipers");
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop(S_volume,0.3);
@@ -28,7 +74,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("controls/engines/engine[1]/condition",0);
     setprop(Oiltemp1,getprop("environment/temperature-degc"));
     settimer(update_systems, 2);
-    });
+});
 
 setlistener("/engines/engine/out-of-fuel", func(nf){
     if(nf.getValue() != 0){
@@ -110,21 +156,6 @@ setprop("engines/engine[0]/running",0);
 setprop("engines/engine[1]/running",0);
 }
 
-var wipers_on = func{
-    var wiper_pos=WiperPos.getValue();
-    if(wiper_pos >= 1.000) {
-    w_fctr =-1;
-    }else{
-    if(wiper_pos <= 0.000) w_fctr =1;
-    }
-    
-    if(!WiperSwitch.getValue()){
-    if(wiper_pos <=0.0)return;
-    }
-    var wiper_time = getprop("/sim/time/delta-realtime-sec");
-    wiper_pos += (wiper_time * w_fctr);
-    WiperPos.setValue(wiper_pos);
-}
 
 var update_systems = func {
         var power = getprop("/controls/switches/master-panel");
@@ -136,19 +167,19 @@ var update_systems = func {
         setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
     flight_meter();
     oil_temp();
-    wipers_on();
+    wiper.active();
 
     if(getprop("controls/engines/engine[0]/cutoff")){
         setprop("controls/engines/engine[0]/condition",0);
         setprop("engines/engine[0]/running",0);
         }else{
-            setprop("controls/engines/engine[0]/condition",getprop("controls/engines/engine[0]/condition-lever"));
+            setprop("controls/engines/engine[0]/condition",getprop("controls/engines/engine[0]/mixture"));
         }
     if(getprop("controls/engines/engine[1]/cutoff")){
         setprop("controls/engines/engine[1]/condition",0);
         setprop("engines/engine[1]/running",0);
     }else{
-        setprop("controls/engines/engine[1]/condition",getprop("controls/engines/engine[1]/condition-lever"));
+        setprop("controls/engines/engine[1]/condition",getprop("controls/engines/engine[1]/mixture"));
     }
     if(getprop("controls/gear/water-rudder-down")){
         setprop("controls/gear/water-rudder-pos",getprop("controls/flight/rudder"));
