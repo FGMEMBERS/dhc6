@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-
+<!--
+KI-227-01 ADF indicator 
+Syd Adams
+-->
 <PropertyList>
 
 <path>adf.ac</path>
@@ -19,7 +22,7 @@
 <animation>
     <type>rotate</type>
     <object-name>ADFface</object-name>
-    <property>instrumentation/adf/rotation-deg[0]</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <factor>-1</factor>
     <axis>
         <x>-1</x>

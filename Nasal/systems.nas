@@ -66,12 +66,14 @@ setlistener("/sim/signals/fdm-initialized", func {
     fuel_density=props.globals.getNode("consumables/fuel/tank[0]/density-ppg").getValue();
     setprop("/instrumentation/clock/flight-meter-hour",0);
     print("system  ...Check");
-    setprop("controls/engines/engine/condition",0);
+    Shutdown();
     setprop("controls/engines/engine[1]/condition",0);
-    setprop("controls/engines/engine/mixture",0);
-    setprop("controls/engines/engine[1]/mixture",0);
     setprop(Oiltemp1,getprop("environment/temperature-degc"));
     settimer(update_systems, 2);
+});
+
+setlistener("/sim/signals/reinit", func {
+    Shutdown();
 });
 
 setlistener("/engines/engine/out-of-fuel", func(nf){
@@ -121,11 +123,14 @@ setprop("controls/electric/avionics-switch",1);
 setprop("controls/electric/battery-switch",1);
 setprop("controls/electric/inverter-switch",1);
 setprop("controls/lighting/instrument-lights",1);
+setprop("controls/lighting/instruments-norm",0.8);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
 setprop("controls/engines/engine[0]/mixture",1);
 setprop("controls/engines/engine[1]/mixture",1);
+setprop("controls/engines/engine[0]/cutoff",0);
+setprop("controls/engines/engine[1]/cutoff",0);
 setprop("controls/engines/engine[0]/propeller-pitch",1);
 setprop("controls/engines/engine[1]/propeller-pitch",1);
 setprop("engines/engine[0]/running",1);
@@ -139,6 +144,7 @@ setprop("controls/electric/avionics-switch",0);
 setprop("controls/electric/battery-switch",0);
 setprop("controls/electric/inverter-switch",0);
 setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/instruments-norm",0.8);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
 setprop("controls/lighting/strobe",0);
@@ -146,6 +152,8 @@ setprop("controls/engines/engine[0]/mixture",0);
 setprop("controls/engines/engine[1]/mixture",0);
 setprop("controls/engines/engine[0]/propeller-pitch",0);
 setprop("controls/engines/engine[1]/propeller-pitch",0);
+setprop("controls/engines/engine[0]/cutoff",0);
+setprop("controls/engines/engine[1]/cutoff",0);
 setprop("engines/engine[0]/running",0);
 setprop("engines/engine[1]/running",0);
 }

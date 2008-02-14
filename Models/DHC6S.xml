@@ -142,7 +142,7 @@
 
     <model>
         <name>Pilot ADF</name>
-        <path>Aircraft/dhc6/Models/Instruments/adf.xml</path>
+        <path>Aircraft/dhc6/Models/Instruments/ki227-01.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.634</y-m>
@@ -285,7 +285,7 @@
 
     <model>
         <name>CoPilot ADF</name>
-        <path>Aircraft/dhc6/Models/Instruments/adf.xml</path>
+        <path>Aircraft/dhc6/Models/Instruments/ki227-01.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.421</y-m>
@@ -1248,7 +1248,22 @@
         </axis>
     </animation>
 
-
+    <animation>
+        <type>rotate</type>
+        <object-name>Avn.toggle</object-name>
+        <property>controls/lighting/instrument-lights</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-2.953</x-m>
+            <y-m>0</y-m>
+            <z-m>0.957</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <animation>
         <type>rotate</type>
@@ -1499,6 +1514,57 @@
         </action>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>Batt.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/battery-switch</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LHgen.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[0]/generator</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RHgen.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine[1]/generator</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Avn.bezel</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/instrument-lights</property>
+        </binding>
+        </action>
+    </animation>
 
 
 
@@ -1580,45 +1646,6 @@
             <y>0</y>
             <z>0.996</z>
         </axis>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Batt.bezel</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/electric/battery-switch</property>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>LHgen.bezel</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/electric/engine[0]/generator</property>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>RHgen.bezel</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/electric/engine[1]/generator</property>
-        </binding>
-        </action>
     </animation>
 
 </PropertyList>
