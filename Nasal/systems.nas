@@ -10,6 +10,7 @@ C_volume = "sim/sound/cabin";
 var Oiltemp1="engines/engine[0]/oil-temp-c";
 var Oiltemp2="engines/engine[1]/oil-temp-c";
 Wiper=[];
+FuelSelector=props.globals.getNode("controls/fuel/tank-selector",1);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 
 #usage :     var wiper = Wiper.new(wiper property , wiper power source (separate from on off switch));
@@ -64,7 +65,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop(S_volume,0.3);
     setprop(C_volume,0.3);
     fuel_density=props.globals.getNode("consumables/fuel/tank[0]/density-ppg").getValue();
-    setprop("/instrumentation/clock/flight-meter-hour",0);
+    FuelSelector.setIntValue(0);
+    setprop("instrumentation/clock/flight-meter-hour",0);
     print("system  ...Check");
     Shutdown();
     setprop("controls/engines/engine[1]/condition",0);
@@ -74,6 +76,20 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 setlistener("/sim/signals/reinit", func {
     Shutdown();
+});
+
+setlistener("controls/fuel/tank-selector", func(tk){
+var tnk = tk.getValue();
+if(tnk == -1){
+        setprop("consumables/fuel/tank[0]/selected",0);
+        setprop("consumables/fuel/tank[1]/selected",1);
+    }elsif(tnk == 0){
+        setprop("consumables/fuel/tank[0]/selected",1);
+        setprop("consumables/fuel/tank[1]/selected",1);
+    }elsif(tnk == 1){
+        setprop("consumables/fuel/tank[0]/selected",1);
+        setprop("consumables/fuel/tank[1]/selected",0);
+    }
 });
 
 setlistener("/engines/engine/out-of-fuel", func(nf){

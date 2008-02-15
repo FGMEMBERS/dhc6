@@ -19,7 +19,7 @@ Jan 2008 Syd Adams
         </startup>
 
     <model>
-        <path>Aircraft/dhc6/Models/DHC6S.xml</path>
+        <path>Aircraft/dhc6/Models/DHC6.xml</path>
         <remove-doors type="bool">0</remove-doors>
     </model>
 

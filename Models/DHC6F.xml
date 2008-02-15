@@ -1368,6 +1368,24 @@
         </axis>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>Fuel.select</object-name>
+        <property>controls/fuel/tank-selector</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-3.938</x-m>
+            <y-m>-0.114</y-m>
+            <z-m>0.163</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
 <!-- Gear -->
 
     <animation>
@@ -1763,6 +1781,42 @@
             <binding>
             <command>property-toggle</command>
             <property>controls/lighting/instrument-lights</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Tank.aft</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/fuel/tank-selector</property>
+            <step>-1</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Tank.fwd</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>controls/fuel/tank-selector</property>
+            <step>1</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
         </binding>
         </action>
     </animation>
