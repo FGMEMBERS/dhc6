@@ -1,15 +1,11 @@
 ####	DHC6 systems	####
 aircraft.livery.init("Aircraft/dhc6/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 var w_fctr=0;
-var pph1 = 0.0;
-var pph2 = 0.0;
-var fuel_density=0.0;
 var ViewNum = 0.0;
 S_volume = "sim/sound/E_volume";
 C_volume = "sim/sound/cabin";
-var Oiltemp1="engines/engine[0]/oil-temp-c";
-var Oiltemp2="engines/engine[1]/oil-temp-c";
 Wiper=[];
+
 FuelSelector=props.globals.getNode("controls/fuel/tank-selector",1);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 
@@ -59,18 +55,64 @@ var Wiper = {
     }
 };
 
+#Engine sensors class 
+# ie: var Eng = Engine.new(engine number);
+var Engine = {
+    new : func(eng_num){
+        m = { parents : [Engine]};
+        m.fdensity = getprop("consumables/fuel/tank/density-ppg");
+        if(m.fdensity ==nil)m.fdensity=6.72;
+        m.air_temp = props.globals.getNode("environment/temperature-degc",1);
+        m.eng = props.globals.getNode("engines/engine["~eng_num~"]",1);
+        m.running = m.eng.getNode("running",1);
+        m.condition = props.globals.getNode("controls/engines/engine["~eng_num~"]/condition",1);
+        m.cutoff = props.globals.getNode("controls/engines/engine["~eng_num~"]/cutoff",1);
+        m.mixture = props.globals.getNode("controls/engines/engine["~eng_num~"]/mixture",1);
+        m.rpm = m.eng.getNode("n2",1);
+        m.fuel_pph=m.eng.getNode("fuel-flow_pph",1);
+        m.oil_temp=m.eng.getNode("oil-temp-c",1);
+        m.oil_temp.setDoubleValue(m.air_temp.getValue());
+        m.fuel_pph.setDoubleValue(0);
+        m.fuel_gph=m.eng.getNode("fuel-flow-gph",1);
+        m.hpump=props.globals.getNode("systems/hydraulics/pump-psi["~eng_num~"]",1);
+        m.hpump.setDoubleValue(0);
+    return m;
+    },
+#### update ####
+    update : func{
+        me.fuel_pph.setValue(me.fuel_gph.getValue()*me.fdensity);
+        var hpsi =me.rpm.getValue();
+        if(hpsi>60)hpsi = 60;
+        me.hpump.setValue(hpsi);
+        var OT= me.oil_temp.getValue();
+        var rpm = me.rpm.getValue();
+        if(OT < rpm)OT+=0.01;
+        if(OT > rpm)OT-=0.001;
+        me.oil_temp.setValue(OT);
+        },
+#### check fuel cutoff , copy mixture setting to condition for turboprop ####
+    condition_check :  func{
+        if(me.cutoff.getBoolValue()){
+            me.condition.setValue(0);
+            me.running.setBoolValue(0);
+        }else{
+            me.condition.setValue(me.mixture.getValue());
+        }
+    }
+};
+
     var wiper = Wiper.new("controls/electric/wipers","systems/electrical/outputs/wipers");
+    var LHeng = Engine.new(0);
+    var RHeng = Engine.new(1);
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop(S_volume,0.3);
     setprop(C_volume,0.3);
-    fuel_density=props.globals.getNode("consumables/fuel/tank[0]/density-ppg").getValue();
     FuelSelector.setIntValue(0);
     setprop("instrumentation/clock/flight-meter-hour",0);
     print("system  ...Check");
     Shutdown();
     setprop("controls/engines/engine[1]/condition",0);
-    setprop(Oiltemp1,getprop("environment/temperature-degc"));
     settimer(update_systems, 2);
 });
 
@@ -174,39 +216,6 @@ setprop("engines/engine[0]/running",0);
 setprop("engines/engine[1]/running",0);
 }
 
-
-var update_systems = func {
-        var power = getprop("/controls/switches/master-panel");
-        pph1 = getprop("/engines/engine[0]/fuel-flow-gph");
-        pph2 = getprop("/engines/engine[1]/fuel-flow-gph");
-        if(pph1 == nil){pph1 = 6.72;}
-        if(pph2 == nil){pph2 = 6.72;}
-        setprop("engines/engine[0]/fuel-flow-pph",pph1* fuel_density);
-        setprop("engines/engine[1]/fuel-flow-pph",pph2* fuel_density);
-    flight_meter();
-    oil_temp();
-    wiper.active();
-
-    if(getprop("controls/engines/engine[0]/cutoff")){
-        setprop("controls/engines/engine[0]/condition",0);
-        setprop("engines/engine[0]/running",0);
-        }else{
-            setprop("controls/engines/engine[0]/condition",getprop("controls/engines/engine[0]/mixture"));
-        }
-    if(getprop("controls/engines/engine[1]/cutoff")){
-        setprop("controls/engines/engine[1]/condition",0);
-        setprop("engines/engine[1]/running",0);
-    }else{
-        setprop("controls/engines/engine[1]/condition",getprop("controls/engines/engine[1]/mixture"));
-    }
-    if(getprop("controls/gear/water-rudder-down")){
-        setprop("controls/gear/water-rudder-pos",getprop("controls/flight/rudder"));
-    }else{
-        setprop("controls/gear/water-rudder-pos",0);
-    }
-    settimer(update_systems, 0);
-}
-
 var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
@@ -215,23 +224,16 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
 
-var oil_temp = func{
-var Air_temp= getprop("environment/temperature-degc");
-var OT1= getprop(Oiltemp1);
-if(OT1 == nil)OT1=0;
-var OT2= getprop(Oiltemp2);
-if(OT2 == nil)OT2=0;
+##### Main ###########
 
-if(getprop("engines/engine[0]/running")){
-    if(OT1 < getprop("engines/engine[0]/n2"))setprop(Oiltemp1,OT1+0.01);
-    }else{
-        if(OT1 > Air_temp)setprop(Oiltemp1,OT1-0.001);
-    }
-
-if(getprop("engines/engine[1]/running")){
-    if(OT2 < getprop("engines/engine[1]/n2"))setprop(Oiltemp2,OT2+0.01);
-    }else{
-        if(OT2 > Air_temp)setprop(Oiltemp2,OT2-0.001);
-    }
+var update_systems = func {
+    var power = getprop("/controls/switches/master-panel");
+    LHeng.update();
+    LHeng.condition_check();
+    RHeng.update();
+    RHeng.condition_check();
+    flight_meter();
+    wiper.active();
+    settimer(update_systems, 0);
 }
 

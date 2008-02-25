@@ -1,4 +1,4 @@
-####    Two Generator electrical system    #### 
+####    Electrical system    #### 
 ####    Syd Adams    ####
 #### Based on Curtis Olson's nasal electrical code ####
 
@@ -8,11 +8,10 @@ var ammeter_ave = 0.0;
 
 var outPut = "systems/electrical/outputs/";
 
-BattVolts = "systems/electrical/batt-volts";
-Volts = props.globals.getNode("/systems/electrical/volts",1);
-Amps = props.globals.getNode("/systems/electrical/amps",1);
-BATT = props.globals.getNode("/controls/electric/battery-switch",1);
-EXT  = props.globals.getNode("/controls/electric/external-power",1); 
+var BattVolts = props.globals.getNode("systems/electrical/batt-volts",1);
+var Volts = props.globals.getNode("/systems/electrical/volts",1);
+var Amps = props.globals.getNode("/systems/electrical/amps",1);
+var EXT  = props.globals.getNode("/controls/electric/external-power",1); 
 
 
 strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
@@ -20,89 +19,112 @@ aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.30], strobe_switch
 beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 aircraft.light.new("controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
+#var battery = Battery.new(switch-prop,volts,amps,amp_hours,charge_percent,charge_amps);
 Battery = {
-    new : func {
+    new : func(swtch,vlt,amp,hr,chp,cha){
     m = { parents : [Battery] };
-            m.ideal_volts = arg[0];
-            m.ideal_amps = arg[1];
-            m.amp_hours = arg[2];
-            m.charge_percent = arg[3]; 
-            m.charge_amps = arg[4];
+            m.switch = props.globals.getNode(swtch,1);
+            m.switch.setBoolValue(0);
+            m.ideal_volts = vlt;
+            m.ideal_amps = amp;
+            m.amp_hours = hr;
+            m.charge_percent = chp; 
+            m.charge_amps = cha;
     return m;
     },
-    
-    apply_load : func {
-        var amphrs_used = arg[0] * arg[1] / 3600.0;
-        percent_used = amphrs_used / me.amp_hours;
+    apply_load : func(load,dt) {
+        var pwr = me.switch.getValue();
+        if(pwr){
+        var amphrs_used = load * dt / 3600.0;
+        var percent_used = amphrs_used / me.amp_hours;
         me.charge_percent -= percent_used;
         if ( me.charge_percent < 0.0 ) {
             me.charge_percent = 0.0;
         } elsif ( me.charge_percent > 1.0 ) {
         me.charge_percent = 1.0;
         }
-        return me.amp_hours * me.charge_percent;
+        var output =me.amp_hours * me.charge_percent;
+        return output;
+        }else{return 0;}
     },
 
     get_output_volts : func {
-    x = 1.0 - me.charge_percent;
-    tmp = -(3.0 * x - 1.0);
-    factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
-    return me.ideal_volts * factor;
+        var pwr = me.switch.getValue();
+        var x = 1.0 - me.charge_percent;
+        var tmp = -(3.0 * x - 1.0);
+        var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+        var output =me.ideal_volts * factor;
+        return output * pwr;
     },
 
     get_output_amps : func {
-    x = 1.0 - me.charge_percent;
-    tmp = -(3.0 * x - 1.0);
-    factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
-    return me.ideal_amps * factor;
+        var pwr = me.switch.getValue();
+        var x = 1.0 - me.charge_percent;
+        var tmp = -(3.0 * x - 1.0);
+        var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+        var output =me.ideal_amps * factor;
+        return output*pwr;
     }
 };
 
+# var alternator = Alternator.new(num,switch,rpm_source,rpm_threshold,volts,amps);
 Alternator = {
-    new : func {
-    m = { parents : [Alternator] };
-            m.rpm_source =  props.globals.getNode(arg[0],1);
-            m.rpm_threshold = arg[1];
-            m.ideal_volts = arg[2];
-            m.ideal_amps = arg[3];
-          return m;
+    new : func (num,switch,src,thr,vlt,amp){
+        m = { parents : [Alternator] };
+        m.switch =  props.globals.getNode(switch,1);
+        if(m.switch.getValue()==nil)m.switch.setBoolValue(0);
+        m.meter =  props.globals.getNode("systems/electrical/gen-load["~num~"]",1);
+        m.meter.setDoubleValue(0);
+        m.gen_output =  props.globals.getNode("engines/engine["~num~"]/amp-v",1);
+        m.gen_output.setDoubleValue(0);
+        m.meter.setDoubleValue(0);
+        m.rpm_source =  props.globals.getNode(src,1);
+        m.rpm_threshold = thr;
+        m.ideal_volts = vlt;
+        m.ideal_amps = amp;
+        return m;
     },
 
-    apply_load : func( amps, dt) {
-    var factor = me.rpm_source.getValue() / me.rpm_threshold;
-    if ( factor > 1.0 ){factor = 1.0;}
-    available_amps = me.ideal_amps * factor;
-    return available_amps - amps;
+    apply_load : func(load) {
+        var cur_volt=me.gen_output.getValue();
+        var cur_amp=me.meter.getValue();
+        if(cur_volt >1){
+            var factor=1/cur_volt;
+            gout = (load * factor);
+            if(gout>1)gout=1;
+        }else{
+            gout=0;
+        }
+        if(cur_amp > gout)me.meter.setValue(cur_amp - 0.01);
+        if(cur_amp < gout)me.meter.setValue(cur_amp + 0.01);
     },
 
     get_output_volts : func {
-    var factor = me.rpm_source.getValue() / me.rpm_threshold;
-    if ( factor > 1.0 ) {
-        factor = 1.0;
-        }
-    return me.ideal_volts * factor;
+        var pwr = me.switch.getValue();
+        var factor = me.rpm_source.getValue() / me.rpm_threshold;
+        if ( factor > 1.0 )factor = 1.0;
+        var out = pwr * (me.ideal_volts * factor);
+        me.gen_output.setValue(out);
+        return out;
     },
 
     get_output_amps : func {
-    var factor = me.rpm_source.getValue() / me.rpm_threshold;
-    if ( factor > 1.0 ) {
-        factor = 1.0;
+        var pwr = me.switch.getValue();
+        var factor = me.rpm_source.getValue() / me.rpm_threshold;
+        if ( factor > 1.0 ) {
+            factor = 1.0;
+            }
+        return pwr * (me.ideal_amps * factor);
         }
-    return me.ideal_amps * factor;
-    }
 };
-#var battery = Battery.new(volts,amps,amp_hours,charge_percent,charge_amps);
 
-var battery = Battery.new(24,30,34,1.0,7.0);
-
-# var alternator = Alternator.new("rpm-source",rpm_threshold,volts,amps);
-
-alternator1 = Alternator.new("/engines/engine[0]/n2",50.0,28.0,60.0);
-alternator2 = Alternator.new("/engines/engine[1]/n2",50.0,28.0,60.0);
+var battery = Battery.new("/controls/electric/battery-switch",24,30,34,1.0,7.0);
+alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator","/engines/engine[0]/rpm",100.0,28.0,60.0);
+alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","/engines/engine[1]/rpm",100.0,28.0,60.0);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
-    setprop(BattVolts,0);
+    BattVolts.setDoubleValue(0);
     setprop("controls/electric/ammeter-switch",0);
     setprop("controls/electric/external-power",0);
     setprop("controls/anti-ice/prop-heat",0);
@@ -129,32 +151,24 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 update_virtual_bus = func( dt ) {
     var PWR = getprop("systems/electrical/serviceable");
-    var alternator1_volts = 0.0;
-    var alternator2_volts = 0.0;
-    var gen1=getprop("controls/electric/engine[0]/generator");
-    var gen2=getprop("controls/electric/engine[1]/generator");
-    battery_volts = battery.get_output_volts();
-    setprop(BattVolts,battery_volts*BATT.getBoolValue());
-    alternator1_volts = gen1 * alternator1.get_output_volts();
-    setprop("engines/engine[0]/amp-v",alternator1_volts);
+    var battery_volts = battery.get_output_volts();
+    BattVolts.setValue(battery_volts);
+    var alternator1_volts = alternator1.get_output_volts();
+    var alternator2_volts = alternator2.get_output_volts();
+    var external_volts = 24.0;
 
-    alternator2_volts = gen2 * alternator2.get_output_volts();
-    setprop("engines/engine[1]/amp-v",alternator2_volts);
-
-    external_volts = 0.0;
     load = 0.0;
-
     bus_volts = 0.0;
     power_source = nil;
-    if(PWR){
-    if ( BATT.getBoolValue()) {
+        
         bus_volts = battery_volts;
         power_source = "battery";
-        }
-   if (alternator1_volts > bus_volts) {
+
+    if (alternator1_volts > bus_volts) {
         bus_volts = alternator1_volts;
         power_source = "alternator1";
         }
+
     if (alternator2_volts > bus_volts) {
         bus_volts = alternator2_volts;
         power_source = "alternator2";
@@ -162,12 +176,14 @@ update_virtual_bus = func( dt ) {
     if ( EXT.getBoolValue() and ( external_volts > bus_volts) ) {
         bus_volts = external_volts;
         }
-   
+
+    bus_volts *=PWR;
+
     load += electrical_bus(bus_volts);
     load += avionics_bus(bus_volts);
 
     ammeter = 0.0;
-    if ( bus_volts > 1.0 )load += 15.0;
+#    if ( bus_volts > 1.0 )load += 15.0;
 
     if ( power_source == "battery" ) {
         ammeter = -load;
@@ -185,8 +201,10 @@ update_virtual_bus = func( dt ) {
 
    Amps.setValue(ammeter_ave);
    Volts.setValue(bus_volts);
-    }
-   return load;
+    alternator1.apply_load(load);
+    alternator2.apply_load(load);
+
+return load;
 }
 
 electrical_bus = func() {
