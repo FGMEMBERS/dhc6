@@ -11,7 +11,7 @@ var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 
 #usage :     var wiper = Wiper.new(wiper property , wiper power source (separate from on off switch));
 #
-#    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/outputs/wiper");
+#    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts");
 
 var Wiper = {
     new : func {
@@ -101,7 +101,7 @@ var Engine = {
     }
 };
 
-    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/outputs/wipers");
+    var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts");
     var LHeng = Engine.new(0);
     var RHeng = Engine.new(1);
 
