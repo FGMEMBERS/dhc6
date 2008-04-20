@@ -43,13 +43,13 @@ var Wiper = {
         me.direction=-1;
         }elsif(pos <=0.000){
         me.direction=0;
-        me.delay_count+=getprop("/sim/time/delta-realtime-sec");
+        me.delay_count+=getprop("/sim/time/delta-sec");
         if(me.delay_count >= me.delay.getValue()){
             me.delay_count=0;
             me.direction=1;
             }
         }
-    var wiper_time = spd_factor*getprop("/sim/time/delta-realtime-sec");
+    var wiper_time = spd_factor*getprop("/sim/time/delta-sec");
     pos +=(wiper_time * me.direction);
     me.position.setValue(pos);
     }

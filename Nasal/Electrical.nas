@@ -120,8 +120,8 @@ Alternator = {
 };
 
 var battery = Battery.new("/controls/electric/battery-switch",24,30,34,1.0,7.0);
-var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator","/engines/engine[0]/rpm",100.0,28.0,60.0);
-var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","/engines/engine[1]/rpm",100.0,28.0,60.0);
+var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator","/engines/engine[0]/n2",30.0,28.0,60.0);
+var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","/engines/engine[1]/n2",30.0,28.0,60.0);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
@@ -323,7 +323,7 @@ setprop(outPut~"instrument-lights-norm",(0.0357 * (bus_volts * INSTR_DIMMER)));
 }
 
 update_electrical = func {
-    var scnd = getprop("sim/time/delta-realtime-sec");
+    var scnd = getprop("sim/time/delta-sec");
     update_virtual_bus( scnd );
 settimer(update_electrical, 0);
 }
