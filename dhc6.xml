@@ -192,9 +192,9 @@ Prop diam: 2.59 m
     </jet>
 -->
 
-    <ballast x="-6.5" y="0" z="0" mass="-350"/>
+    <ballast x="-6.5" y="0" z="0" mass="-450"/>
     <ballast x="0.3" y="0" z="-0.5" mass="1500"/>
-    <ballast x="2.5" y="0" z="-1" mass="1000"/>
+    <ballast x="2.5" y="0" z="-1" mass="1400"/>
 
     <weight x="2.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
