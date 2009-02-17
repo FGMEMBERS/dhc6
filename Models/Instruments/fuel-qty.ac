@@ -7,7 +7,7 @@ OBJECT poly
 name "FuelQTY.bezel"
 data 12
 Cylinder.012
-texture "fuel-qty.rgb"
+texture "fuel-qty.png"
 texrep 1 1
 crease 30.000000
 numvert 242
@@ -1723,7 +1723,7 @@ OBJECT poly
 name "FuelQTY.face"
 data 10
 Circle.126
-texture "fuel-qty.rgb"
+texture "fuel-qty.png"
 texrep 1 1
 crease 30.000000
 numvert 20
@@ -1832,7 +1832,7 @@ OBJECT poly
 name "FuelQTY.needle"
 data 10
 Circle.124
-texture "fuel-qty.rgb"
+texture "fuel-qty.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1860,7 +1860,7 @@ OBJECT poly
 name "FuelQTY.tank"
 data 10
 Circle.128
-texture "fuel-qty.rgb"
+texture "fuel-qty.png"
 texrep 1 1
 crease 30.000000
 numvert 4

@@ -329,7 +329,7 @@
     <name>Vertical Speed Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/altitude</prop>
+      <prop>autopilot/locks/altitude</prop>
       <value>vertical-speed-hold</value>
       <honor-passive>true</honor-passive>
     </enable>

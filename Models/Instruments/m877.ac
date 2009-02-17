@@ -9,7 +9,7 @@ OBJECT poly
 name "CTL.btn"
 data 4
 Cube
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -66,7 +66,7 @@ OBJECT poly
 name "HR.001"
 data 9
 Plane.472
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -87,7 +87,7 @@ OBJECT poly
 name "HR.002"
 data 9
 Plane.477
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -108,7 +108,7 @@ OBJECT poly
 name "M877"
 data 10
 Circle.050
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 102
@@ -787,7 +787,7 @@ OBJECT poly
 name "M877.002"
 data 10
 Circle.054
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -941,7 +941,7 @@ OBJECT poly
 name "M877.display"
 data 9
 Plane.469
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -973,7 +973,7 @@ OBJECT poly
 name "MN.001"
 data 9
 Plane.479
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -994,7 +994,7 @@ OBJECT poly
 name "MN.002"
 data 9
 Plane.478
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1015,7 +1015,7 @@ OBJECT poly
 name "SEL.btn"
 data 8
 Cube.001
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -1072,7 +1072,7 @@ OBJECT poly
 name "et"
 data 9
 Plane.485
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1093,7 +1093,7 @@ OBJECT poly
 name "ft"
 data 9
 Plane.484
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1114,7 +1114,7 @@ OBJECT poly
 name "gmt"
 data 9
 Plane.482
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1135,7 +1135,7 @@ OBJECT poly
 name "lt"
 data 9
 Plane.483
-texture "M877.rgb"
+texture "M877.png"
 texrep 1 1
 crease 30.000000
 numvert 4

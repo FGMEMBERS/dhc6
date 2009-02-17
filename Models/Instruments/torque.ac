@@ -7,7 +7,7 @@ OBJECT poly
 name "TQbezel"
 data 12
 Cylinder.003
-texture "torque.rgb"
+texture "torque.png"
 texrep 1 1
 crease 30.000000
 numvert 263
@@ -1861,7 +1861,7 @@ OBJECT poly
 name "TQface"
 data 8
 Mesh.014
-texture "torque.rgb"
+texture "torque.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1928,7 +1928,7 @@ OBJECT poly
 name "TQneedle"
 data 10
 Circle.091
-texture "torque.rgb"
+texture "torque.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1956,7 +1956,7 @@ OBJECT poly
 name "TQneedle.001"
 data 10
 Circle.094
-texture "torque.rgb"
+texture "torque.png"
 texrep 1 1
 crease 30.000000
 numvert 4

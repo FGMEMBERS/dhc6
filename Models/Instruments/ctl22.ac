@@ -9,7 +9,7 @@ OBJECT poly
 name "CTL-22"
 data 4
 Mesh
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -72,7 +72,7 @@ OBJECT poly
 name "CTL-22.mem"
 data 8
 Mesh.001
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -93,7 +93,7 @@ OBJECT poly
 name "CTL-22.pwr"
 data 8
 Mesh.002
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 61
@@ -490,7 +490,7 @@ OBJECT poly
 name "CTL-22.toggle"
 data 8
 Mesh.003
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -593,7 +593,7 @@ OBJECT poly
 name "CTL-22.vol"
 data 8
 Mesh.004
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 33
@@ -844,7 +844,7 @@ OBJECT poly
 name "CTL-22.xfr"
 data 8
 Mesh.005
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -865,7 +865,7 @@ OBJECT poly
 name "act.btn"
 data 8
 Mesh.006
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -1032,7 +1032,7 @@ OBJECT poly
 name "freq.001"
 data 8
 Mesh.007
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1053,7 +1053,7 @@ OBJECT poly
 name "freq.002"
 data 8
 Mesh.008
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1074,7 +1074,7 @@ OBJECT poly
 name "freq.003"
 data 8
 Mesh.009
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1095,7 +1095,7 @@ OBJECT poly
 name "freq.004"
 data 8
 Mesh.010
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1116,7 +1116,7 @@ OBJECT poly
 name "freq.005"
 data 8
 Mesh.011
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1137,7 +1137,7 @@ OBJECT poly
 name "freq.006"
 data 8
 Mesh.012
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1158,7 +1158,7 @@ OBJECT poly
 name "freq.dec"
 data 8
 Mesh.013
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1179,7 +1179,7 @@ OBJECT poly
 name "freq.dwn"
 data 8
 Mesh.014
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1200,7 +1200,7 @@ OBJECT poly
 name "freq.knob"
 data 8
 Mesh.015
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 65
@@ -1707,7 +1707,7 @@ OBJECT poly
 name "freq.up"
 data 8
 Mesh.016
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1728,7 +1728,7 @@ OBJECT poly
 name "mem.annun"
 data 8
 Mesh.017
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1749,7 +1749,7 @@ OBJECT poly
 name "pwr.off"
 data 8
 Mesh.018
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1770,7 +1770,7 @@ OBJECT poly
 name "pwr.on"
 data 8
 Mesh.019
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1791,7 +1791,7 @@ OBJECT poly
 name "stby.001"
 data 8
 Mesh.020
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1812,7 +1812,7 @@ OBJECT poly
 name "stby.002"
 data 8
 Mesh.021
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1833,7 +1833,7 @@ OBJECT poly
 name "stby.003"
 data 8
 Mesh.022
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1854,7 +1854,7 @@ OBJECT poly
 name "stby.004"
 data 8
 Mesh.023
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1875,7 +1875,7 @@ OBJECT poly
 name "stby.005"
 data 8
 Mesh.024
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1896,7 +1896,7 @@ OBJECT poly
 name "stby.006"
 data 8
 Mesh.025
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1917,7 +1917,7 @@ OBJECT poly
 name "stby.dec"
 data 8
 Mesh.026
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1938,7 +1938,7 @@ OBJECT poly
 name "sto.btn"
 data 8
 Mesh.027
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -2105,7 +2105,7 @@ OBJECT poly
 name "test.btn"
 data 8
 Mesh.028
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -2272,7 +2272,7 @@ OBJECT poly
 name "xmt.annun"
 data 8
 Mesh.029
-texture "ctl-22.rgb"
+texture "ctl-22.png"
 texrep 1 1
 crease 30.000000
 numvert 25

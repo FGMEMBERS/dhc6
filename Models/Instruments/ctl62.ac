@@ -9,7 +9,7 @@ OBJECT poly
 name "CTL-62"
 data 8
 Mesh.211
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -72,7 +72,7 @@ OBJECT poly
 name "CTL-62.mem"
 data 9
 Plane.002
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -93,7 +93,7 @@ OBJECT poly
 name "CTL-62.pwr"
 data 8
 Mesh.214
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 61
@@ -490,7 +490,7 @@ OBJECT poly
 name "CTL-62.toggle"
 data 10
 Circle.001
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -593,7 +593,7 @@ OBJECT poly
 name "CTL-62.vol"
 data 8
 Mesh.216
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 33
@@ -844,7 +844,7 @@ OBJECT poly
 name "CTL-62.xfr"
 data 9
 Plane.019
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -865,7 +865,7 @@ OBJECT poly
 name "act.btn"
 data 10
 Circle.004
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -1032,7 +1032,7 @@ OBJECT poly
 name "freq.001"
 data 9
 Plane.031
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1053,7 +1053,7 @@ OBJECT poly
 name "freq.002"
 data 9
 Plane.030
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1074,7 +1074,7 @@ OBJECT poly
 name "freq.003"
 data 9
 Plane.027
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1095,7 +1095,7 @@ OBJECT poly
 name "freq.004"
 data 9
 Plane.026
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1116,7 +1116,7 @@ OBJECT poly
 name "freq.005"
 data 9
 Plane.001
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1137,7 +1137,7 @@ OBJECT poly
 name "freq.dec"
 data 9
 Plane.039
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1158,7 +1158,7 @@ OBJECT poly
 name "freq.dwn"
 data 9
 Plane.051
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1179,7 +1179,7 @@ OBJECT poly
 name "freq.knob"
 data 8
 Mesh.213
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 65
@@ -1686,7 +1686,7 @@ OBJECT poly
 name "freq.up"
 data 9
 Plane.050
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1707,7 +1707,7 @@ OBJECT poly
 name "mem.annun"
 data 9
 Plane.047
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1728,7 +1728,7 @@ OBJECT poly
 name "pwr.off"
 data 9
 Plane.048
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1749,7 +1749,7 @@ OBJECT poly
 name "pwr.on"
 data 9
 Plane.052
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1770,7 +1770,7 @@ OBJECT poly
 name "stby.001"
 data 9
 Plane.041
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1791,7 +1791,7 @@ OBJECT poly
 name "stby.002"
 data 9
 Plane.042
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1812,7 +1812,7 @@ OBJECT poly
 name "stby.003"
 data 9
 Plane.043
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1833,7 +1833,7 @@ OBJECT poly
 name "stby.004"
 data 9
 Plane.044
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1854,7 +1854,7 @@ OBJECT poly
 name "stby.005"
 data 5
 Plane
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1875,7 +1875,7 @@ OBJECT poly
 name "stby.dec"
 data 9
 Plane.040
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1896,7 +1896,7 @@ OBJECT poly
 name "sto.btn"
 data 10
 Circle.007
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -2063,7 +2063,7 @@ OBJECT poly
 name "test.btn"
 data 10
 Circle.003
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 40.000000
 numvert 24
@@ -2230,7 +2230,7 @@ OBJECT poly
 name "xmt.annun"
 data 10
 Circle.005
-texture "ctl-62.rgb"
+texture "ctl-62.png"
 texrep 1 1
 crease 30.000000
 numvert 25

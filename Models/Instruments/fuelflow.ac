@@ -7,7 +7,7 @@ OBJECT poly
 name "FFbezel"
 data 12
 Cylinder.008
-texture "fuelflow.rgb"
+texture "fuelflow.png"
 texrep 1 1
 crease 30.000000
 numvert 246
@@ -1742,7 +1742,7 @@ OBJECT poly
 name "FFface"
 data 8
 Mesh.003
-texture "fuelflow.rgb"
+texture "fuelflow.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1809,7 +1809,7 @@ OBJECT poly
 name "FFneedle"
 data 10
 Circle.107
-texture "fuelflow.rgb"
+texture "fuelflow.png"
 texrep 1 1
 crease 30.000000
 numvert 5

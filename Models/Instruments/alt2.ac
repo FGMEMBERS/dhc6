@@ -7,7 +7,7 @@ OBJECT poly
 name "ALTbezel"
 data 4
 Mesh
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 161
@@ -1100,7 +1100,7 @@ OBJECT poly
 name "ALTface"
 data 8
 Mesh.003
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -1175,7 +1175,7 @@ OBJECT poly
 name "InhgKnob"
 data 8
 Mesh.004
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -1366,7 +1366,7 @@ OBJECT poly
 name "inhg"
 data 8
 Mesh.006
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -1434,7 +1434,7 @@ OBJECT poly
 name "needle100"
 data 8
 Mesh.002
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1462,7 +1462,7 @@ OBJECT poly
 name "needle1000"
 data 8
 Mesh.005
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1490,7 +1490,7 @@ OBJECT poly
 name "needle10000"
 data 8
 Mesh.001
-texture "altimeter.rgb"
+texture "altimeter.png"
 texrep 1 1
 crease 30.000000
 numvert 5

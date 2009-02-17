@@ -7,7 +7,7 @@ OBJECT poly
 name "OP.ind"
 data 10
 Circle.111
-texture "oilpsi.rgb"
+texture "oilpsi.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -28,7 +28,7 @@ OBJECT poly
 name "OPbezel"
 data 12
 Cylinder.011
-texture "oilpsi.rgb"
+texture "oilpsi.png"
 texrep 1 1
 crease 30.000000
 numvert 246
@@ -1763,7 +1763,7 @@ OBJECT poly
 name "OPface"
 data 8
 Mesh.006
-texture "oilpsi.rgb"
+texture "oilpsi.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1830,7 +1830,7 @@ OBJECT poly
 name "OPneedle"
 data 10
 Circle.110
-texture "oilpsi.rgb"
+texture "oilpsi.png"
 texrep 1 1
 crease 30.000000
 numvert 5

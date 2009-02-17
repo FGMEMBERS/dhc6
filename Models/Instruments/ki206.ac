@@ -7,7 +7,7 @@ OBJECT poly
 name "KI206.bezel"
 data 8
 Mesh.011
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 164
@@ -1139,7 +1139,7 @@ OBJECT poly
 name "KI206.face"
 data 8
 Mesh.010
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 45.000000
 numvert 18
@@ -1216,7 +1216,7 @@ OBJECT poly
 name "KI206.fromflag"
 data 8
 Mesh.009
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 3
@@ -1235,7 +1235,7 @@ OBJECT poly
 name "KI206.gsflag"
 data 8
 Mesh.013
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1256,7 +1256,7 @@ OBJECT poly
 name "KI206.gsneedle"
 data 8
 Mesh.008
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1277,7 +1277,7 @@ OBJECT poly
 name "KI206.knob"
 data 8
 Mesh.016
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 45.000000
 numvert 24
@@ -1430,7 +1430,7 @@ OBJECT poly
 name "KI206.locneedle"
 data 8
 Mesh.015
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1451,7 +1451,7 @@ OBJECT poly
 name "KI206.navflag"
 data 8
 Mesh.007
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -1472,7 +1472,7 @@ OBJECT poly
 name "KI206.toflag"
 data 8
 Mesh.017
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 3
@@ -1491,7 +1491,7 @@ OBJECT poly
 name "KI206card"
 data 8
 Mesh.012
-texture "KI206.rgb"
+texture "KI206.png"
 texrep 1 1
 crease 30.000000
 numvert 32

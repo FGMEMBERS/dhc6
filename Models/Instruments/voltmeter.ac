@@ -8,7 +8,7 @@ OBJECT poly
 name "volt.face"
 data 10
 Circle.117
-texture "DCvolts.rgb"
+texture "DCvolts.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -75,7 +75,7 @@ OBJECT poly
 name "voltbezel"
 data 10
 Circle.116
-texture "DCvolts.rgb"
+texture "DCvolts.png"
 texrep 1 1
 crease 30.000000
 numvert 160
@@ -1184,7 +1184,7 @@ OBJECT poly
 name "voltneedle"
 data 9
 Plane.117
-texture "DCvolts.rgb"
+texture "DCvolts.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1212,7 +1212,7 @@ OBJECT poly
 name "voltneedle.001"
 data 9
 Plane.123
-texture "DCvolts.rgb"
+texture "DCvolts.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1240,7 +1240,7 @@ OBJECT poly
 name "voltneedle.002"
 data 9
 Plane.124
-texture "DCvolts.rgb"
+texture "DCvolts.png"
 texrep 1 1
 crease 30.000000
 numvert 5

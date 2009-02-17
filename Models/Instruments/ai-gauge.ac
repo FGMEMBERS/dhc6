@@ -8,7 +8,7 @@ OBJECT poly
 name "AIbezel"
 data 12
 Cylinder.005
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 30.000000
 numvert 264
@@ -1926,7 +1926,7 @@ OBJECT poly
 name "AImrkr"
 data 12
 Cylinder.001
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -2032,7 +2032,7 @@ OBJECT poly
 name "AIneedle"
 data 6
 Circle
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -2267,7 +2267,7 @@ OBJECT poly
 name "AIring"
 data 8
 Mesh.013
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 45.000000
 numvert 94
@@ -2739,7 +2739,7 @@ OBJECT poly
 name "Knob"
 data 8
 Cylinder
-texture "ai.rgb"
+texture "ai.png"
 texrep 1 1
 crease 30.000000
 numvert 34

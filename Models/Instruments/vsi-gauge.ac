@@ -8,7 +8,7 @@ OBJECT poly
 name "VSIneedle"
 data 8
 Mesh.034
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 30
 numvert 5
@@ -36,7 +36,7 @@ OBJECT poly
 name "VSIgauge"
 data 12
 Cylinder.011
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 30
 numvert 242
@@ -1752,7 +1752,7 @@ OBJECT poly
 name "VSIgauge.001"
 data 8
 Mesh.055
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 30
 numvert 9

@@ -8,7 +8,7 @@ OBJECT poly
 name "Dim.bezel"
 data 12
 Cylinder.001
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 19
@@ -157,7 +157,7 @@ OBJECT poly
 name "Dim.toggle"
 data 4
 Tube
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -416,7 +416,7 @@ OBJECT poly
 name "Gearswitch"
 data 10
 Circle.001
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -595,7 +595,7 @@ OBJECT poly
 name "Plane"
 data 5
 Plane
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -616,7 +616,7 @@ OBJECT poly
 name "Switch.nut"
 data 8
 Cylinder
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 13
@@ -717,7 +717,7 @@ OBJECT poly
 name "Wgear.bezel"
 data 6
 Circle
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 52
@@ -1095,7 +1095,7 @@ OBJECT poly
 name "maindn1"
 data 10
 Sphere.011
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -1346,7 +1346,7 @@ OBJECT poly
 name "maindn2"
 data 10
 Sphere.014
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -1597,7 +1597,7 @@ OBJECT poly
 name "mainup1"
 data 10
 Sphere.009
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -1848,7 +1848,7 @@ OBJECT poly
 name "mainup2"
 data 10
 Sphere.008
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -2099,7 +2099,7 @@ OBJECT poly
 name "nosedn1"
 data 10
 Sphere.012
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -2350,7 +2350,7 @@ OBJECT poly
 name "nosedn2"
 data 10
 Sphere.013
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -2601,7 +2601,7 @@ OBJECT poly
 name "noseup1"
 data 10
 Sphere.001
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -2852,7 +2852,7 @@ OBJECT poly
 name "noseup2"
 data 10
 Sphere.007
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -3103,7 +3103,7 @@ OBJECT poly
 name "pump"
 data 10
 Sphere.010
-texture "gear.rgb"
+texture "gear.png"
 texrep 1 1
 crease 30.000000
 numvert 33

@@ -7,7 +7,7 @@ OBJECT poly
 name "T5bezel"
 data 12
 Cylinder.009
-texture "t5.rgb"
+texture "t5.png"
 texrep 1 1
 crease 30.000000
 numvert 267
@@ -1884,7 +1884,7 @@ OBJECT poly
 name "T5face"
 data 8
 Mesh.004
-texture "t5.rgb"
+texture "t5.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1951,7 +1951,7 @@ OBJECT poly
 name "T5needle"
 data 10
 Circle.105
-texture "torque.rgb"
+texture "torque.png"
 texrep 1 1
 crease 30.000000
 numvert 5

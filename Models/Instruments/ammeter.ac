@@ -8,7 +8,7 @@ OBJECT poly
 name "amp.face"
 data 10
 Circle.118
-texture "DCload.rgb"
+texture "DCload.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -75,7 +75,7 @@ OBJECT poly
 name "ampbezel"
 data 10
 Circle.119
-texture "DCload.rgb"
+texture "DCload.png"
 texrep 1 1
 crease 30.000000
 numvert 160
@@ -1184,7 +1184,7 @@ OBJECT poly
 name "ampneedle"
 data 9
 Plane.118
-texture "DCload.rgb"
+texture "DCload.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1212,7 +1212,7 @@ OBJECT poly
 name "gen1needle"
 data 5
 Plane
-texture "DCload.rgb"
+texture "DCload.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1240,7 +1240,7 @@ OBJECT poly
 name "gen2needle"
 data 9
 Plane.001
-texture "DCload.rgb"
+texture "DCload.png"
 texrep 1 1
 crease 30.000000
 numvert 5

@@ -7,7 +7,7 @@ OBJECT poly
 name "gg.ind1"
 data 10
 Circle.100
-texture "ggrpm.rgb"
+texture "ggrpm.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -28,7 +28,7 @@ OBJECT poly
 name "ggRPM.bezel"
 data 12
 Cylinder.007
-texture "ggrpm.rgb"
+texture "ggrpm.png"
 texrep 1 1
 crease 30.000000
 numvert 242
@@ -1744,7 +1744,7 @@ OBJECT poly
 name "ggRPM.face"
 data 8
 Mesh.002
-texture "ggrpm.rgb"
+texture "ggrpm.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1811,7 +1811,7 @@ OBJECT poly
 name "ggRPMneedle"
 data 10
 Circle.099
-texture "ggrpm.rgb"
+texture "ggrpm.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -1839,7 +1839,7 @@ OBJECT poly
 name "ggRpm"
 data 10
 Circle.098
-texture "ggrpm.rgb"
+texture "ggrpm.png"
 texrep 1 1
 crease 30.000000
 numvert 3

@@ -21,7 +21,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>FFneedle</object-name>
-        <property>engines/engine[0]/fuel-flow-pph</property>
+        <property>engines/engine[0]/fuel-flow_pph</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>100.0</ind><dep>30.0</dep></entry>

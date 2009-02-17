@@ -8,7 +8,7 @@ OBJECT poly
 name "Compass"
 data 12
 Cylinder.006
-texture "compass.rgb"
+texture "compass.png"
 texrep 1 1
 crease 30.000000
 numvert 67
@@ -423,7 +423,7 @@ OBJECT poly
 name "Compass.ball"
 data 10
 Sphere.004
-texture "compass.rgb"
+texture "compass.png"
 texrep 1 1
 crease 45.000000
 numvert 254

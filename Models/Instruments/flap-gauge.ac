@@ -7,7 +7,7 @@ OBJECT poly
 name "FlapLever"
 data 4
 Cube
-texture "flaps.rgb"
+texture "flaps.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -67,7 +67,7 @@ OBJECT poly
 name "Flapgauge"
 data 9
 Plane.027
-texture "flaps.rgb"
+texture "flaps.png"
 texrep 1 1
 crease 30.000000
 numvert 6

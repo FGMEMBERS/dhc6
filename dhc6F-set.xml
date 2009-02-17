@@ -15,7 +15,7 @@ Jan 2008 Syd Adams
         <aero>dhc6F</aero>
         <fuel-fraction>0.5</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/dhc6/splash1.rgb</splash-texture>
+            <splash-texture>Aircraft/dhc6/splash1.png</splash-texture>
         </startup>
 
     <model>
@@ -68,7 +68,7 @@ Jan 2008 Syd Adams
                     <label>Open tow-hook</label>
                     <binding>
                         <command>property-assign</command>
-                        <property>/sim/hitches/aerotow/open</property>
+                        <property>sim/hitches/aerotow/open</property>
                         <value type="bool">true</value>
                     </binding>
                 </item>
@@ -76,7 +76,7 @@ Jan 2008 Syd Adams
                     <label>Lock tow-hook</label>
                     <binding>
                         <command>property-assign</command>
-                        <property>/sim/hitches/aerotow/open</property>
+                        <property>sim/hitches/aerotow/open</property>
                         <value type="bool">false</value>
                     </binding>
                 </item>
@@ -108,7 +108,7 @@ Jan 2008 Syd Adams
             <desc>Open aerotow hook</desc>
             <binding>
                 <command>property-assign</command>
-                <property>/sim/hitches/aerotow/open</property>
+                <property>sim/hitches/aerotow/open</property>
                 <value type="bool">true</value>
             </binding>
         </key>
@@ -117,7 +117,7 @@ Jan 2008 Syd Adams
             <desc>Lock aerotow hook</desc>
             <binding>
                 <command>property-assign</command>
-                <property>/sim/hitches/aerotow/open</property>
+                <property>sim/hitches/aerotow/open</property>
                 <value type="bool">false</value>
             </binding>
         </key>

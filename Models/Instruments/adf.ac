@@ -8,7 +8,7 @@ OBJECT poly
 name "ADFface"
 data 8
 Mesh.091
-texture "hdg.rgb"
+texture "hdg.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -75,7 +75,7 @@ OBJECT poly
 name "ADFgauge"
 data 12
 Cylinder.008
-texture "hdg.rgb"
+texture "hdg.png"
 texrep 1 1
 crease 30.000000
 numvert 242
@@ -1791,7 +1791,7 @@ OBJECT poly
 name "ADFneedle"
 data 5
 Plane
-texture "hdg.rgb"
+texture "hdg.png"
 texrep 1 1
 crease 30.000000
 numvert 7

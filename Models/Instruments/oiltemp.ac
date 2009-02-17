@@ -7,7 +7,7 @@ OBJECT poly
 name "OTbezel"
 data 12
 Cylinder.010
-texture "fuelflow.rgb"
+texture "fuelflow.png"
 texrep 1 1
 crease 30.000000
 numvert 246
@@ -1742,7 +1742,7 @@ OBJECT poly
 name "OTface"
 data 8
 Mesh.005
-texture "oiltemp.rgb"
+texture "oiltemp.png"
 texrep 1 1
 crease 30.000000
 numvert 9
@@ -1809,7 +1809,7 @@ OBJECT poly
 name "OTneedle"
 data 10
 Circle.109
-texture "fuelflow.rgb"
+texture "fuelflow.png"
 texrep 1 1
 crease 30.000000
 numvert 5

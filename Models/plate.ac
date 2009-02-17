@@ -8,7 +8,7 @@ OBJECT poly
 name "Plate_0"
 data 9
 Plane.156
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -61,7 +61,7 @@ OBJECT poly
 name "Plate_1"
 data 9
 Plane.157
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 68

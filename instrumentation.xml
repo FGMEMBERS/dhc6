@@ -16,20 +16,20 @@ This file selects the instrumentation modules that should be available.
     <airspeed-indicator>
         <name>airspeed-indicator</name>
         <number>0</number>
-        <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
-        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <total-pressure>systems/pitot/total-pressure-inhg</total-pressure>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
     </airspeed-indicator>
 
     <altimeter>
         <name>altimeter</name>
         <number>0</number>
-        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
     </altimeter>
 
     <attitude-indicator>
         <name>attitude-indicator</name>
         <number>0</number>
-        <suction>/systems/vacuum/suction-inhg</suction>
+        <suction>systems/vacuum/suction-inhg</suction>
     </attitude-indicator>
 
     <clock>
@@ -40,7 +40,7 @@ This file selects the instrumentation modules that should be available.
     <heading-indicator>
         <name>heading-indicator</name>
         <number>0</number>
-        <suction>/systems/vacuum/suction-inhg</suction>
+        <suction>systems/vacuum/suction-inhg</suction>
     </heading-indicator>
 
     <heading-indicator-dg>
@@ -66,7 +66,7 @@ This file selects the instrumentation modules that should be available.
     <transponder>
         <name>transponder</name>
         <number>0</number>
-        <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+        <mode-c-altitude>instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
     </transponder>
 
     <turn-indicator>
@@ -77,7 +77,7 @@ This file selects the instrumentation modules that should be available.
     <vertical-speed-indicator>
         <name>vertical-speed-indicator</name>
         <number>0</number>
-        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
     </vertical-speed-indicator>
 
     <gps>
