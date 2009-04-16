@@ -130,16 +130,6 @@ Jan 2008 Syd Adams
     </keyboard>
 </input>
 
-    <nasal>
-        <dhc6>
-            <file>Aircraft/dhc6/Nasal/Electrical.nas</file>
-            <file>Aircraft/dhc6/Nasal/systems.nas</file>
-            <file>Aircraft/dhc6/Nasal/vhf22.nas</file>
-            <file>Aircraft/dhc6/Nasal/vir32.nas</file>
-            <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
-        </dhc6>
-    </nasal>
-
   <hitch name="aerotow" x="-6.2" y="0" z="-0.12"  force-is-calculated-by-other="1">
   <tow length="60" weight-per-meter="0.035" elastic-constant="9000" break-force="10000" mp-auto-connect-period="1.0"/>
   <winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>

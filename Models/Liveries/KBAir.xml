@@ -5,8 +5,7 @@
     <model>
         <livery>
             <name type="string">Kenn Borek Air LTD</name>
-            <index type="int">1</index>
-            <texture>paint2.rgb</texture>
+            <texture>paint2.png</texture>
         </livery>
     </model>
 </sim>

@@ -5,8 +5,7 @@
     <model>
         <livery>
             <name type="string">FireFighter</name>
-            <index type="int">2</index>
-            <texture>paint3.rgb</texture>
+            <texture>paint3.png</texture>
         </livery>
     </model>
 </sim>

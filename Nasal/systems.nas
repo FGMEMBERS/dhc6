@@ -1,5 +1,5 @@
 ####	DHC6 systems	####
-aircraft.livery.init("Aircraft/dhc6/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+aircraft.livery.init("Aircraft/dhc6/Models/Liveries");
 var w_fctr=0;
 var ViewNum = 0.0;
 S_volume = "sim/sound/E_volume";
@@ -114,6 +114,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     Shutdown();
     setprop("controls/engines/engine[1]/condition",0);
     settimer(update_systems, 2);
+    setprop("sim/multiplay/generic/string", getprop("sim/aero"));
 });
 
 setlistener("/sim/signals/reinit", func {
