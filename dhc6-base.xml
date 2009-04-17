@@ -209,8 +209,6 @@ Jan 2008 Syd Adams
         <dhc6>
             <file>Aircraft/dhc6/Nasal/Electrical.nas</file>
             <file>Aircraft/dhc6/Nasal/systems.nas</file>
-            <file>Aircraft/dhc6/Nasal/vhf22.nas</file>
-            <file>Aircraft/dhc6/Nasal/vir32.nas</file>
         </dhc6>
         <m877>
             <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>

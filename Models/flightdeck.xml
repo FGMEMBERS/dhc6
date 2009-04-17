@@ -132,7 +132,7 @@
 
     <model>
         <name>Pilot Comm1</name>
-        <path>Aircraft/dhc6/Models/Instruments/comm1.xml</path>
+        <path>Aircraft/Instruments-3d/VHF-22/ctl22-com1.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
@@ -143,7 +143,7 @@
 
     <model>
         <name>Pilot Comm2</name>
-        <path>Aircraft/dhc6/Models/Instruments/comm2.xml</path>
+        <path>Aircraft/Instruments-3d/VHF-22/ctl22-com2.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.194</y-m>
@@ -154,7 +154,7 @@
 
     <model>
         <name>Pilot Nav1</name>
-        <path>Aircraft/dhc6/Models/Instruments/nav1.xml</path>
+        <path>Aircraft/Instruments-3d/VIR-32/ctl32-nav1.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
@@ -176,7 +176,7 @@
 
     <model>
         <name>Pilot Nav2</name>
-        <path>Aircraft/dhc6/Models/Instruments/nav2.xml</path>
+        <path>Aircraft/Instruments-3d/VIR-32/ctl32-nav2.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.194</y-m>

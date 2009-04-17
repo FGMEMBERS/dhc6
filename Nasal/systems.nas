@@ -117,9 +117,14 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("sim/multiplay/generic/string", getprop("sim/aero"));
 });
 
+
 setlistener("/sim/signals/reinit", func {
     Shutdown();
 });
+
+setlistener("sim/multiplay/generic/string", func(st) {
+        st.setValue(getprop("sim/aero"));
+},0,0);
 
 setlistener("controls/fuel/tank-selector", func(tk){
 var tnk = tk.getValue();

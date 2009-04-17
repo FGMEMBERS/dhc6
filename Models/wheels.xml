@@ -23,8 +23,8 @@
         <object-name>Rski</object-name>
         <condition>
             <equals>
-            <property>sim/aero</property>
-            <value>dhc6S</value>
+                <property>sim/multiplay/generic/string</property>
+                <value>dhc6S</value>
             </equals>
         </condition>
     </animation>
