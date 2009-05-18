@@ -27,8 +27,6 @@ O Flaps = 74 kt
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.5"/>
-        <solve-weight idx="0" weight="360"/>
-        <solve-weight idx="1" weight="2940"/>
     </approach>
 
     <cruise speed="180" alt="10000" fuel="0.5"> 
@@ -37,8 +35,6 @@ O Flaps = 74 kt
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.0"/>
-        <solve-weight idx="0" weight="360"/>
-        <solve-weight idx="1" weight="2940"/>
     </cruise>
 
     <cockpit x="2.8" y="0.3" z="0.745"/>
@@ -60,9 +56,9 @@ O Flaps = 74 kt
 
 
     <wing x="0.10" y="0.80" z="1.0" length="9.0" chord="1.95"
-        sweep="0" dihedral="2" taper="1"  camber="0.020" incidence="1">
-        <stall aoa="15" width="6" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.6" drag="1.8"/>
+        sweep="0" dihedral="2" taper="1"  camber="0.0" incidence="1">
+        <stall aoa="12" width="8" peak="1.5"/>
+        <flap0 start="0" end=".6" lift="1.5" drag="1.6"/>
         <flap1 start=".6" end=".95" lift="1.3" drag="1.2"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="20"/>
@@ -76,9 +72,9 @@ O Flaps = 74 kt
     </wing>
 
     <hstab x="-7.47" y="0.08" z="1.186" length="3.15" chord="1.4"
-        sweep="0" dihedral="0" taper="1">
-        <stall aoa="18" width="4" peak="1.5"/>
-        <flap0 start="0" end="1" lift="1.3" drag="1.1"/>
+        sweep="0" dihedral="0" taper="1" camber="-0.03">
+        <stall aoa="15" width="5" peak="1.4"/>
+        <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
@@ -192,9 +188,7 @@ Prop diam: 2.59 m
     </jet>
 -->
 
-    <ballast x="-6.5" y="0" z="0" mass="-450"/>
-    <ballast x="0.3" y="0" z="-0.5" mass="1500"/>
-    <ballast x="2.5" y="0" z="-1" mass="1400"/>
+    <ballast x="-7.4" y="0" z="0.5" mass="-2200"/>
 
     <weight x="2.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
