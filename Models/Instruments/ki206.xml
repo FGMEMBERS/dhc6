@@ -18,6 +18,7 @@ Syd Adams
         <object-name>KI206.locneedle</object-name>
         <object-name>KI206.gsneedle</object-name>
         <object-name>KI206.knob</object-name>
+        <object-name>KI206.lubber</object-name>
         <emission>
             <red>0.028</red>
             <green>0.014</green>
@@ -144,75 +145,70 @@ Syd Adams
 
     <animation>
         <type>pick</type>
-        <object-name>KI206.crsdn</object-name>
-        <visible>0</visible>
+        <object-name>KI206.knob</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
             <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/radials/selected-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>359</max>
+				<wrap>1</wrap>
+			</binding>
         </action>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>KI206.crsdn</object-name>
-        <visible>0</visible>
+        <object-name>KI206.knob</object-name>
         <action>
             <button>1</button>
             <repeatable>true</repeatable>
+			<interval-sec>0.1</interval-sec>
             <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>-10</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/radials/selected-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>359</max>
+				<wrap>1</wrap>
+			</binding>
         </action>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>KI206.crsup</object-name>
-        <visible>0</visible>
+        <object-name>KI206.knob</object-name>
         <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
+            <button>3</button>
             <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>1</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/radials/selected-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>359</max>
+				<wrap>1</wrap>
+			</binding>
         </action>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>KI206.crsup</object-name>
-        <visible>0</visible>
+        <object-name>KI206.knob</object-name>
         <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
+            <button>4</button>
             <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/nav/radials/selected-deg</property>
-            <step>10</step>
-            <min>0</min>
-            <max>360</max>
-            <wrap>1</wrap>
-        </binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/radials/selected-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>359</max>
+				<wrap>1</wrap>
+			</binding>
         </action>
     </animation>
-
 
 </PropertyList>
