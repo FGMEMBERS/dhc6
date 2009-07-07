@@ -29,8 +29,6 @@ O Flaps = 74 kt
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.5"/>
-        <solve-weight idx="0" weight="360"/>
-        <solve-weight idx="1" weight="2940"/>
     </approach>
 
     <cruise speed="180" alt="10000" fuel="0.5"> 
@@ -41,8 +39,6 @@ O Flaps = 74 kt
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.0"/>
-        <solve-weight idx="0" weight="360"/>
-        <solve-weight idx="1" weight="2940"/>
     </cruise>
 
     <cockpit x="2.8" y="0.3" z="0.745"/>
@@ -254,7 +250,7 @@ Prop diam: 2.59 m
         control="PROPFEATHER"/>
     </propeller>
 
-     <ballast x="-7.4" y="0" z="0" mass="-700"/>
+     <ballast x="-7.4" y="0" z="0" mass="-540"/>
 	<ballast x="0.58" y="0" z="-2" mass="2000"/>
 	<ballast x="2" y="0" z="-2" mass="1900"/>
 
