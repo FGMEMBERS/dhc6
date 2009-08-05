@@ -165,7 +165,7 @@
 
     <model>
         <name>Pilot ADF1</name>
-        <path>Aircraft/dhc6/Models/Instruments/ctl62.xml</path>
+        <path>Aircraft/Instruments-3d/ADF-462/ctl62-adf.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
