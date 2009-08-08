@@ -13,6 +13,9 @@ Jan 2008 Syd Adams
         <start-idling type="bool">0</start-idling>
         <variant type="int">0</variant>
         <blunt-nose type="bool">0</blunt-nose>
+	<livery>
+		<file type="string">KBAir</file>
+	</livery>
     </model>
 
     <view n="0">
