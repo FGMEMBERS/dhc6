@@ -109,6 +109,13 @@ Jan 2008 Syd Adams
     </weight>
 
     <yokes-visible type="bool">1</yokes-visible>
+	
+    <multiplay>
+        <generic>
+            <string n="0" alias="/sim/aero"/>
+            <string n="1" alias="/sim/multiplay/callsign"/>
+        </generic>
+    </multiplay>
 
 </sim>
 

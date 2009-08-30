@@ -114,17 +114,12 @@ setlistener("/sim/signals/fdm-initialized", func {
     Shutdown();
     setprop("controls/engines/engine[1]/condition",0);
     settimer(update_systems, 2);
-    setprop("sim/multiplay/generic/string", getprop("sim/aero"));
 });
 
 
 setlistener("/sim/signals/reinit", func {
     Shutdown();
 });
-
-setlistener("sim/multiplay/generic/string", func(st) {
-        st.setValue(getprop("sim/aero"));
-},0,0);
 
 setlistener("controls/fuel/tank-selector", func(tk){
 var tnk = tk.getValue();

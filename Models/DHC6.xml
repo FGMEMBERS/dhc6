@@ -106,6 +106,54 @@
         </offsets>
     </model>
 
+<!--LH wing reg-->
+	<model>
+		<path>Aircraft/dhc6/Models/registration.xml</path>
+		<offsets>
+			<x-m>-0.310</x-m>
+			<y-m>-5.5</y-m>
+			<z-m>1.09</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>3</pitch-deg>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>2</size>
+				<alignment>reversed-xy-plane</alignment>
+				<color>
+					<red>0.0</red>
+					<green>0.0</green>
+					<blue>0.0</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+
+<!--RH wing reg-->
+	<model>
+		<path>Aircraft/dhc6/Models/registration.xml</path>
+		<offsets>
+			<x-m>-0.310</x-m>
+			<y-m>5.5</y-m>
+			<z-m>1.09</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>-3</pitch-deg>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<size>2</size>
+				<alignment>reversed-xy-plane</alignment>
+				<color>
+					<red>0.0</red>
+					<green>0.0</green>
+					<blue>0.0</blue>
+				</color>
+			</params>
+		</overlay>
+	</model>
+
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
