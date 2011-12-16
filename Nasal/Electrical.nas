@@ -152,10 +152,14 @@ init_switches = func() {
 
     append(switch_list,"controls/anti-ice/prop-heat");
     append(output_list,"prop-heat");
+    append(switch_list,"controls/electric/caution-test");
+    append(output_list,"caution-test");
     append(switch_list,"controls/anti-ice/pitot-heat");
     append(output_list,"pitot-heat");
-    append(switch_list,"controls/lighting/landing-lights");
-    append(output_list,"landing-lights");
+    append(switch_list,"controls/lighting/landing-light[0]");
+    append(output_list,"landing-light[0]");
+    append(switch_list,"controls/lighting/landing-light[1]");
+    append(output_list,"landing-light[1]");
     append(switch_list,"controls/lighting/beacon-state/state");
     append(output_list,"beacon");
     append(switch_list,"controls/lighting/nav-lights");
@@ -308,13 +312,10 @@ avionics_bus = func(bv) {
     var load = 0.0;
     var srvc = 0.0;
 INSTR_DIMMER = getprop("controls/lighting/instruments-norm");
-#EFIS_DIMMER = getprop("controls/lighting/efis-norm");
-#ENG_DIMMER = getprop("controls/lighting/engines-norm");
-#PANEL_DIMMER = getprop("controls/lighting/panel-norm");
-setprop(outPut~"instrument-lights",(bus_volts * INSTR_DIMMER));
-setprop(outPut~"instrument-lights-norm",(0.0357 * (bus_volts * INSTR_DIMMER)));
-#setprop(outPut~"eng-lights",(bus_volts * ENG_DIMMER));
-#setprop(outPut~"panel-lights",(bus_volts * PANEL_DIMMER));
+var instr_lights=(bus_volts * getprop("controls/lighting/instrument-lights") ) * INSTR_DIMMER;
+setprop(outPut~"instrument-lights",(instr_lights));
+setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
+
 
     for(var i=0; i<size(serv_list); i+=1) {
         var srvc = getprop(serv_list[i]);

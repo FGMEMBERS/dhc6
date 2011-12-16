@@ -7,6 +7,8 @@
             <name type="string">Trans North</name>
             <texture>paint1.png</texture>
         </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>1</display-callsign>
     </model>
 </sim>
 </PropertyList>

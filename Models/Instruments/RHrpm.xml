@@ -23,10 +23,10 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>PropRPMneedle</object-name>
-        <property>engines/engine[1]/n2</property>
+        <property>engines/engine[1]/rpm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>100</ind><dep>270</dep></entry>
+            <entry><ind>2200</ind><dep>270</dep></entry>
         </interpolation>
         <axis>
             <x>-1</x>

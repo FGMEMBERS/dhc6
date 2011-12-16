@@ -22,12 +22,10 @@
         <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>30</ind><dep>9.0</dep></entry>   
-            <entry><ind>40</ind><dep>18.0</dep></entry>
-            <entry><ind>60</ind><dep>36.0</dep></entry>
-            <entry><ind>100</ind><dep>108.0</dep></entry>
-            <entry><ind>140</ind><dep>180</dep></entry>
-            <entry><ind>180</ind><dep>252.0</dep></entry>
+            <entry><ind>20.0</ind><dep>0.0</dep></entry>
+            <entry><ind>60</ind><dep>36</dep></entry>
+            <entry><ind>80</ind><dep>72</dep></entry>
+            <entry><ind>170</ind><dep>234</dep></entry>
             <entry><ind>200</ind><dep>288.0</dep></entry>
             <entry><ind>240</ind><dep>326.0</dep></entry>
         </interpolation>
