@@ -1,12 +1,6 @@
-####	DHC6 systems	####
+####    DHC6 systems   	####
 aircraft.livery.init("Aircraft/dhc6/Models/Liveries");
-var LF_door = aircraft.door.new("/controls/doors/LF-door", 1);
-var RF_door = aircraft.door.new("/controls/doors/RF-door", 1);
-var RR_door = aircraft.door.new("/controls/doors/RR-door", 1);
-var LR_door = aircraft.door.new("/controls/doors/LR-door", 1);
 
-var w_fctr=0;
-FuelSelector=props.globals.initNode("controls/fuel/tank-selector",0,"INT");
 var C_volume = props.globals.initNode("sim/sound/cabin",0.3);
 var D_volume = props.globals.initNode("sim/sound/doors",0.7);
 var ctn_counter=0;
@@ -443,11 +437,10 @@ var update_systems = func {
     wiper.active();
     var wind = getprop("velocities/airspeed-kt");
     if(wind>40){
-        if(lfdoor_pos>0)LF_door.close();
-        if(rfdoor_pos>0)RF_door.close();
-        if(rrdoor_pos>0)RR_door.close();
-        if(lrdoor_pos>0)LR_door.close();
+        if(getprop("controls/doors/LF-door/open"))setprop("controls/doors/LF-door/open",0);
+        if(getprop("controls/doors/RF-door/open"))setprop("controls/doors/RF-door/open",0);
+        if(getprop("controls/doors/LR-door/open"))setprop("controls/doors/LR-door/open",0);
+        if(getprop("controls/doors/RR-door/open"))setprop("controls/doors/RR-door/open",0);
     }
-    if(lfdoor_pos>0.005 or rfdoor_pos>0.005)D_volume.setValue(0.8) else D_volume.setValue(C_volume.getValue());
     settimer(update_systems, 0);
 }

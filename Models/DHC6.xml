@@ -166,7 +166,7 @@
       <object-name>RRdoor.glass</object-name>
       <object-name>float.fairing</object-name>
       <object-name>wheel.fairing</object-name>
-      <object-name>FrrtStrut</object-name>	      
+      <object-name>FrrtStrut</object-name>
     </effect-->
 
     <animation>
@@ -829,9 +829,9 @@
         <action>
             <button>0</button>
             <binding>
-            <command>nasal</command>
-            <script>dhc6.LR_door.toggle();</script>
-        </binding>
+                <command>property-toggle</command>
+                <property>controls/doors/LR-door/open</property>
+            </binding>
         </action>
     </animation>
 
@@ -842,9 +842,9 @@
         <action>
             <button>0</button>
             <binding>
-            <command>nasal</command>
-            <script>dhc6.LR_door.toggle();</script>
-        </binding>
+                <command>property-toggle</command>
+                <property>controls/doors/LR-door/open</property>
+            </binding>
         </action>
     </animation>
 
@@ -855,9 +855,9 @@
         <action>
             <button>0</button>
             <binding>
-            <command>nasal</command>
-            <script>dhc6.LF_door.toggle();</script>
-        </binding>
+                <command>property-toggle</command>
+                <property>controls/doors/LF-door/open</property>
+            </binding>
         </action>
     </animation>
 
@@ -868,9 +868,9 @@
         <action>
             <button>0</button>
             <binding>
-            <command>nasal</command>
-            <script>dhc6.RF_door.toggle();</script>
-        </binding>
+                <command>property-toggle</command>
+                <property>controls/doors/RF-door/open</property>
+            </binding>
         </action>
     </animation>
 
@@ -881,9 +881,9 @@
         <action>
             <button>0</button>
             <binding>
-            <command>nasal</command>
-            <script>dhc6.RR_door.toggle();</script>
-        </binding>
+                <command>property-toggle</command>
+                <property>controls/doors/RR-door/open</property>
+            </binding>
         </action>
     </animation>
 

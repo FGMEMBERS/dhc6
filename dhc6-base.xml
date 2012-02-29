@@ -102,20 +102,8 @@ Jan 2008 Syd Adams
             <path></path>
         </electrical>
         <autopilot>
-            <path>Aircraft/Generic/generic-autopilot.xml</path>
+            <path>Aircraft/dhc6/systems/autopilot.xml</path>
         </autopilot>
-        <vacuum>
-            <name>vacuum</name>
-            <number>0</number>
-            <rpm>/engines/engine[0]/n2</rpm>
-            <scale>15.0</scale>
-        </vacuum>
-        <vacuum>
-            <name>vacuum</name>
-            <number>1</number>
-            <rpm>/engines/engine[1]/n2</rpm>
-            <scale>15.0</scale>
-        </vacuum>
     </systems>
 
         <instrumentation>
@@ -291,6 +279,27 @@ Jan 2008 Syd Adams
         <mixture-coupled type="bool">1</mixture-coupled>
         <prop-coupled type="bool">1</prop-coupled>
         <movement-scale>0.025</movement-scale>
+        <doors>
+            <LF-door>
+                <open type="bool">0</open>
+                <position-norm type="double">0</position-norm>
+            </LF-door>
+            <RF-door>
+                <open type="bool">0</open>
+                <position-norm type="double">0</position-norm>
+            </RF-door>
+            <RR-door>
+                <open type="bool">0</open>
+                <position-norm type="double">0</position-norm>
+            </RR-door>
+            <LR-door>
+                <open type="bool">0</open>
+                <position-norm type="double">0</position-norm>
+            </LR-door>
+        </doors>
+        <fuel>
+            <tank-selector type="int">0</tank-selector>
+        </fuel>
 </controls>
 
 <consumables>
@@ -352,17 +361,11 @@ Jan 2008 Syd Adams
         </locks>
     </autopilot>
 
-    <environment>
-        <turbulence>
-        <use-cloud-turbulence>true</use-cloud-turbulence>
-        </turbulence>
-    </environment>
 
     <nasal>
         <dhc6>
             <file>Aircraft/dhc6/Nasal/Electrical.nas</file>
             <file>Aircraft/dhc6/Nasal/systems.nas</file>
-            
         </dhc6>
     <dialogs><file>Aircraft/dhc6/Nasal/dialogs.nas</file></dialogs>
         <m877>

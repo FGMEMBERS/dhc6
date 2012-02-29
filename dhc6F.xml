@@ -86,6 +86,31 @@ O Flaps = 74 kt
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
     </vstab>
+
+<!-- frt doors-->
+    <vstab x="0" y="0" z="0" length="0.001" chord="0.001">
+        <stall aoa="16" width="4" peak="1.5"/>
+        <flap0 start="0" end="0.5" lift="0" drag="0"/>
+        <control-input axis="/controls/doors/LF-door/open" control="FLAP0"/>
+        <control-output control="FLAP0" prop="/controls/doors/LF-door/position-norm"/>
+        <control-speed control="FLAP0" transition-time="2"/>
+        <control-input axis="/controls/doors/RF-door/open" control="FLAP1"/>
+        <control-output control="FLAP1" prop="/controls/doors/RF-door/position-norm"/>
+        <control-speed control="FLAP1" transition-time="2"/>
+    </vstab>
+
+<!-- rear doors-->
+    <vstab x="0" y="0" z="0" length="0.001" chord="0.001">
+        <stall aoa="16" width="4" peak="1.5"/>
+        <flap0 start="0" end="0.5" lift="0" drag="0"/>
+        <control-input axis="/controls/doors/LR-door/open" control="FLAP0"/>
+        <control-output control="FLAP0" prop="/controls/doors/LR-door/position-norm"/>
+        <control-speed control="FLAP0" transition-time="2"/>
+        <control-input axis="/controls/doors/RR-door/open" control="FLAP1"/>
+        <control-output control="FLAP1" prop="/controls/doors/RR-door/position-norm"/>
+        <control-speed control="FLAP1" transition-time="2"/>
+    </vstab>
+
 <!--
 2500 lbs (Jet A)
 Fuel burn ... 580 lbs/hr
