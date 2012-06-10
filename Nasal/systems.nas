@@ -17,6 +17,55 @@ var lever_scale = getprop("controls/movement-scale");
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 
+###################################
+
+var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/engine[1]/generator",1);
+setprop("controls/electric/avionics-switch",1);
+setprop("controls/electric/battery-switch",1);
+setprop("controls/electric/inverter-switch",1);
+setprop("controls/lighting/instrument-lights",1);
+setprop("controls/lighting/instruments-norm",0.8);
+setprop("controls/lighting/nav-lights",1);
+setprop("controls/lighting/beacon",1);
+setprop("controls/lighting/strobe",1);
+setprop("controls/engines/engine[0]/mixture",1);
+setprop("controls/engines/engine[1]/mixture",1);
+setprop("controls/engines/engine[0]/cutoff",0);
+setprop("controls/engines/engine[1]/cutoff",0);
+setprop("controls/engines/engine[0]/propeller-pitch",1);
+setprop("controls/engines/engine[1]/propeller-pitch",1);
+setprop("controls/engines/engine[0]/condition",1);
+setprop("controls/engines/engine[1]/condition",1);
+setprop("engines/engine[0]/running",1);
+setprop("engines/engine[1]/running",1);
+}
+
+var Shutdown = func{
+setprop("controls/electric/engine[0]/generator",0);
+setprop("controls/electric/engine[1]/generator",0);
+setprop("controls/electric/avionics-switch",0);
+setprop("controls/electric/battery-switch",0);
+setprop("controls/electric/inverter-switch",0);
+setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/instruments-norm",0.8);
+setprop("controls/lighting/nav-lights",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/lighting/strobe",0);
+setprop("controls/engines/engine[0]/mixture",0);
+setprop("controls/engines/engine[1]/mixture",0);
+setprop("controls/engines/engine[0]/propeller-pitch",0);
+setprop("controls/engines/engine[1]/propeller-pitch",0);
+setprop("controls/engines/engine[0]/condition",0);
+setprop("controls/engines/engine[1]/condition",0);
+setprop("controls/engines/engine[0]/cutoff",0);
+setprop("controls/engines/engine[1]/cutoff",0);
+setprop("engines/engine[0]/running",0);
+setprop("engines/engine[1]/running",0);
+}
+
+
 var Wiper = {
     new : func (wiper_prop,power_prop){
         m = { parents : [Wiper] };
@@ -184,80 +233,19 @@ var Caution_panel = {
 };
 
 
-var Engine = {
-    new : func(eng_num){
-        m = { parents : [Engine]};
-        m.fdensity = getprop("consumables/fuel/tank/density-ppg")or 6.72;
-        m.air_temp = props.globals.initNode("environment/temperature-degc");
-        m.eng = props.globals.initNode("engines/engine["~eng_num~"]");
-        m.eng_ctrls = props.globals.initNode("controls/engines/engine["~eng_num~"]");
-        m.running = m.eng.getNode("running",1);
-        m.condition = m.eng_ctrls.getNode("condition",1);
-        m.cutoff = m.eng_ctrls.getNode("cutoff",1);
-        m.mixture =m.eng_ctrls.getNode("mixture",1);
-        m.proplever = m.eng_ctrls.getNode("propeller-pitch",1);
-        m.throttle_lever = m.eng_ctrls.initNode("throttle-input",0.0);
-        m.throttle = m.eng_ctrls.initNode("throttle",0.0);
-        m.reverse = m.eng.initNode("reverse-thrust",0.0);
-        m.reverser = m.eng_ctrls.initNode("reverser",0,"BOOL");
-        m.rpm = m.eng.getNode("n2",1);
-        m.fuel_pph=m.eng.initNode("fuel-flow_pph",0.0);
-        m.oil_temp=m.eng.initNode("oil-temp-c",m.air_temp.getValue());
-        m.fuel_gph=m.eng.getNode("fuel-flow-gph",1);
-        m.hpump=props.globals.initNode("systems/hydraulics/pump-psi["~eng_num~"]",0.0);
-        m.condL = setlistener(m.mixture, func m.condition_check(), 1);
-
-    return m;
-    },
-#### update ####
-    update : func{
-        me.fuel_pph.setValue(me.fuel_gph.getValue()*me.fdensity);
-        var hpsi =me.rpm.getValue();
-        if(hpsi>60)hpsi = 60;
-        me.hpump.setValue(hpsi);
-        var OT= me.oil_temp.getValue();
-        var rpm = me.rpm.getValue();
-        if(OT < rpm)OT+=0.01;
-        if(OT > rpm)OT-=0.001;
-        me.oil_temp.setValue(OT);
-        },
-#### check fuel cutoff , copy mixture setting to condition for turboprop ####
-    condition_check :  func{
-        if(me.cutoff.getBoolValue()){
-            me.condition.setValue(0);
-            me.running.setBoolValue(0);
-        }else{
-            var cnd=me.mixture.getValue();
-            if(cnd >0.01)cnd=1.0 else cnd=0.0;
-        
-            me.condition.setValue(cnd);
-        }
-    },
-
-    toggle_reverse : func{
-        if(me.throttle.getValue()==0 and me.reverse.getValue() ==0) me.reverser.setValue(1-me.reverser.getValue());
-        }
-};
 
     var wiper = Wiper.new("controls/electric/wipers","systems/electrical/volts");
-    var LHeng = Engine.new(0);
-    var RHeng = Engine.new(1);
+
     var Ctn_panel=Caution_panel.new("instrumentation/caution-panel");
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop("instrumentation/clock/flight-meter-hour",0);
     print("system  ...Check");
     Shutdown();
-    setprop("controls/engines/engine[1]/condition",0);
-    settimer(mouse_accel, 1);
-    settimer(update_systems, 1.1);
+     settimer(update_systems, 1.1);
     settimer(annunciators, 1.2);
 });
 
-
-setlistener("controls/movement-scale", func {
-    lever_scale = getprop("controls/movement-scale");
-},0,0);
 
 setlistener("/sim/signals/reinit", func {
     Shutdown();
@@ -277,18 +265,17 @@ if(tnk == -1){
     }
 });
 
-setlistener("/sim/current-view/internal", func(vw){
-    var vol = vw.getValue();
-    vol == 0 ? C_volume.setValue(1.0) : C_volume.setValue(0.4) ;
-},0,0);
 
 setlistener("/sim/model/autostart", func(idle){
-    var run= idle.getBoolValue();
-    if(run){
-    Startup();
-    }else{
-    Shutdown();
-    }
+      if(idle.getBoolValue())Startup() else Shutdown();
+},0,0);
+
+setlistener("controls/engines/engine[0]/cutoff", func(c1){
+      setprop("controls/engines/engine[0]/condition",1-c1.getValue());
+},0,0);
+
+setlistener("controls/engines/engine[1]/cutoff", func(c1){
+      setprop("controls/engines/engine[1]/condition",1-c1.getValue());
 },0,0);
 
 setlistener("/gear/gear[1]/wow", func(gr){
@@ -296,28 +283,6 @@ setlistener("/gear/gear[1]/wow", func(gr){
     FHmeter.stop();
     }else{FHmeter.start();}
 },0,0);
-
-var set_levers = func(type,num,min,max){
-        var ctrl=[];
-        var cpld=-1;
-        if(type == "throttle"){
-            ctrl = ["controls/engines/engine[0]/throttle-input","controls/engines/engine[1]/throttle-input"];
-            cpld = "controls/throttle-coupled";
-        }elsif(type == "prop"){
-            ctrl = ["controls/engines/engine[0]/propeller-pitch","controls/engines/engine[1]/propeller-pitch"];
-            cpld = "controls/prop-coupled";
-        }elsif(type == "condition"){
-            ctrl = ["controls/engines/engine[0]/mixture","controls/engines/engine[1]/mixture"];
-            cpld ="controls/mixture-coupled";
-        }
-       
-        var amnt =mousey* getprop("controls/movement-scale");
-        var ttl = getprop(ctrl[num]) + amnt;
-        if(ttl > max) ttl = max;
-        if(ttl<min)ttl=min;
-         setprop(ctrl[num],ttl);
-        if(getprop(cpld))setprop(ctrl[1-num],ttl);
- }
 
 
 controls.incThrottle = func {
@@ -355,47 +320,6 @@ controls.throttleAxis = func{
         }
 }
 
-var Startup = func{
-setprop("controls/electric/engine[0]/generator",1);
-setprop("controls/electric/engine[1]/generator",1);
-setprop("controls/electric/avionics-switch",1);
-setprop("controls/electric/battery-switch",1);
-setprop("controls/electric/inverter-switch",1);
-setprop("controls/lighting/instrument-lights",1);
-setprop("controls/lighting/instruments-norm",0.8);
-setprop("controls/lighting/nav-lights",1);
-setprop("controls/lighting/beacon",1);
-setprop("controls/lighting/strobe",1);
-setprop("controls/engines/engine[0]/mixture",1);
-setprop("controls/engines/engine[1]/mixture",1);
-setprop("controls/engines/engine[0]/cutoff",0);
-setprop("controls/engines/engine[1]/cutoff",0);
-setprop("controls/engines/engine[0]/propeller-pitch",1);
-setprop("controls/engines/engine[1]/propeller-pitch",1);
-setprop("engines/engine[0]/running",1);
-setprop("engines/engine[1]/running",1);
-}
-
-var Shutdown = func{
-setprop("controls/electric/engine[0]/generator",0);
-setprop("controls/electric/engine[1]/generator",0);
-setprop("controls/electric/avionics-switch",0);
-setprop("controls/electric/battery-switch",0);
-setprop("controls/electric/inverter-switch",0);
-setprop("controls/lighting/instrument-lights",0);
-setprop("controls/lighting/instruments-norm",0.8);
-setprop("controls/lighting/nav-lights",0);
-setprop("controls/lighting/beacon",0);
-setprop("controls/lighting/strobe",0);
-setprop("controls/engines/engine[0]/mixture",0);
-setprop("controls/engines/engine[1]/mixture",0);
-setprop("controls/engines/engine[0]/propeller-pitch",0);
-setprop("controls/engines/engine[1]/propeller-pitch",0);
-setprop("controls/engines/engine[0]/cutoff",0);
-setprop("controls/engines/engine[1]/cutoff",0);
-setprop("engines/engine[0]/running",0);
-setprop("engines/engine[1]/running",0);
-}
 
 var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
@@ -404,18 +328,6 @@ var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
-
-var mouse_accel=func{
-   msx=getprop("devices/status/mice/mouse/x") or 0;
-    mousex=msx-msxa;
-    mousex*=0.5;
-     msxa=msx;
-    msy=getprop("devices/status/mice/mouse/y") or 0;
-    mousey=msya-msy;
-    mousey*=0.5;
-     msya=msy;
-    settimer(mouse_accel, 0);
-}
 ##### Main ###########
 
 
@@ -423,7 +335,7 @@ var annunciators = func {
     Ctn_panel.update();
     settimer(annunciators, 0.5);
     }
-    
+
 
 var update_systems = func {
     var lfdoor_pos = getprop("controls/doors/LF-door/position-norm");
@@ -431,8 +343,6 @@ var update_systems = func {
     var rrdoor_pos = getprop("controls/doors/RR-door/position-norm");
      lrdoor_pos = getprop("controls/doors/LR-door/position-norm");
     var power = getprop("/controls/switches/master-panel");
-    LHeng.update();
-    RHeng.update();
     flight_meter();
     wiper.active();
     var wind = getprop("velocities/airspeed-kt");

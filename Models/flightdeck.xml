@@ -1006,7 +1006,7 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Lfuel.cutoff</object-name>
+        <object-name>LFuel.off</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
@@ -1019,7 +1019,7 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Rfuel.cutoff</object-name>
+        <object-name>RFuel.off</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
@@ -1032,7 +1032,7 @@
 
     <animation>
         <type>pick</type>
-        <object-name>Firetest.bezel</object-name>
+        <object-name>Fire.test</object-name>
         <action>
             <button>0</button>
             <binding>
@@ -1052,73 +1052,63 @@
 
     <animation>
         <type>pick</type>
-        <object-name>LHind.select</object-name>
+        <object-name>Indselect.toggle</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-            <command>property-adjust</command>
-            <property>controls/electric/ammeter-switch</property>
-            <step>-1</step>
-            <min>-1</min>
-            <max>1</max>
-            <wrap>0</wrap>
-        </binding>
+                <command>property-adjust</command>
+                <property>controls/electric/ammeter-switch</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/ammeter-switch</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
         </action>
     </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>RHind.select</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>controls/electric/ammeter-switch</property>
-            <step>1</step>
-            <min>-1</min>
-            <max>1</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>Tank.aft</object-name>
-        <visible>0</visible>
+        <object-name>Fuel.select</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-            <command>property-adjust</command>
-            <property>controls/fuel/tank-selector</property>
-            <step>-1</step>
-            <min>-1</min>
-            <max>1</max>
-            <wrap>0</wrap>
-        </binding>
+                <command>property-adjust</command>
+                <property>controls/fuel/tank-selector</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/fuel/tank-selector</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
         </action>
     </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>Tank.fwd</object-name>
-        <visible>0</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>controls/fuel/tank-selector</property>
-            <step>1</step>
-            <min>-1</min>
-            <max>1</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
 
     <animation>
         <type>pick</type>

@@ -124,8 +124,8 @@
 
     <animation>
         <type>select</type>
-        <object-name>Rwing-reg</object-name>
-        <object-name>Lwing-reg</object-name>
+        <object-name>RHreg</object-name>
+        <object-name>LHreg</object-name>
         <condition>
             <not-equals>
                 <property>sim/multiplay/generic/int[1]</property>
@@ -134,7 +134,7 @@
         </condition>
     </animation>
 
-<!--effect>
+<effect>
       <inherits-from>Aircraft/dhc6/Models/Effects/skin-reflect</inherits-from>
       <object-name>fuselage</object-name>
       <object-name>fuselage.004</object-name>
@@ -167,7 +167,16 @@
       <object-name>float.fairing</object-name>
       <object-name>wheel.fairing</object-name>
       <object-name>FrrtStrut</object-name>
-    </effect-->
+    </effect>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>Lrdoor.glass</object-name>
+        <object-name>glass</object-name>
+        <object-name>LHdoor.glass</object-name>
+        <object-name>RHdoor.glass</object-name>
+        <object-name>RRdoor.glass</object-name>
+    </effect>
 
     <animation>
         <type>shader</type>

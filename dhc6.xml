@@ -21,7 +21,7 @@ O Flaps = 74 kt
 
 <airplane mass="7500">
 
-    <approach speed="70" aoa="5" fuel="0.2">
+    <approach speed="75" aoa="16" fuel="0.2">
         <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
         <control-setting axis="/controls/engines/engine[1]/throttle" value="0.3"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -62,7 +62,7 @@ O Flaps = 74 kt
     <wing x="0.10" y="0.80" z="1.0" length="9.0" chord="1.95"
         sweep="0" dihedral="2" taper="1"  incidence="2" idrag="0.8">
         <stall aoa="17" width="8" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.4" drag="1.6"/>
+        <flap0 start="0" end=".6" lift="1.5" drag="1.6"/>
         <flap1 start=".6" end=".95" lift="1.3" drag="1.2"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="20"/>
@@ -76,8 +76,8 @@ O Flaps = 74 kt
     </wing>
 
     <hstab x="-7.47" y="0.08" z="1.186" length="3.15" chord="1.4"
-        sweep="0" dihedral="0" taper="1" camber="0">
-        <stall aoa="15" width="3" peak="1.5"/>
+        sweep="0" dihedral="0" taper="1" camber="-0.003" effectiveness="1.5">
+        <stall aoa="17" width="5" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.5" drag="1.1"/>
         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -205,9 +205,7 @@ Prop diam: 2.59 m
         control="THROTTLE"/>
     </thruster>
 
-
-    <ballast x="-7.4" y="0" z="1" mass="-500"/>
-    <ballast x="-6" y="0" z="0" mass="-1500"/>
+    <ballast x="-6" y="0" z="0" mass="-1000"/>
 
     <weight x="2.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.0" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

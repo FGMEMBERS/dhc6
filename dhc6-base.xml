@@ -111,7 +111,7 @@ Jan 2008 Syd Adams
         </instrumentation>
 
     <sound>
-        <path>Aircraft/dhc6/dhc6-sound.xml</path>
+        <path>Aircraft/dhc6/Sounds/dhc6-sound.xml</path>
     </sound>
 
     <flaps>
@@ -172,26 +172,17 @@ Jan 2008 Syd Adams
                     </binding>
                 </item>
                 <item>
-                    <label>Remove Rear Doors</label>
+                    <label>Options</label>
                     <binding>
-                        <command>property-toggle</command>
-                        <property>sim/model/remove-doors</property>
-                    </binding>
-                </item>
-                 <item>
-                    <label>Open tow-hook</label>
-                    <binding>
-                        <command>property-assign</command>
-                        <property>sim/hitches/aerotow/open</property>
-                        <value type="bool">true</value>
+                        <command>nasal</command>
+                        <script>dialogs.options.open()</script>
                     </binding>
                 </item>
                 <item>
-                    <label>Lock tow-hook</label>
+                    <label>Throttles</label>
                     <binding>
-                        <command>property-assign</command>
-                        <property>sim/hitches/aerotow/open</property>
-                        <value type="bool">false</value>
+                        <command>nasal</command>
+                        <script>dialogs.throttles.open()</script>
                     </binding>
                 </item>
                 <item>

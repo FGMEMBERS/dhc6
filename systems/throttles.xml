@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <name>throttles</name>
+    <layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>T-L T-R</label>
+            <halign>center</halign>
+        </text>
+
+    </group>
+
+    <group>
+       <layout>hbox</layout>
+
+        <slider>
+            <vertical>true</vertical>
+            <pref-height>200</pref-height>
+            <live>true</live>
+            <property>controls/engines/engine/throttle</property>
+            <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+        </slider>
+
+        <slider>
+            <vertical>true</vertical>
+            <pref-height>200</pref-height>
+            <live>true</live>
+            <property>controls/engines/engine[1]/throttle</property>
+            <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+        </slider>
+
+    </group>
+
+    <group>
+       <layout>hbox</layout>
+
+        <button>
+            <legend>close</legend>
+            <pref-width>30</pref-width>
+            <pref-height>15</pref-height>
+            <default>true</default>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+    </group>
+ 
+
+</PropertyList>
