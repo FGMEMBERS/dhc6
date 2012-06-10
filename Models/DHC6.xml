@@ -176,6 +176,12 @@
         <object-name>LHdoor.glass</object-name>
         <object-name>RHdoor.glass</object-name>
         <object-name>RRdoor.glass</object-name>
+        <object-name>strobe.1</object-name>
+        <object-name>strobe.2</object-name>
+        <object-name>RHLNDlight</object-name>
+        <object-name>LHLNDlight</object-name>
+        <object-name>Lprop.disk</object-name>
+        <object-name>Rprop.disk</object-name>
     </effect>
 
     <animation>
