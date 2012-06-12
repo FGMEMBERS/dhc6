@@ -14,7 +14,17 @@
         </unload>
     </nasal>
 
-
+    <!-- Mark transparent surfaces for Rembrandt -->
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>glass</object-name>
+        <object-name>RHdoor.glass</object-name>
+        <object-name>LHdoor.glass</object-name>
+        <object-name>RRdoor.glass</object-name>
+        <object-name>Lrdoor.glass</object-name>
+        <object-name>LHLNDlight</object-name>
+        <object-name>RHLNDlight</object-name>
+    </effect>
 
     <animation>
       <name>Exterior</name>
