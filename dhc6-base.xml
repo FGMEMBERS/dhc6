@@ -347,6 +347,7 @@ Jan 2008 Syd Adams
     </engines>
 
     <autopilot>
+        <hide-menu type="bool">true</hide-menu> <!-- AP is disabled -->
         <locks>
             <passive-mode type="bool">true</passive-mode>
         </locks>

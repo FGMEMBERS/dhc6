@@ -7,4 +7,4 @@ var options = gui.Dialog.new("/sim/gui/dialogs/options/dialog",
 var throttles = gui.Dialog.new("/sim/gui/dialogs/throttles/dialog",
         "Aircraft/dhc6/systems/throttles.xml");
 gui.menuBind("radio", "dialogs.Radio.open()");
-gui.menuBind("autopilot-settings", "dialogs.ap_settings.open()");
+#gui.menuBind("autopilot-settings", "dialogs.ap_settings.open()");
