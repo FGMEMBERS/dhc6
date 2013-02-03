@@ -3,6 +3,8 @@ aircraft.livery.init("Aircraft/dhc6/Models/Liveries");
 
 var C_volume = props.globals.initNode("sim/sound/cabin",0.3);
 var D_volume = props.globals.initNode("sim/sound/doors",0.7);
+var E1_volume = props.globals.initNode("sim/sound/engine[0]",0.0);
+var E2_volume = props.globals.initNode("sim/sound/engine[1]",0.0);
 var ctn_counter=0;
 Wiper=[];
 
@@ -13,7 +15,6 @@ var mousey = 0;
 var msy = 0;
 var msya=0;
 var lever_scale = getprop("controls/movement-scale");
-
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 
@@ -285,41 +286,6 @@ setlistener("/gear/gear[1]/wow", func(gr){
 },0,0);
 
 
-controls.incThrottle = func {
-    var val = 0;
-    var inc = arg[0];
-    if (!getprop("controls/engines/engine[0]/reverser")){
-        val = getprop("controls/engines/engine[0]/throttle") + inc;
-        setprop("controls/engines/engine[0]/throttle",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-    }else{
-        val = getprop("engines/engine[0]/reverse-thrust") + inc;
-        setprop("engines/engine[0]/reverse-thrust",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-    }
-
-if (!getprop("controls/engines/engine[1]/reverser")){
-        val = getprop("controls/engines/engine[1]/throttle") + inc;
-        setprop("controls/engines/engine[1]/throttle",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-    }else{
-        val = getprop("engines/engine[1]/reverse-thrust") + inc;
-        setprop("engines/engine[1]/reverse-thrust",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-    }
-}
-
-controls.throttleAxis = func{
-    var val = cmdarg().getNode("setting").getValue();
-        val =(1 - val) / 2;
-        if (!getprop("controls/engines/engine[0]/reverser")){
-            setprop("controls/engines/engine[0]/throttle",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-        }else{
-        setprop("engines/engine[0]/reverse-thrust",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-        }
-        if (!getprop("controls/engines/engine[1]/reverser")){
-            setprop("controls/engines/engine[1]/throttle",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-        }else{
-        setprop("engines/engine[1]/reverse-thrust",val < 0.0 ? 0.0 : val > 1.0 ? 1.0 : val);
-        }
-}
-
 
 var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
@@ -336,6 +302,23 @@ var annunciators = func {
     settimer(annunciators, 0.5);
     }
 
+var update_eng_sound = func {
+    var tst1 = (getprop("engines/engine[0]/n2") * 0.01)-0.5;
+    var tst2 = (getprop("engines/engine[1]/n2") * 0.01)-0.5;
+    tst1+=(getprop("engines/engine[0]/reverse") * 0.2);
+    tst2+=(getprop("engines/engine[1]/reverse") * 0.2);
+    E1_volume.setValue(tst1);
+    E2_volume.setValue(tst2);
+    }
+
+var update_throttles = func {
+    var LHrvr=getprop("controls/engines/engine[0]/reverser");
+    var RHrvr=getprop("controls/engines/engine[1]/reverser");
+    var THR1 =getprop("controls/engines/engine[0]/throttle");
+     var THR2 =getprop("controls/engines/engine[1]/throttle");
+    if(LHrvr)setprop("controls/engines/engine[0]/throttle-rvrs",THR1) else setprop("controls/engines/engine[0]/throttle-fwd",THR1);
+    if(RHrvr)setprop("controls/engines/engine[1]/throttle-rvrs",THR2) else setprop("controls/engines/engine[1]/throttle-fwd",THR2);
+    }
 
 var update_systems = func {
     var lfdoor_pos = getprop("controls/doors/LF-door/position-norm");
@@ -352,5 +335,7 @@ var update_systems = func {
         if(getprop("controls/doors/LR-door/open"))setprop("controls/doors/LR-door/open",0);
         if(getprop("controls/doors/RR-door/open"))setprop("controls/doors/RR-door/open",0);
     }
+    update_throttles();
+    update_eng_sound();
     settimer(update_systems, 0);
 }

@@ -101,4 +101,9 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </encoder>
 
+    <radar>
+        <name>radar</name>
+        <number>0</number>
+    </radar>
+
 </PropertyList>

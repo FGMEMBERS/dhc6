@@ -30,8 +30,8 @@ Jan 2008 Syd Adams
             <default-field-of-view-deg>60</default-field-of-view-deg>
             <x-offset-m type="double">-0.48</x-offset-m>
             <y-offset-m type="double">0.72</y-offset-m>
-            <z-offset-m type="double">-3.26</z-offset-m>
-            <pitch-offset-deg>-12</pitch-offset-deg>
+            <z-offset-m type="double">-3.15</z-offset-m>
+            <pitch-offset-deg>-15</pitch-offset-deg>
             <limits>
                 <enabled type="bool">true</enabled>
                 <left>
@@ -48,9 +48,35 @@ Jan 2008 Syd Adams
         </config>
     </view>
 
+   <view n="100">
+        <name>Overhead Panel</name>
+        <enabled type="bool">true</enabled>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            <default-pitch-deg type="double">85</default-pitch-deg>
+            <default-heading-deg type="double">0</default-heading-deg>
+            <front-direction-deg type="double">0</front-direction-deg>
+            <front-left-direction-deg type="double">45</front-left-direction-deg>
+            <left-direction-deg type="double">90</left-direction-deg>
+            <back-left-direction-deg type="double">135</back-left-direction-deg>
+            <back-direction-deg type="double">180</back-direction-deg>
+            <back-right-direction-deg type="double">225</back-right-direction-deg>
+            <right-direction-deg type="double">270</right-direction-deg>
+            <front-right-direction-deg type="double">315</front-right-direction-deg>
+            <dynamic-view type="bool">false</dynamic-view>
+            <x-offset-m type="double">-0.02</x-offset-m>
+            <y-offset-m type="double">0.55</y-offset-m>
+            <z-offset-m type="double">-2.97</z-offset-m>
+            <pitch-offset-deg>85</pitch-offset-deg>
+        </config>
+    </view>
 
-
-    <view n="100">
+    <view n="101">
         <name>CoPilot View</name>
         <enabled type="bool">true</enabled>
         <type>lookfrom</type>
@@ -204,11 +230,24 @@ Jan 2008 Syd Adams
             <name>Delete</name>
             <desc>Toggle Reversers</desc>
             <binding>
-                <command>nasal</command>
-                <script>
-                    dhc6.RHeng.toggle_reverse();
-                    dhc6.LHeng.toggle_reverse();
-                </script>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/reverser</property>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[1]/reverser</property>
             </binding>
         </key>
         <key n="79">
@@ -258,13 +297,17 @@ Jan 2008 Syd Adams
                 <cutoff>0</cutoff>
                 <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
+                <throttle-fwd type="double">0</throttle-fwd>
+                <throttle-rvrs type="double">0</throttle-rvrs>
                 </engine>
             <engine n="1">
                 <condition>0</condition>
                 <cutoff>0</cutoff>
                 <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
-                </engine>
+                <throttle-fwd type="double">0</throttle-fwd>
+                <throttle-rvrs type="double">0</throttle-rvrs>  
+            </engine>
         </engines>
         <throttle-coupled type="bool">1</throttle-coupled>
         <mixture-coupled type="bool">1</mixture-coupled>

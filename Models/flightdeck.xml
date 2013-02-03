@@ -674,17 +674,9 @@
 
     <animation>
         <type>rotate</type>
-        <condition>
-            <not>
-                <property>controls/engines/engine[0]/reverser</property>
-            </not>
-        </condition>
         <object-name>LHthrottle</object-name>
-        <property>controls/engines/engine[0]/throttle</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>9.0</dep></entry>
-        </interpolation>
+        <property>controls/engines/engine[0]/throttle-fwd</property>
+        <factor>9</factor>
         <center>
             <x-m>-3.6</x-m>
             <y-m>0</y-m>
@@ -699,15 +691,9 @@
 
     <animation>
         <type>rotate</type>
-        <condition>
-            <property>controls/engines/engine[0]/reverser</property>
-        </condition>
         <object-name>LHthrottle</object-name>
-        <property>engines/engine[0]/reverse-thrust</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>-5.0</dep></entry>
-        </interpolation>
+        <property>controls/engines/engine[0]/throttle-rvrs</property>
+        <factor>-5</factor>
         <center>
             <x-m>-3.6</x-m>
             <y-m>0</y-m>
@@ -722,17 +708,9 @@
 
     <animation>
         <type>rotate</type>
-        <condition>
-            <not>
-                <property>controls/engines/engine[1]/reverser</property>
-            </not>
-        </condition>
         <object-name>RHthrottle</object-name>
-        <property>controls/engines/engine[1]/throttle</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>9.0</dep></entry>
-        </interpolation>
+        <property>controls/engines/engine[1]/throttle-fwd</property>
+        <factor>9</factor>
         <center>
             <x-m>-3.6</x-m>
             <y-m>0</y-m>
@@ -747,15 +725,9 @@
 
     <animation>
         <type>rotate</type>
-        <condition>
-            <property>controls/engines/engine[1]/reverser</property>
-        </condition>
         <object-name>RHthrottle</object-name>
-        <property>engines/engine[1]/reverse-thrust</property>
-        <interpolation>
-            <entry><ind>0.0</ind><dep>0.0</dep></entry>
-            <entry><ind>1.0</ind><dep>-5.0</dep></entry>
-        </interpolation>
+        <property>controls/engines/engine[1]/throttle-rvrs</property>
+        <factor>-5</factor>
         <center>
             <x-m>-3.6</x-m>
             <y-m>0</y-m>

@@ -21,28 +21,28 @@ O Flaps = 74 kt
 
 <airplane mass="7500">
 
-    <approach speed="80" aoa="8" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.3"/>
+    <approach speed="85" aoa="7" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.1"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.1"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
-        <control-setting axis="/controls/flight/flaps" value="0.5"/>
-        <solve-weight idx="0" weight="400"/>
-        <solve-weight idx="1" weight="3400"/>
+        <control-setting axis="/controls/flight/flaps" value="0.125"/>
+        <solve-weight idx="0" weight="360"/>
+        <solve-weight idx="1" weight="3150"/>
     </approach>
 
-    <cruise speed="183" alt="10000" fuel="0.5"> 
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.95"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.95"/>
+    <cruise speed="182" alt="6000" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.75"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.75"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
         <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
         <control-setting axis="/controls/flight/flaps" value="0.0"/>
-        <solve-weight idx="0" weight="400"/>
-        <solve-weight idx="1" weight="3400"/>
+        <solve-weight idx="0" weight="360"/>
+        <solve-weight idx="1" weight="3350"/>
     </cruise>
 
     <cockpit x="2.8" y="0.3" z="0.745"/>
@@ -54,11 +54,11 @@ O Flaps = 74 kt
     <fuselage ax="-2.470"  ay="0" az="0.111" bx="-8.811" by="0" bz="0.30"
         width="1.8" taper="0.1" midpoint="0.0" cy="1.1" cx="1.1"/>
 
-    <wing x="0.10" y="0.80" z="1.0" length="9.0" chord="1.95"
-        sweep="0" dihedral="5" taper="1"  incidence="2" camber="0.02" idrag="1.0">
+    <wing x="0.0" y="0.880" z="1.0" length="9.5" chord="2.0"
+        sweep="0" dihedral="3" taper="1"  incidence="2" camber="0.005" idrag="1.0">
         <stall aoa="12" width="15" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.5" drag="1.5"/>
-        <flap1 start=".6" end=".95" lift="1.2" drag="1.1"/>
+        <flap0 start="0" end=".6" lift="1.55" drag="1.6"/>
+        <flap1 start=".6" end=".95" lift="1.3" drag="1.1"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="20"/>
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -69,7 +69,7 @@ O Flaps = 74 kt
     </wing>
 
     <hstab x="-7.47" y="0.08" z="1.186" length="3.15" chord="1.4"
-        sweep="0" dihedral="0" taper="1" effectiveness="1.5">
+        sweep="0" dihedral="0" taper="1" >
         <stall aoa="18" width="3" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.5" drag="1.1"/>
         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -223,16 +223,16 @@ Prop diam: 2.59 m
 
     <propeller x="1.3" y="2.65" z="1.0"
         mass="500" moment="6" radius="1.1"
-        cruise-speed="210" cruise-rpm="2000"
-        cruise-power="600" cruise-alt="10000"
+        cruise-speed="170" cruise-rpm="1650"
+        cruise-power="480" cruise-alt="6000"
         min-rpm="1650" max-rpm="2200"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
             eng-power="620" eng-rpm="2200" alt="10000"
             flat-rating="620" n2-low-idle="45" n2-high-idle="65" n2-max="101.5" bsfc="0.468"/>
         <actionpt x="2.2" y="2.65" z="1.0"/>
-        <control-input axis="/controls/engines/engine[0]/throttle"
-        control="THROTTLE" src0="0.005" dst0="0" src1="1" dst1="1"/>
+        <control-input axis="/controls/engines/engine[0]/throttle-fwd"
+        control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[0]/condition"
         control="CONDLEVER"/>
         <control-input axis="/controls/engines/engine[0]/starter"
@@ -245,17 +245,16 @@ Prop diam: 2.59 m
 
     <propeller x="1.3" y="-2.65" z="1.1"
         mass="500" moment="-6" radius="1.0"
-        cruise-speed="210" cruise-rpm="2000"
-        cruise-power="600" cruise-alt="10000"
+        cruise-speed="170" cruise-rpm="1650"
+        cruise-power="480" cruise-alt="6000"
         min-rpm="1650" max-rpm="2200"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
             eng-power="620" eng-rpm="2200" alt="10000"
             flat-rating="620" n2-low-idle="45" n2-high-idle="65" n2-max="101.5" bsfc="0.468"/>
         <actionpt x="2.2" y="-2.65" z="1.0"/>
-        <control-input axis="/controls/engines/engine[1]/throttle"
-        control="THROTTLE" src0="0.005" dst0="0" src1="1" dst1="1"/>
-        <control-output control="THROTTLE" prop="/surface-positions/reverser-norm"/>
+        <control-input axis="/controls/engines/engine[1]/throttle-fwd"
+        control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[1]/condition"
         control="CONDLEVER"/>
         <control-input axis="/controls/engines/engine[1]/starter"
@@ -266,24 +265,19 @@ Prop diam: 2.59 m
         control="PROPFEATHER"/>
     </propeller>
 
-    <thruster x="2.2" y="2.65" z="1.0" vx="-1" vy="0" vz="0" thrust="500">
-        <control-input axis="engines/engine[0]/reverse-thrust"
-        control="THROTTLE"/>
+    <thruster x="2.2" y="2.65" z="1.0" vx="-1" vy="0" vz="0" thrust="200">
+        <control-input axis="/controls/engines/engine[0]/throttle-rvrs" control="THROTTLE"/>
+        <control-output control="THROTTLE" prop="engines/engine[0]/reverse"/>
+        <control-speed control="THROTTLE" transition-time="2"/>
     </thruster>
 
-    <thruster x="2.2" y="-2.65" z="1.0" vx="-1" vy="0" vz="0" thrust="500">
-        <control-input axis="engines/engine[1]/reverse-thrust"
-        control="THROTTLE"/>
+    <thruster x="2.2" y="-2.65" z="1.0" vx="-1" vy="0" vz="0" thrust="200">
+        <control-input axis="/controls/engines/engine[1]/throttle-rvrs" control="THROTTLE"/>
+        <control-output control="THROTTLE" prop="engines/engine[1]/reverse"/>
+        <control-speed control="THROTTLE" transition-time="2"/>
     </thruster>
 
-    <ballast x="4.5" y="0" z="-0.15" mass="500"/>
-    <ballast x="3.5" y="0" z="-0.5" mass="1000"/>
-    <ballast x="-0.1" y="0.7" z="-0.7" mass="500"/>
-    <ballast x="-0.1" y="-0.7" z="-0.7" mass="500"/>
-    <ballast x="-0.1" y="0" z="1.0" mass="800"/>
-    <ballast x="-2.3" y="0" z="0.15" mass="1000"/>
-    <ballast x="-0.5" y="0.0" z="-0.7" mass="-500"/>
-
+    <ballast x="-7.5" y="0" z="1.7" mass="-900"/>
 
     <weight x="2.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.1" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

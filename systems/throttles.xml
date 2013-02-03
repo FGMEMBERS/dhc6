@@ -46,10 +46,58 @@
 
     <group>
        <layout>hbox</layout>
+       <padding>2</padding>
+
+        <checkbox>
+            <width>30</width>
+            <pref-height>15</pref-height>
+            <property>controls/engines/engine[0]/reverser</property>
+            <live>true</live>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+                <text>
+                    <label>RVRS</label>
+                    <halign>center</halign>
+                </text>
+
+        <checkbox>
+            <width>30</width>
+            <pref-height>15</pref-height>
+            <property>controls/engines/engine[1]/reverser</property>
+            <live>true</live>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+    </group>
+    <group>
+       <layout>hbox</layout>
 
         <button>
-            <legend>close</legend>
-            <pref-width>30</pref-width>
+            <legend>X</legend>
+            <pref-width>20</pref-width>
             <pref-height>15</pref-height>
             <default>true</default>
             <key>Esc</key>
@@ -59,6 +107,5 @@
         </button>
 
     </group>
- 
 
 </PropertyList>
