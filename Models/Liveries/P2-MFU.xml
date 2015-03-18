@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">P2-MFU (MAF PNG)</name>
+            <texture>Liveries/P2-MFU.png</texture>
+        </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>
