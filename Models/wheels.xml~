@@ -233,7 +233,7 @@
         <animation>
         <type>spin</type>
         <object-name>Rwheel</object-name>
-        <property>gear/gear[2]/rollspeed-ms</property>
+        <property>gear/gear[0]/rollspeed-ms</property>
         <factor>-20</factor>
         <center>
             <x-m>0.0774</x-m>
@@ -273,7 +273,7 @@
         <animation>
         <type>spin</type>
         <object-name>Lwheel</object-name>
-        <property>gear/gear[1]/rollspeed-ms</property>
+        <property>gear/gear[0]/rollspeed-ms</property>
         <factor>20</factor>
          <center>
             <x-m>0.0774</x-m>

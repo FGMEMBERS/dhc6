@@ -727,6 +727,7 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
 	    <file>Aircraft/dhc6/Nasal/smoothAnimate.nas</file>
 	    <file>Aircraft/dhc6/Nasal/beta-range.nas</file>
 	    <file>Aircraft/dhc6/Nasal/auto-feather.nas</file>
+	    <file>Aircraft/dhc6/Nasal/spool-downgrader.nas</file>
         </dhc6>
     <dialogs><file>Aircraft/dhc6/Nasal/dialogs.nas</file></dialogs>
         <m877>
