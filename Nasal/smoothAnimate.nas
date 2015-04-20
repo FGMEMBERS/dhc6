@@ -10,10 +10,10 @@ props.globals.initNode("controls/autopilot/settings/navsetflag", 0, "BOOL");
 var smoothAnimate = func {
 
     var aileron = getprop("controls/flight/aileron");
-    interpolate("controls/flight/aileron-smooth",aileron,1.3);
+    interpolate("controls/flight/aileron-smooth",aileron,1.5);
 
     var elevator = getprop("controls/flight/elevator");
-    interpolate("controls/flight/elevator-smooth",elevator,1.3);
+    interpolate("controls/flight/elevator-smooth",elevator,1.5);
 
     settimer(smoothAnimate,0);
 }

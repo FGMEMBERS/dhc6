@@ -1,8 +1,4 @@
-# The outside temperature would influence the t5.
 
-# To do:
-# 1) IAS effect to the T5;
-# 2) twist more.
 
 props.globals.initNode("environment/temperature-degc",0);
 props.globals.initNode("engines/engine[0]/n2",0);

@@ -27,7 +27,7 @@
     <object-name>vitre</object-name>
   </animation>
 
-        <animation>
+  <animation>
             <type>shader</type>
                 <shader>chrome</shader>
                    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
@@ -89,7 +89,7 @@
             <binding>
               <command>set-tooltip</command>
                 <tooltip-id>Altimeter-ft</tooltip-id>
-                  <label>Altitude-ft: %3d ft</label>
+                       <label> Altitude-ft:% 3d ft </label>
                 <property>instrumentation/altimeter/indicated-altitude-ft</property>
             </binding>
       </hovered>

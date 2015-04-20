@@ -10,7 +10,7 @@
         <floats>
           <texture>floats.png</texture>
         </floats>
-        <blunt-nose>1</blunt-nose>
+        <blunt-nose>0</blunt-nose>
         <display-callsign>1</display-callsign>
     </model>
 </sim>

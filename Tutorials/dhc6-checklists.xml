@@ -1043,7 +1043,24 @@
 				</equals>
 			</condition>
 		</item>
-			
+		
+		<item>
+			<name>Auto Feather</name>
+			<value>ON</value>
+			<marker>
+			  <x-m>-3.9395</x-m>
+			  <y-m>-0.481471</y-m>
+			  <z-m>0.456843</z-m>
+    			  <scale>3.0000</scale>
+			</marker>
+			<condition>
+				<equals>
+					<property>controls/engines/auto-feather</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</item>
+		
 		<item>
 			<name>Throttle</name>
 			<value>FULL POWER</value>
@@ -1189,6 +1206,24 @@
 			</condition>
 		</item>
 
+		<item>
+			<name>Auto Feather</name>
+			<value>OFF</value>
+			<marker>
+			  <x-m>-3.9395</x-m>
+			  <y-m>-0.481471</y-m>
+			  <z-m>0.456843</z-m>
+    			  <scale>3.0000</scale>
+			</marker>
+			<condition>
+				<equals>
+					<property>controls/engines/auto-feather</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</item>
+		
+		
 		<item>
 			<name>Landing lights</name>
 			<value>OFF AT 2000 FT</value>

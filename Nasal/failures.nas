@@ -10,6 +10,8 @@ props.globals.initNode("/engines/engine[1]/serviceable", 1);
 props.globals.initNode("controls/anti-ice/pitot-heat",0);
 #props.globals.initNode("instrumentation/airspeed-indicator/indicated-speed-kt",0);
 props.globals.initNode("controls/anti-ice/prop-heat",0);
+props.globals.initNode("harzards/icing/pitot",0);
+props.globals.initNode("harzards/icing/propeller",0);
 
 var pitot_icing_time = 0;
 var pitot_no_icing_time = 0;
@@ -25,14 +27,14 @@ var prop_icing_index = 0;
 var engine0_completely_broken = func {
     setprop("/engines/engine[0]/serviceable", 0);
     setprop("/engines/engine[0]/running", 0);
-    setprop("controls/engines/engine[0]/condition", 0);
+    setprop("controls/engines/engine[0]/internal-condition", 0);
     settimer(engine0_completely_broken, 0);
 }
 
 var engine1_completely_broken = func {
     setprop("/engines/engine[1]/serviceable", 0);
     setprop("/engines/engine[1]/running", 0);
-    setprop("controls/engines/engine[1]/condition", 0);
+    setprop("controls/engines/engine[1]/internal-condition", 0);
     settimer(engine1_completely_broken, 0);
 }
 ########################################################################
@@ -47,12 +49,12 @@ var sands_stones = func {
     var gear2_ground_type = getprop("gear/gear[2]/ground-friction-factor");
     var wow2 = getprop("gear/gear[2]/wow");
     
-    if (intake_deflector0 == 0 and gear1_ground_type < 1 and engine0_running and wow1) {
+    if (intake_deflector0 == 0 and gear1_ground_type < 1 and engine0_running and wow1 and rand()>0.8) {
         print("Your left engine is damaged by sands and stones!");
 	engine0_completely_broken();
     }
     
-    if (intake_deflector1 == 0 and gear2_ground_type < 1 and engine1_running and wow2) {
+    if (intake_deflector1 == 0 and gear2_ground_type < 1 and engine1_running and wow2 and rand()>0.8) {
         print("Your right engine is damaged by sands and stones!");
 	engine1_completely_broken();
     }
@@ -62,21 +64,28 @@ var sands_stones = func {
 var pitot_fail = func {
     var pitot_heat = getprop("controls/anti-ice/pitot-heat");
     var oat = getprop("environment/temperature-degc");
+    var dew_point = getprop("environment/dewpoint-degc");
 
+    ## Set a mark ##
+    if ((oat <= 0 and oat <= dew_point) and pitot_heat != 1) {
+        setprop("harzards/icing/pitot",1);
+    } else {
+        setprop("harzards/icing/pitot",0);
+    }
             ####### Set custom timer #####
-    if (oat <= 0 and pitot_heat != 1) {
+    if ((oat <= 0 and oat <= dew_point) and pitot_heat != 1) {
         pitot_icing_time = getprop("sim/time/elapsed-sec");
     }
-    if (oat > 0 or pitot_heat == 1) {
+    if ((oat > 0 or oat > dew_point) or pitot_heat == 1) {
         pitot_no_icing_time = getprop("sim/time/elapsed-sec");
     }
 
         ######## Set icing index based on timer #######
-    if (oat <= 0 and pitot_heat != 1){
+    if (oat <= 0 and oat <= dew_point and pitot_heat != 1){
         pitot_icing_index = pitot_icing_time - pitot_no_icing_time
     }
               #### Icing ####   
-    if (oat <= 0 and pitot_heat != 1) {
+    if (oat <= 0 and oat <= dew_point and pitot_heat != 1) {
 
         if ((getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-pitot_icing_index)>0) {
             setprop("instrumentation/airspeed-indicator/indicated-speed-kt",  getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-pitot_icing_index);
@@ -91,7 +100,7 @@ var pitot_fail = func {
     }
 
               ### Deicing ###
-    if ((oat > 0 or pitot_heat == 1) and getprop("instrumentation/airspeed-indicator/serviceable") == 0) {
+    if ((oat > 0 or oat > dew_point or pitot_heat == 1) and getprop("instrumentation/airspeed-indicator/serviceable") == 0) {
 	setprop("instrumentation/altimeter[0]/serviceable",1);
 	setprop("instrumentation/altimeter[1]/serviceable",1);
 	setprop("instrumentation/vertical-speed-indicator/serviceable",1);
@@ -112,40 +121,49 @@ var prop_icing = func {
     var engine1_running = getprop("engines/engine[1]/running");
     var prop_heat = getprop("controls/anti-ice/prop-heat");
     var oat = getprop("environment/temperature-degc");
+    var dew_point = getprop("environment/dewpoint-degc");
     var rand_prop_icing0 = rand()*50;
     var rand_prop_icing1 = rand()*50;
 
-    if (oat <= 0 and prop_heat != 1) {
+    # Set a mark #
+
+    if (oat <= 0 and oat <= dew_point and prop_heat != 1) {
+        setprop("harzards/icing/propeller",1);
+    } else {
+        setprop("harzards/icing/propeller",0);
+    }
+
+    if (oat <= 0 and oat <= dew_point and prop_heat != 1) {
         prop_icing_time = getprop("sim/time/elapsed-sec");
     }
-    if (oat > 0 or prop_heat == 1) {
+    if (oat > 0 or oat <= dew_point or prop_heat == 1) {
         prop_no_icing_time = getprop("sim/time/elapsed-sec");
     }
-    if (oat <= 0 and prop_heat != 1) {
+    if (oat <= 0 and oat <= dew_point and prop_heat != 1) {
         prop_icing_index = prop_icing_time - prop_no_icing_time;
     }
-    if ((oat > 0 or prop_heat == 1) and prop_icing_index > 0) {
+    if ((oat > 0 or oat > dew_point or prop_heat == 1) and prop_icing_index > 0) {
         prop_icing_index = prop_icing_index - (prop_no_icing_time - prop_icing_time)/100;
     }
     if (prop_icing_index > 1600) {
         prop_icing_index = 1600;
     }
 
-    if (prop_icing_index > 0 and oat <= 0 and prop_heat != 1 and engine0_running and (getprop("engines/engine[0]/rpm") - prop_icing_index - rand_prop_icing0)>230) {
+    if (prop_icing_index > 0 and oat <= 0 and oat <= dew_point and prop_heat != 1 and engine0_running and (getprop("engines/engine[0]/rpm") - prop_icing_index - rand_prop_icing0)>230) {
         setprop("engines/engine[0]/rpm", (getprop("engines/engine[0]/rpm") - prop_icing_index - rand_prop_icing0));
     }
-    if (prop_icing_index > 0 and oat <= 0 and prop_heat != 1 and engine1_running and (getprop("engines/engine[1]/rpm") - prop_icing_index - rand_prop_icing1)>230) {
+    if (prop_icing_index > 0 and oat <= 0 and oat <= dew_point and prop_heat != 1 and engine1_running and (getprop("engines/engine[1]/rpm") - prop_icing_index - rand_prop_icing1)>230) {
         setprop("engines/engine[1]/rpm", (getprop("engines/engine[1]/rpm") - prop_icing_index - rand_prop_icing1));
     }
-    if (prop_icing_index > 0 and oat <= 0 and prop_heat != 1 and engine0_running and (getprop("engines/engine[0]/rpm") - prop_icing_index - rand_prop_icing0)<=230) {
+    if (prop_icing_index > 0 and oat <= 0 and oat <= dew_point and prop_heat != 1 and engine0_running and (getprop("engines/engine[0]/rpm") - prop_icing_index - rand_prop_icing0)<=230) {
         setprop("engines/engine[0]/rpm", 230);
     }
-    if (prop_icing_index > 0 and oat <= 0 and prop_heat != 1 and engine1_running and (getprop("engines/engine[1]/rpm") - prop_icing_index - rand_prop_icing1)<=230) {
+    if (prop_icing_index > 0 and oat <= 0 and oat <= dew_point and prop_heat != 1 and engine1_running and (getprop("engines/engine[1]/rpm") - prop_icing_index - rand_prop_icing1)<=230) {
         setprop("engines/engine[1]/rpm", 230);
     }
 
 
-    if (prop_icing_index > 0 and (oat > 0 or prop_heat == 1)) {
+    if (prop_icing_index > 0 and (oat > 0 or oat > dew_point or prop_heat == 1)) {
         if ((getprop("engines/engine[0]/rpm") - prop_icing_index) <=230 or (getprop("engines/engine[1]/rpm") - prop_icing_index)<=230) {
 	    setprop("engines/engine[0]/rpm", 230);
 	    setprop("engines/engine[1]/rpm", 230);
@@ -158,6 +176,22 @@ var prop_icing = func {
     settimer(prop_icing, 0);
 }
 
+var apDisable = func {
+    var pitot_icing = getprop("harzards/icing/pitot");
+    var prop_icing = getprop("harzards/icing/propeller");
+    if (pitot_icing == 1 or prop_icing == 1) {
+        setprop("controls/autopilot/settings/apflag", 0);
+        setprop("controls/autopilot/settings/altflag", 0);
+        setprop("controls/autopilot/settings/iasflag", 0);
+        setprop("controls/autopilot/settings/hdgflag", 0);
+        setprop("controls/autopilot/settings/hdgsetflag", 0);
+        setprop("controls/autopilot/settings/navsetflag", 0);
+        setprop("controls/autopilot/settings/gssetflag", 0);
+    }
+    settimer(apDisable, 1);
+}
+
 setlistener("/sim/signals/fdm-initialized", sands_stones);
 setlistener("/sim/signals/fdm-initialized", pitot_fail);
 setlistener("/sim/signals/fdm-initialized", prop_icing);
+setlistener("/sim/signals/fdm-initialized", apDisable);
