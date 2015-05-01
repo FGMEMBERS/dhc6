@@ -27,6 +27,8 @@ props.globals.initNode("controls/engines/engine[0]/condition", 0.0);
 props.globals.initNode("controls/engines/engine[1]/condition", 0.0);
 props.globals.initNode("controls/engines/internal-engine-starter", 0.0);
 props.globals.initNode("controls/electric/power-source",0);
+props.globals.initNode("controls/switches/dme", 0);
+props.globals.initNode("controls/switches/dme-gps-slave", 0);
 
 ###################################
 
