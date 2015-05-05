@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Westcoast Air</name>
+            <texture>Liveries/YWZ.png</texture>
+        </livery>
+        <floats>
+        <texture>floats.png</texture>
+        </floats>
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>
