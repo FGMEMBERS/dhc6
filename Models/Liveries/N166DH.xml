@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">N166DH - Freefall</name>
+            <texture>Liveries/N166DH.png</texture>
+        </livery>
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>
