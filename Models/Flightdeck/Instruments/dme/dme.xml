@@ -270,7 +270,7 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>On_Off_gps_slave</tooltip-id>
-                <label>Power: %s</label>
+                <label>GPS Slave: %s</label>
                 <mapping>on-off</mapping>
                 <property>/controls/switches/dme-gps-slave</property>
             </binding>

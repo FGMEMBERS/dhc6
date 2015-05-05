@@ -36,6 +36,8 @@
       <object-name>AutoFthr.toggle</object-name>
       <object-name>autofeather.arm.lit</object-name>
       <object-name>autofeather.sel.lit</object-name>
+      <object-name>beta-range-nut-l</object-name>
+      <object-name>beta-range-nut-r</object-name>
     </effect> 
 
 
@@ -2849,6 +2851,68 @@
                 <label>Auto-Feather: %s</label>
                 <mapping>on-off</mapping>
                 <property>controls/engines/auto-feather</property>
+            </binding>
+        </hovered>
+    </animation>
+
+      <animation>
+        <type>knob</type>
+        <object-name>beta-range-nut-l</object-name>
+        <property>engines/engine[0]/beta-range-nut-l</property>
+        <center>
+            <x-m>-3.9235</x-m><y-m>-0.477435</y-m><z-m>0.425978</z-m>
+        </center>
+        <axis>
+            <x>-1</x><y>0</y><z>0</z>
+        </axis>
+ 
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>engines/engine[0]/beta-range-nut-l</property>
+                <factor>0.1</factor>
+                <min>0</min>
+                <max>1.0</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+	<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>beta-range-l</tooltip-id>
+                <label>Beta Range Left: %0.1f</label>
+                <property>engines/engine[0]/beta-range-nut-l</property>
+            </binding>
+        </hovered>
+      </animation>
+      
+      <animation>
+        <type>knob</type>
+        <object-name>beta-range-nut-r</object-name>
+        <property>engines/engine[1]/beta-range-nut-r</property>
+        <center>
+            <x-m>-3.9235</x-m><y-m>-0.4493</y-m><z-m>0.4259</z-m>
+        </center>
+        <axis>
+            <x>-1</x><y>0</y><z>0</z>
+        </axis>
+ 
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>engines/engine[1]/beta-range-nut-r</property>
+                <factor>0.1</factor>
+                <min>0</min>
+                <max>1.0</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+	<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>beta-range-r</tooltip-id>
+                <label>Beta Range Right: %0.1f</label>
+                <property>engines/engine[1]/beta-range-nut-r</property>
             </binding>
         </hovered>
     </animation>
