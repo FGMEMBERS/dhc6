@@ -1,11 +1,12 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!--Livery by Robert Maheu   www.flightgearcanada.ca  -->
 
 <PropertyList>
 <sim>
     <model>
         <livery>
-            <name type="string">Armé de l'Air</name>
+            <name type="string">ArmÃ© de l'Air</name>
             <texture>Liveries/F-RACD.png</texture>
         </livery>
         <floats>
