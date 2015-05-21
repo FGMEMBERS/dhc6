@@ -274,6 +274,10 @@ Jan 2008 Syd Adams
         <autopilot>
             <path>Aircraft/dhc6/systems/autopilot.xml</path>
         </autopilot>
+        <!--ALS Landing Lights-->
+        <property-rule n="101">
+            <path>Aircraft/dhc6/systems/als-lights.xml</path>
+        </property-rule>
     </systems>
 
         <instrumentation>
@@ -460,6 +464,13 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
             </menu>
         </default>
     </menubar>
+
+    <rendering>
+        <als-secondary-lights>
+            <landing-light1-offset-deg type="float">-5</landing-light1-offset-deg>
+            <landing-light2-offset-deg type="float">5</landing-light2-offset-deg>
+        </als-secondary-lights>
+    </rendering>
 
 </sim>
 

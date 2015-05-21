@@ -38,6 +38,8 @@
       <object-name>autofeather.sel.lit</object-name>
       <object-name>beta-range-nut-l</object-name>
       <object-name>beta-range-nut-r</object-name>
+      <object-name>thrust_reverse_l.lit</object-name>
+      <object-name>thrust_reverse_r.lit</object-name>
     </effect> 
 
 
@@ -706,6 +708,79 @@
 	</emission>
      </animation>
      
+     <!--Thrust reverse lights-->
+     <animation>
+        <type>select</type>
+        <object-name>thrust_reverse_l.lit</object-name>
+        <condition>
+            <and>
+                <property>controls/engines/engine[0]/reverser</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>thrust_reverse_l.lit</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/engines/engine[0]/reverser</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
+        </condition>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>thrust_reverse_r.lit</object-name>
+        <condition>
+            <and>
+                <property>controls/engines/engine[1]/reverser</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>thrust_reverse_r.lit</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/engines/engine[1]/reverser</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
+        </condition>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
+    </animation>
+
     <animation>
         <type>translate</type>
         <object-name>RHpedal</object-name>
