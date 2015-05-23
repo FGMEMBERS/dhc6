@@ -6,7 +6,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Armé de l'Air</name>
+            <name type="string">Armée de l'Air</name>
             <texture>Liveries/F-RACD.png</texture>
         </livery>
         <floats>
