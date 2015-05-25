@@ -37,6 +37,7 @@
 </pid-controller>
 
 <!-- Heading Bug Hold -->
+
 <pi-simple-controller>
   <name>Heading Bug Hold (DG based) Stage 1</name>
   <debug>false</debug>
@@ -54,7 +55,7 @@
       <property>autopilot/internal/target-roll-deg</property>
   </output>
   <config>
-    <Kp>-0.5</Kp>
+    <Kp>-1.5</Kp>
     <Ki>0.0</Ki>
     <u_min>-27.0</u_min>
     <u_max>27.0</u_max>
@@ -79,18 +80,19 @@
     <prop>controls/flight/aileron</prop>
   </output>
   <config>
-    <Kp>10</Kp>
+    <Kp>0.5</Kp>
     <beta>1.0</beta>
-    <alpha>0.0000000000001</alpha>
+    <alpha>0.1</alpha>
     <gamma>0.0</gamma>
-    <Ti>1.0</Ti>
-    <Td>0.000000000000001</Td>
-    <u_min>-0.5</u_min>
-    <u_max>0.5</u_max>
+    <Ti>10.0</Ti>
+    <Td>0.01</Td>
+    <u_min>-1.0</u_min>
+    <u_max>1.0</u_max>
   </config>
 </pid-controller>
 
 <!-- Nav1 hold. -->
+
 <pi-simple-controller>
   <name>Nav1 Hold Stage 1</name>
   <debug>false</debug>
@@ -102,19 +104,19 @@
     <prop>autopilot/internal/nav1-heading-error-deg</prop>
   </input>
   <reference>
-    <value>0.0</value>
+    <value>0</value>
   </reference>
   <output>
-      <property>autopilot/internal/target-roll-deg</property>
+    <prop>autopilot/internal/target-roll-deg</prop>
   </output>
   <config>
-    <Kp>-0.5</Kp>
+    <Kp>-1.5</Kp>
     <Ki>0.0</Ki>
-    <u_min>-27.0</u_min>
-    <u_max>27.0</u_max>
+    <u_min>-30.0</u_min>
+    <u_max>30.0</u_max>
   </config>
 </pi-simple-controller>
- 
+
 <pid-controller>
   <name>Nav1 Hold Stage 2</name>
   <debug>false</debug>
@@ -133,14 +135,14 @@
     <prop>controls/flight/aileron</prop>
   </output>
   <config>
-     <Kp>10</Kp>
+     <Kp>0.5</Kp>
     <beta>1.0</beta>
-    <alpha>0.00000001</alpha>
+    <alpha>0.1</alpha>
     <gamma>0.0</gamma>
-    <Ti>1.0</Ti>
-    <Td>0.00000001</Td>
-    <u_min>-0.5</u_min>
-    <u_max>0.5</u_max>
+    <Ti>10.0</Ti>
+    <Td>0.01</Td>
+    <u_min>-1.0</u_min>
+    <u_max>1.0</u_max>
   </config>
 </pid-controller>
 
@@ -263,8 +265,8 @@
       <gamma>0.0</gamma>
       <Ti>10.0</Ti>
       <Td>0.000001</Td>
-      <u_min>-0.5</u_min>
-      <u_max>0.5</u_max> 
+      <u_min>-0.25</u_min>
+      <u_max>0.25</u_max> 
     </config>
 </pid-controller>
 
@@ -325,8 +327,8 @@
       <gamma>0.0</gamma>
       <Ti>1.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.5</u_min>
-      <u_max>0.5</u_max> 
+      <u_min>-0.25</u_min>
+      <u_max>0.25</u_max> 
     </config>
 </pid-controller>
 
@@ -354,88 +356,61 @@
       <prop>controls/flight/elevator-trim</prop>
     </output>
     <config>
-       <Kp>-0.01</Kp>
+       <Kp>-0.02</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
       <Ti>5.0</Ti>
       <Td>0.00001</Td>
-      <u_min>-0.5</u_min>
-      <u_max>0.5</u_max> 
+      <u_min>-0.25</u_min>
+      <u_max>0.25</u_max> 
     </config>
   </pid-controller>
-
 
 <!--
 ==============
 Speed Modes
 ==============
 -->
+<!-- Simple Auto throttle -->
 
-<pi-simple-controller>
-  <name>Pitch for speed Stage 1</name>
-  <debug>false</debug>
-  <enable>
-        <property>controls/autopilot/settings/iasflag</property>
-  </enable>
-  <input>
-    <prop>velocities/airspeed-kt</prop>
-  </input>
-  <reference>
-    <prop>autopilot/settings/target-speed-kt</prop>
-  </reference>
-  <output>
-      <property>autopilot/internal/target-pitch-deg</property>
-  </output>
-  <config>
-    <Kp>-5</Kp>
-    <Ki>0.0</Ki>
-    <Ti>10.0</Ti>
-    <Td>0.0000001</Td>
-    <u_min>-20</u_min>
-    <u_max>30</u_max>
-  </config>
-</pi-simple-controller>
-
-<pi-simple-controller>
-        <name>flc</name>
-        <debug>false</debug>
-        <enable>
-          <property>controls/autopilot/settings/iasflag</property>
-        </enable>
-        <input>
-	  <prop>orientation/pitch-deg</prop>
-        </input>
-	<reference>
-	  <prop>autopilot/internal/target-pitch-deg</prop>
-	</reference>
-	<output>
-          <prop>controls/flight/elevator</prop>
-        </output>
-	<output>
-          <prop>controls/flight/elevator-trim</prop>
-        </output>
-         <config>
-      <Kp>-0.01</Kp>      <!-- proportional gain -->
-      <beta>1.0</beta>    <!-- input value weighing factor -->
-      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>-0.5</u_min>
-      <u_max>0.5</u_max>
+<pid-controller>
+<name>Auto Throttle</name>
+<debug>false</debug>
+<enable>
+<prop>autopilot/locks/speed</prop>
+<value>speed-with-throttle</value>
+</enable>
+<input>
+<prop>velocities/airspeed-kt</prop>
+</input>
+<reference>
+<prop>autopilot/settings/target-speed-kt</prop>
+</reference>
+    <output>
+      <prop>/controls/engines/engine[0]/throttle</prop>
+      <prop>/controls/engines/engine[1]/throttle</prop>
+    </output>
+    <config>
+       <Kp>0.1</Kp>
+      <beta>1.0</beta>
+      <alpha>0.1</alpha>
+      <gamma>0.0</gamma>
+      <Ti>10.0</Ti>
+      <Td>0.00001</Td>
+      <u_min>0</u_min>
+      <u_max>1</u_max> 
     </config>
-</pi-simple-controller>
+</pid-controller>
 
-    
 <!-- Yaw Damper -->
 
    <pid-controller>
      <name>yaw damper</name>
      <debug>false</debug>
      <enable>
-       <prop>controls/autopilot/settings/hdgflag</prop>
+      <prop>controls/flight/yaw-damper</prop>
+      <value type="bool">true</value>
      </enable>
      <input>
        <prop>instrumentation/slip-skid-ball/indicated-slip-skid</prop>

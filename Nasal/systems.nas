@@ -33,26 +33,23 @@ props.globals.initNode("controls/switches/dme-gps-slave", 0);
 ###################################
 
 var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/engine[1]/generator",1);
 setprop("controls/electric/avionics-switch",1);
 setprop("controls/electric/battery-switch",1);
 setprop("controls/electric/power-source",1);
 setprop("controls/electric/inverter-switch",1);
-setprop("controls/electric/ammeter-switch",0);
 setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/instruments-norm",0.8);
-setprop("controls/lighting/cabin-lights",1);
+setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
+setprop("controls/lighting/strobe",1);
 setprop("controls/electric/aft-boost-pump",1);
 setprop("controls/electric/fwd-boost-pump",1);
 setprop("controls/engines/engine[0]/cutoff",0);
 setprop("controls/engines/engine[1]/cutoff",0);
-setprop("controls/engines/engine[0]/intake-deflector",1);
-setprop("controls/engines/engine[1]/intake-deflector",1);
 setprop("controls/engines/internal-engine-starter",1);
-setprop("controls/engines/engine[0]/throttle",0);
-setprop("controls/engines/engine[1]/throttle",0);
-setprop("controls/anti-ice/pitot-heat",1);
-setprop("controls/anti-ice/prop-heat",1);
+
 
 var check_loop1 = func {
 
@@ -64,7 +61,7 @@ var check_loop1 = func {
     if (getprop("engines/engine[0]/n2") > 12.0) {
         setprop("controls/engines/engine[0]/condition",1);
         setprop("controls/engines/engine[0]/mixture",1);
-        
+        setprop("controls/engines/engine[0]/propeller-pitch",1);
     }
 
     if (getprop("engines/engine[0]/running") == 1 and getprop("engines/engine[1]/running") == 0) {
@@ -73,24 +70,12 @@ var check_loop1 = func {
     if (getprop("engines/engine[1]/n2") > 12.0) {
         setprop("controls/engines/engine[1]/condition",1);
         setprop("controls/engines/engine[1]/mixture",1);
-        
+        setprop("controls/engines/engine[1]/propeller-pitch",1);
     }
     if (getprop("engines/engine[0]/running") == 1 and getprop("engines/engine[1]/running") == 1) {
         setprop("controls/engines/internal-engine-starter",0);
-        setprop("controls/electric/ammeter-switch",1);
-        setprop("controls/engines/engine[0]/propeller-pitch",1);
-        setprop("controls/engines/engine[1]/propeller-pitch",1);
-		setprop("controls/lighting/no-smoking",1);
-		setprop("controls/lighting/seat-belt",1);
-		setprop("controls/electric/engine[0]/generator",1);
-		setprop("controls/electric/engine[1]/generator",1);
-		setprop("controls/lighting/landing-light[0]",1);
-		setprop("controls/lighting/landing-light[1]",1);
-		setprop("controls/lighting/nav-lights",1);
-		setprop("controls/lighting/strobe",1);
-		setprop("controls/engines/auto-feather",1);
     }
-    settimer(check_loop1, 1);
+    settimer(check_loop1, 0.3);
     }
 }
 check_loop1();
@@ -104,12 +89,10 @@ setprop("controls/electric/avionics-switch",0);
 setprop("controls/electric/battery-switch",0);
 setprop("controls/electric/inverter-switch",0);
 setprop("controls/lighting/instrument-lights",0);
-setprop("controls/lighting/instruments-norm",0);
+setprop("controls/lighting/instruments-norm",0.8);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
 setprop("controls/lighting/strobe",0);
-setprop("controls/engines/engine[0]/throttle",0);
-setprop("controls/engines/engine[1]/throttle",0);
 setprop("controls/engines/engine[0]/mixture",0);
 setprop("controls/engines/engine[1]/mixture",0);
 setprop("controls/engines/engine[0]/propeller-pitch",0);
@@ -125,14 +108,6 @@ setprop("engines/engine[1]/running",0);
 setprop("controls/electric/aft-boost-pump",0);
 setprop("controls/electric/fwd-boost-pump",0);
 setprop("controls/electric/power-source",0);
-setprop("controls/engines/internal-engine-starter",0);
-setprop("controls/lighting/landing-light[0]",0);
-setprop("controls/lighting/landing-light[1]",0);
-setprop("controls/flight/flaps",0);
-setprop("controls/gear/brake-parking",1);
-setprop("controls/engines/engine[0]/intake-deflector",0);
-setprop("controls/engines/engine[1]/intake-deflector",0);
-setprop("controls/lighting/cabin-lights",0);
 }
 
 

@@ -109,13 +109,10 @@
     <type>select</type>
     <object-name>light-volume</object-name>
     <condition>
-      <and>
-        <greater-than>
-          <property>sim/multiplay/generic/float[4]</property>
-          <value>9</value>
-        </greater-than>
-        <property>/sim/rendering/rembrandt/enabled</property>
-      </and>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+        <value>9</value>
+      </greater-than>
     </condition>
   </animation>
 

@@ -5,7 +5,7 @@
     <model>
         <livery>
           <name type="string">Blue2</name>
-          <texture>paint2-R.png</texture>
+          <texture>paint2.png</texture>
         </livery>
         <floats>
           <texture>floats.png</texture>
