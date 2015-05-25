@@ -10,8 +10,8 @@ props.globals.initNode("/engines/engine[1]/serviceable", 1);
 props.globals.initNode("controls/anti-ice/pitot-heat",0);
 #props.globals.initNode("instrumentation/airspeed-indicator/indicated-speed-kt",0);
 props.globals.initNode("controls/anti-ice/prop-heat",0);
-props.globals.initNode("harzards/icing/pitot",0);
-props.globals.initNode("harzards/icing/propeller",0);
+props.globals.initNode("hazards/icing/pitot",0);
+props.globals.initNode("hazards/icing/propeller",0);
 
 var pitot_icing_time = 0;
 var pitot_no_icing_time = 0;
@@ -68,9 +68,9 @@ var pitot_fail = func {
 
     ## Set a mark ##
     if ((oat <= 0 and oat <= dew_point) and pitot_heat != 1) {
-        setprop("harzards/icing/pitot",1);
+        setprop("hazards/icing/pitot",1);
     } else {
-        setprop("harzards/icing/pitot",0);
+        setprop("hazards/icing/pitot",0);
     }
             ####### Set custom timer #####
     if ((oat <= 0 and oat <= dew_point) and pitot_heat != 1) {
@@ -128,9 +128,9 @@ var prop_icing = func {
     # Set a mark #
 
     if (oat <= 0 and oat <= dew_point and prop_heat != 1) {
-        setprop("harzards/icing/propeller",1);
+        setprop("hazards/icing/propeller",1);
     } else {
-        setprop("harzards/icing/propeller",0);
+        setprop("hazards/icing/propeller",0);
     }
 
     if (oat <= 0 and oat <= dew_point and prop_heat != 1) {
@@ -177,8 +177,8 @@ var prop_icing = func {
 }
 
 var apDisable = func {
-    var pitot_icing = getprop("harzards/icing/pitot");
-    var prop_icing = getprop("harzards/icing/propeller");
+    var pitot_icing = getprop("hazards/icing/pitot");
+    var prop_icing = getprop("hazards/icing/propeller");
     if (pitot_icing == 1 or prop_icing == 1) {
         setprop("controls/autopilot/settings/apflag", 0);
         setprop("controls/autopilot/settings/altflag", 0);

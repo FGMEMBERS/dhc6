@@ -21,11 +21,11 @@
  <!-- AP-Onoff -->
  <animation>	
     <type>pick</type>
-    <object-name>AP-onoff</object-name>      
+    <object-name>AP-onoff</object-name>
     <action>
       <button>0</button>
       <repeatable>false</repeatable> 
-      <binding>      	  		
+      <binding>
 	<command>property-toggle</command>
 	<property>controls/autopilot/settings/apflag</property>
 	<value type="bool">true</value>
@@ -93,7 +93,7 @@
   <type>select</type>
   <object-name>AP-ONOFF</object-name> 
   <condition> 
-     <property>controls/autopilot/settings/apflag</property>
+    <property>controls/autopilot/settings/apflag</property>
    </condition>
    
 </animation>
@@ -113,11 +113,14 @@
 	  <property>controls/autopilot/settings/altflag</property>
 	  <value type="bool">true</value>
 	</binding>
-             <binding>
+        <binding>
+	  <condition>
+	    <not><property>controls/autopilot/settings/iasflag</property></not>
+	  </condition>
                <command>property-assign</command>
 	    <property>autopilot/locks/altitude</property>
 	    <value type="string"></value>
-             </binding>
+            </binding>
              <binding>
                <command>property-assign</command>
 	    <property>controls/autopilot/settings/altsetflag</property>
@@ -133,7 +136,6 @@
 	    <property>controls/autopilot/settings/gssetflag</property>
 	    <value type="bool">false</value>
              </binding>
-             
              <!-- sp DHC6 -->
 	  	<binding>
 			<command>property-assign</command>
@@ -179,8 +181,11 @@
 	   <property>controls/autopilot/settings/gssetflag</property>
 	   <value type="bool">false</value>
 	</binding>
-
-	
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/iasflag</property>
+	   <value type="bool">false</value>
+	</binding>
 	<binding>
 	<condition>
       	   <property>controls/autopilot/settings/altflag</property>
@@ -227,14 +232,18 @@
 	   <property>controls/autopilot/settings/gssetflag</property>
 	   <value type="bool">false</value>
 	</binding>
-	
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/iasflag</property>
+	   <value type="bool">false</value>
+	</binding>
 	<binding>
 	<condition>
-      	   <property>controls/autopilot/settings/altflag</property>
+      	  <property>controls/autopilot/settings/altflag</property>
       	</condition>   	    
-	    <command>property-assign</command>
-	    <property>autopilot/locks/altitude</property>
-	    <value type="string">vertical-speed-hold</value>
+	<command>property-assign</command>
+	<property>autopilot/locks/altitude</property>
+	<value type="string">vertical-speed-hold</value>
 	</binding>
    </action>    
 </animation>
@@ -269,7 +278,11 @@
 	   <property>controls/autopilot/settings/altsetflag</property>
 	   <value type="bool">false</value>
 	</binding>
-	
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/iasflag</property>
+	   <value type="bool">false</value>
+	</binding>	
 	<binding>	
 	   <command>property-assign</command>
 	   <property>controls/autopilot/settings/vssetflag</property>
@@ -305,9 +318,9 @@
     <object-name>AP-iasoff</object-name>      
     <action>
       <button>0</button>
-      <repeatable>false</repeatable> 
+      <repeatable>false</repeatable>
       	<binding>
-      	<condition>
+      	  <condition>
       	<and>
       	   <property>controls/autopilot/settings/apflag</property>
       	   <greater-than>
@@ -320,21 +333,24 @@
 	  <property>controls/autopilot/settings/iasflag</property>
 	  <value type="bool">true</value>
 	</binding>
-	 <binding>
-	 <condition>
-      	<greater-than>
-      	<property>position/altitude-agl-ft</property>
-      	<value type="double">100</value>
-      	</greater-than>
-      	</condition>      
-               <command>property-cycle</command>
-	    <property>autopilot/locks/speed</property>	     
-	    <value type="string">speed-with-throttle</value>
-	    <value type="string"></value>
-             </binding>
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/altsetflag</property>
+	   <value type="bool">false</value>
+	</binding>
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/gssetflag</property>
+	   <value type="bool">false</value>
+	</binding>	
+	<binding>	
+	   <command>property-assign</command>
+	   <property>controls/autopilot/settings/vssetflag</property>
+	   <value type="bool">false</value>
+	</binding>
             <!-- sp DHC6 -->
 	  	<binding>
-			<command>property-assign</command>
+			<command>property-cycle</command>
 			<property>/autopilot/locks/passive-mode/</property>
 			<value type="bool">false</value>
 		</binding>
