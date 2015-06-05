@@ -11,7 +11,6 @@ Dec 2013 http://equipe-flightgear.forumactif.com/t1195-dhc-6-300-twin-otter#2194
 <PropertyList include="dhc6-base.xml">
     <sim>
         <description>de Havilland Twin Otter (wheels)</description>
-        <status>Alpha</status>
         <author>Syd Adams, Christian Thiriot (PATTEN), Clément de l'Hamaide, (f-jjth), PAF Team, Zdenal, Erik, abassign, primtala2, lanbo64, Jonathan Schellhase (dg-505), CaptB... </author>
         <flight-model>yasim</flight-model>
         <aero>dhc6</aero>
