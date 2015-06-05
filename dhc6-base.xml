@@ -16,9 +16,9 @@ Jan 2008 Syd Adams
         <remove-doors type="bool">0</remove-doors>
     </model>
 
-	<status>early production</status>
-		<rating>
- 		<FDM type="int">3</FDM>
+	<status>production</status>
+	<rating>
+ 		<FDM type="int">4</FDM>
 		<systems type="int">4</systems>
 		<cockpit type="int">4</cockpit>
 		<model type="int">4</model>
