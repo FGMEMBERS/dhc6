@@ -40,6 +40,7 @@
       <object-name>beta-range-nut-r</object-name>
       <object-name>thrust_reverse_l.lit</object-name>
       <object-name>thrust_reverse_r.lit</object-name>
+      <object-name>windshield-heat</object-name>
     </effect> 
 
 
@@ -2045,7 +2046,7 @@
                 <property>controls/lighting/seat-belt</property>
             </binding>
         </hovered>
-    </animation>  
+    </animation>
 
 <!-- Cones Rembrandt -->
 
@@ -2990,7 +2991,34 @@
                 <property>engines/engine[1]/beta-range-nut-r</property>
             </binding>
         </hovered>
+      </animation>
+
+      <animation>
+        <type>pick</type>
+        <object-name>windshield-heat</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/anti-ice/window-heat</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+     <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>windshield-heat-switch</tooltip-id>
+                <label>Windshield Heat: %s</label>
+                <mapping>on-off</mapping>
+                <property>/controls/anti-ice/window-heat</property>
+            </binding>
+        </hovered>
     </animation>
+
 
 <!--                   animate    fwd                     -->
 
@@ -3113,7 +3141,7 @@
       </axis>
     </animation>
 
-        <animation>
+    <animation>
       <type>rotate</type>
       <object-name>AutoFthr.toggle</object-name>
       <property>controls/engines/auto-feather</property>
@@ -3126,6 +3154,23 @@
       <axis>
         <x>0</x>
         <y>-1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+
+    <animation>
+      <type>rotate</type>
+      <object-name>windshield-heat</object-name>
+      <property>/controls/anti-ice/window-heat</property>
+      <factor>35.0</factor>
+      <center>
+        <x-m>-3.6148</x-m>
+        <y-m>0.274</y-m>
+        <z-m>0.904</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
         <z>0</z>
       </axis>
     </animation>

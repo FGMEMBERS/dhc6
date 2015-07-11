@@ -256,6 +256,24 @@
     </condition>
     </effect>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/dhc6-interior-glass-reflection-side</inherits-from>
+      <object-name>LHdoor.glass_interior</object-name>
+      <object-name>RHdoor.glass_interior</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/dhc6-interior-glass-reflection-front</inherits-from>
+      <object-name>glass_interior</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Effects/glass</inherits-from>
+      <object-name>cabin-glass_interior</object-name>
+      <object-name>RRdoor.glass_interior</object-name>
+      <object-name>Lrdoor.glass_interior</object-name>
+    </effect>
+
       <animation>
         <type>shader</type>
         <shader>chrome</shader>
@@ -1124,6 +1142,7 @@
         <type>rotate</type>
         <object-name>LFdoor</object-name>
         <object-name>LHdoor.glass</object-name>
+        <object-name>LHdoor.glass_interior</object-name>
         <object-name>LHdoor.inner</object-name>
         <property>controls/doors/LF-door/position-norm</property>
         <factor>120</factor>
@@ -1143,6 +1162,7 @@
         <type>rotate</type>
         <object-name>RFdoor</object-name>
         <object-name>RHdoor.glass</object-name>
+        <object-name>RHdoor.glass_interior</object-name>
         <object-name>RHdoor.inner</object-name>
         <property>controls/doors/RF-door/position-norm</property>
         <factor>-120</factor>
@@ -1162,6 +1182,7 @@
         <type>rotate</type>
         <object-name>RRdoor</object-name>
         <object-name>RRdoor.glass</object-name>
+        <object-name>RRdoor.glass_interior</object-name>
         <object-name>RRdoor.inner</object-name>
         <property>controls/doors/RR-door/position-norm</property>
         <factor>-100</factor>
@@ -1200,6 +1221,7 @@
         <object-name>Lrdoor-rear</object-name>
         <object-name>Lrdoor-rear.001</object-name>
         <object-name>Lrdoor.glass</object-name>
+        <object-name>Lrdoor.glass_interior</object-name>
         <property>controls/doors/LR-door-R/position-norm</property>
         <factor>-130</factor>
         <center>
