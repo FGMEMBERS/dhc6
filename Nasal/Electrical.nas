@@ -198,6 +198,8 @@ init_switches = func() {
     append(output_list,"aft-boost-pump");
     append(switch_list,"controls/electric/fwd-boost-pump");
     append(output_list,"fwd-boost-pump");
+    append(switch_list,"controls/anti-ice/window-heat");
+    append(output_list,"window-heat");
 
 
     append(serv_list,"instrumentation/adf/serviceable");
