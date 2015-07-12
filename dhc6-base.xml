@@ -467,7 +467,6 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
 
     <rendering>
         <als-secondary-lights>
-            <landing-light1-offset-deg type="float">-5</landing-light1-offset-deg>
             <landing-light2-offset-deg type="float">5</landing-light2-offset-deg>
         </als-secondary-lights>
     </rendering>
@@ -740,6 +739,7 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
 	    <file>Aircraft/dhc6/Nasal/auto-feather.nas</file>
 	    <file>Aircraft/dhc6/Nasal/spool-downgrader.nas</file>
 	    <file>Aircraft/dhc6/Nasal/weather-effects.nas</file>
+        <file>Aircraft/dhc6/Nasal/als-taxi-lights.nas</file>
         </dhc6>
     <dialogs><file>Aircraft/dhc6/Nasal/dialogs.nas</file></dialogs>
         <m877>
