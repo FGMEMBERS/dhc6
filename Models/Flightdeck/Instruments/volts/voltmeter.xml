@@ -18,6 +18,24 @@
     </emission>
 </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>volt.face</object-name>
+      <object-name>voltbezel</object-name>
+      <object-name>voltneedle</object-name>
+      <object-name>voltneedle.001</object-name>
+      <object-name>voltneedle.002</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>volt.face</object-name>
+      <object-name>voltbezel</object-name>
+      <object-name>voltneedle</object-name>
+      <object-name>voltneedle.001</object-name>
+      <object-name>voltneedle.002</object-name>
+    </effect>
+
 <animation>
     <type>rotate</type>
     <object-name>voltneedle</object-name>
