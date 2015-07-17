@@ -59,6 +59,84 @@
           <object-name>vitre</object-name>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Bezel</object-name>
+      <object-name>DME.Face</object-name>
+      <object-name>Dme.1</object-name>
+      <object-name>Dme.1.1</object-name>
+      <object-name>Dme.1.2</object-name>
+      <object-name>Dme.1.3</object-name>
+      <object-name>Dme.10</object-name>
+      <object-name>Dme.10.1</object-name>
+      <object-name>Dme.10.2</object-name>
+      <object-name>Dme.10.3</object-name>
+      <object-name>Dme.100</object-name>
+      <object-name>Dme.100.1</object-name>
+      <object-name>Dme.100.2</object-name>
+      <object-name>Dme.100.3</object-name>
+      <object-name>Dme.1000</object-name>
+      <object-name>Dme.1000.1</object-name>
+      <object-name>Dme.1000.2</object-name>
+      <object-name>Dme.1000.3</object-name>
+      <object-name>Dot</object-name>
+      <object-name>NoDME</object-name>
+      <object-name>Tacan.1</object-name>
+      <object-name>Tacan.10</object-name>
+      <object-name>Tacan.100</object-name>
+      <object-name>Tacan.1000</object-name>
+      <object-name>backlight</object-name>
+      <object-name>shadow</object-name>
+      <object-name>sockle</object-name>
+      <object-name>sockle.001</object-name>
+      <object-name>switch</object-name>
+      <object-name>switch.001</object-name>
+      <object-name>switchshadow</object-name>
+      <object-name>switchshadow.001</object-name>
+      <object-name>switchsup</object-name>
+      <object-name>switchsup.001</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>Bezel</object-name>
+      <object-name>DME.Face</object-name>
+      <object-name>Dme.1</object-name>
+      <object-name>Dme.1.1</object-name>
+      <object-name>Dme.1.2</object-name>
+      <object-name>Dme.1.3</object-name>
+      <object-name>Dme.10</object-name>
+      <object-name>Dme.10.1</object-name>
+      <object-name>Dme.10.2</object-name>
+      <object-name>Dme.10.3</object-name>
+      <object-name>Dme.100</object-name>
+      <object-name>Dme.100.1</object-name>
+      <object-name>Dme.100.2</object-name>
+      <object-name>Dme.100.3</object-name>
+      <object-name>Dme.1000</object-name>
+      <object-name>Dme.1000.1</object-name>
+      <object-name>Dme.1000.2</object-name>
+      <object-name>Dme.1000.3</object-name>
+      <object-name>Dot</object-name>
+      <object-name>NoDME</object-name>
+      <object-name>Tacan.1</object-name>
+      <object-name>Tacan.10</object-name>
+      <object-name>Tacan.100</object-name>
+      <object-name>Tacan.1000</object-name>
+      <object-name>backlight</object-name>
+      <object-name>shadow</object-name>
+      <object-name>sockle</object-name>
+      <object-name>sockle.001</object-name>
+      <object-name>switch</object-name>
+      <object-name>switch.001</object-name>
+      <object-name>switchshadow</object-name>
+      <object-name>switchshadow.001</object-name>
+      <object-name>switchsup</object-name>
+      <object-name>switchsup.001</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
     <effect>
        <inherits-from>Effects/model-transparent</inherits-from>
           <object-name>vitre</object-name>

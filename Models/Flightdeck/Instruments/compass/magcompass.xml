@@ -46,6 +46,20 @@
     </emission>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Compass</object-name>
+      <object-name>Compass.ball</object-name>
+      <object-name>backlight</object-name>
+    </effect>
+
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>Compass</object-name>
+      <object-name>Compass.ball</object-name>
+      <object-name>backlight</object-name>
+    </effect>
+
       <!-- TEXT OSG -->
   <text>
     <name>textosg</name>

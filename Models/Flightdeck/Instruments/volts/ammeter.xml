@@ -18,6 +18,24 @@
     </emission>
 </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>amp.face</object-name>
+      <object-name>ampbezel</object-name>
+      <object-name>ampneedle</object-name>
+      <object-name>gen1needle</object-name>
+      <object-name>gen2needle</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>amp.face</object-name>
+      <object-name>ampbezel</object-name>
+      <object-name>ampneedle</object-name>
+      <object-name>gen1needle</object-name>
+      <object-name>gen2needle</object-name>
+    </effect>
+
 <animation>
     <type>rotate</type>
     <object-name>ampneedle</object-name>

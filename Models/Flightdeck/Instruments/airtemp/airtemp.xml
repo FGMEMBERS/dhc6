@@ -23,6 +23,24 @@
                      <object-name>vitre</object-name>
         </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Airtemp.face</object-name>
+      <object-name>Airtemp.needle</object-name>
+      <object-name>backlight</object-name>
+      <object-name>mount</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>Airtemp.face</object-name>
+      <object-name>Airtemp.needle</object-name>
+      <object-name>backlight</object-name>
+      <object-name>mount</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
    <animation>
             <type>pick</type>
                 <object-name>Airtemp.face</object-name>

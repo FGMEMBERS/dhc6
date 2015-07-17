@@ -26,6 +26,24 @@ Syd Adams
           <object-name>vitre</object-name>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>T5bezel</object-name>
+      <object-name>T5face</object-name>
+      <object-name>T5needle</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>T5bezel</object-name>
+      <object-name>T5face</object-name>
+      <object-name>T5needle</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
    <animation>
             <type>pick</type>
                 <object-name>T5face</object-name>

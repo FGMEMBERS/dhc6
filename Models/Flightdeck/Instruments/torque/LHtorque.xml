@@ -27,6 +27,26 @@ Syd Adams
           <object-name>vitre</object-name>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>TQbezel</object-name>
+      <object-name>TQface</object-name>
+      <object-name>TQneedle</object-name>
+      <object-name>TQneedle.001</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>TQbezel</object-name>
+      <object-name>TQface</object-name>
+      <object-name>TQneedle</object-name>
+      <object-name>TQneedle.001</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
    <animation>
             <type>pick</type>
         <type>material</type>

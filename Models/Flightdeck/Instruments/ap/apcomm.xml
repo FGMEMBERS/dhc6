@@ -15,7 +15,71 @@
         </emission>
     </animation-->
 
-    
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>ALT-on</object-name>
+      <object-name>ALT-onM</object-name>
+      <object-name>ALT-toggle</object-name>
+      <object-name>AP-ALT</object-name>
+      <object-name>AP-ALT-M</object-name>
+      <object-name>AP-HDG</object-name>
+      <object-name>AP-HDG-M</object-name>
+      <object-name>AP-IAS</object-name>
+      <object-name>AP-IAS-M</object-name>
+      <object-name>AP-ONOFF</object-name>
+      <object-name>AP-altoff</object-name>
+      <object-name>AP-hdgoff</object-name>
+      <object-name>AP-iasoff</object-name>
+      <object-name>AP-onoff</object-name>
+      <object-name>AP-onoff-M</object-name>
+      <object-name>AP-toggle.001</object-name>
+      <object-name>GS-on</object-name>
+      <object-name>GS-onM</object-name>
+      <object-name>GS-toggle</object-name>
+      <object-name>HDG-on</object-name>
+      <object-name>HDG-onM</object-name>
+      <object-name>HDG-toggle</object-name>
+      <object-name>NAV-on</object-name>
+      <object-name>NAV-onM</object-name>
+      <object-name>NAV-toggle</object-name>
+      <object-name>VS-on</object-name>
+      <object-name>VS-onM</object-name>
+      <object-name>VS-toggle</object-name>
+      <object-name>cadre</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>ALT-on</object-name>
+      <object-name>ALT-onM</object-name>
+      <object-name>ALT-toggle</object-name>
+      <object-name>AP-ALT</object-name>
+      <object-name>AP-ALT-M</object-name>
+      <object-name>AP-HDG</object-name>
+      <object-name>AP-HDG-M</object-name>
+      <object-name>AP-IAS</object-name>
+      <object-name>AP-IAS-M</object-name>
+      <object-name>AP-ONOFF</object-name>
+      <object-name>AP-altoff</object-name>
+      <object-name>AP-hdgoff</object-name>
+      <object-name>AP-iasoff</object-name>
+      <object-name>AP-onoff</object-name>
+      <object-name>AP-onoff-M</object-name>
+      <object-name>AP-toggle.001</object-name>
+      <object-name>GS-on</object-name>
+      <object-name>GS-onM</object-name>
+      <object-name>GS-toggle</object-name>
+      <object-name>HDG-on</object-name>
+      <object-name>HDG-onM</object-name>
+      <object-name>HDG-toggle</object-name>
+      <object-name>NAV-on</object-name>
+      <object-name>NAV-onM</object-name>
+      <object-name>NAV-toggle</object-name>
+      <object-name>VS-on</object-name>
+      <object-name>VS-onM</object-name>
+      <object-name>VS-toggle</object-name>
+      <object-name>cadre</object-name>
+    </effect>
     
  <!--******************SWITCHS*********************-->
  <!-- AP-Onoff -->

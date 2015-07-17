@@ -39,6 +39,36 @@
                      <object-name>vitre</object-name>
         </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>backlight</object-name>
+      <object-name>face</object-name>
+      <object-name>inhg</object-name>
+      <object-name>inhg.dn</object-name>
+      <object-name>inhg.up</object-name>
+      <object-name>inhgknob</object-name>
+      <object-name>mount</object-name>
+      <object-name>needle100</object-name>
+      <object-name>needle1000</object-name>
+      <object-name>needle10000</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>backlight</object-name>
+      <object-name>face</object-name>
+      <object-name>inhg</object-name>
+      <object-name>inhg.dn</object-name>
+      <object-name>inhg.up</object-name>
+      <object-name>inhgknob</object-name>
+      <object-name>mount</object-name>
+      <object-name>needle100</object-name>
+      <object-name>needle1000</object-name>
+      <object-name>needle10000</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
     <!--effect>
        <inherits-from>Effects/model-transparent</inherits-from>
          <object-name>vitre</object-name>
