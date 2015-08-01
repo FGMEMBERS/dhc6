@@ -54,7 +54,7 @@
       <object-name>front</object-name>
       <object-name>mount.001</object-name>
       <object-name>robin</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>
@@ -71,7 +71,7 @@
       <object-name>front</object-name>
       <object-name>mount.001</object-name>
       <object-name>robin</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <!--effect>

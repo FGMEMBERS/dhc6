@@ -32,7 +32,7 @@ Syd Adams
       <object-name>FFface</object-name>
       <object-name>FFneedle</object-name>
       <object-name>backlight</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
   <effect>
@@ -41,7 +41,7 @@ Syd Adams
       <object-name>FFface</object-name>
       <object-name>FFneedle</object-name>
       <object-name>backlight</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>

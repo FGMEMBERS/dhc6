@@ -200,12 +200,12 @@
         </offsets>
     </model>
 
-    <effect>
+<!--    <effect>
       <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
       <object-name>glass_interior</object-name>
       <object-name>LHdoor.glass_interior</object-name>
       <object-name>RHdoor.glass_interior</object-name>
-    </effect>
+    </effect>-->
 
 <effect>
       <inherits-from>Aircraft/dhc6/Models/Effects/skin-reflect</inherits-from>

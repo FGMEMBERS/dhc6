@@ -59,7 +59,7 @@ Syd Adams
       <object-name>KI206card</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>
@@ -77,7 +77,7 @@ Syd Adams
       <object-name>KI206card</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <!--effect>

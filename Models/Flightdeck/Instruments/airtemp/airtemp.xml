@@ -29,7 +29,7 @@
       <object-name>Airtemp.needle</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>
@@ -38,7 +38,7 @@
       <object-name>Airtemp.needle</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
    <animation>

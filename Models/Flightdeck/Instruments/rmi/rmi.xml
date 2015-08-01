@@ -49,7 +49,7 @@
       <object-name>knob</object-name>
       <object-name>mount</object-name>
       <object-name>switchbox</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
       <object-name>vitre.001</object-name>
     </effect>
 
@@ -72,7 +72,7 @@
       <object-name>knob</object-name>
       <object-name>mount</object-name>
       <object-name>switchbox</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
       <object-name>vitre.001</object-name>
     </effect>
 

@@ -52,7 +52,7 @@
       <object-name>reticl</object-name>
       <object-name>sphere</object-name>
       <object-name>visses</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>
@@ -73,7 +73,7 @@
       <object-name>reticl</object-name>
       <object-name>sphere</object-name>
       <object-name>visses</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <!--effect>

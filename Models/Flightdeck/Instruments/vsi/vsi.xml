@@ -39,7 +39,7 @@
       <object-name>PointerTip</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <effect>
@@ -49,7 +49,7 @@
       <object-name>PointerTip</object-name>
       <object-name>backlight</object-name>
       <object-name>mount</object-name>
-      <object-name>vitre</object-name>
+      <!--object-name>vitre</object-name-->
     </effect>
 
     <!--effect>

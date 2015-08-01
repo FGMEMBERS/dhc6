@@ -744,22 +744,23 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
 
     <nasal>
         <dhc6>
-            <file>Aircraft/dhc6/Nasal/convert.nas</file>
-            <file>Aircraft/dhc6/Nasal/Electrical.nas</file>
-            <file>Aircraft/dhc6/Nasal/systems.nas</file>
-	        <file>Aircraft/dhc6/Nasal/printGforce.nas</file>
- 	        <file>Aircraft/dhc6/Nasal/t5.nas</file>
-	        <file>Aircraft/dhc6/Nasal/torque.nas</file>
-	        <file>Aircraft/dhc6/Nasal/failures.nas</file>
-	        <file>Aircraft/dhc6/Nasal/direction-gyro.nas</file>
-	        <file>Aircraft/dhc6/Nasal/earth-rate.nas</file>
-	        <file>Aircraft/dhc6/Nasal/smoothAnimate.nas</file>
-	        <file>Aircraft/dhc6/Nasal/beta-range.nas</file>
-	        <file>Aircraft/dhc6/Nasal/auto-feather.nas</file>
-	        <file>Aircraft/dhc6/Nasal/spool-downgrader.nas</file>
-	        <file>Aircraft/dhc6/Nasal/weather-effects.nas</file>
-            <file>Aircraft/dhc6/Nasal/als-taxi-lights.nas</file>
-            <file>Nasal/flashlight.nas</file>
+          <file>Aircraft/dhc6/Nasal/convert.nas</file>
+          <file>Aircraft/dhc6/Nasal/Electrical.nas</file>
+          <file>Aircraft/dhc6/Nasal/systems.nas</file>
+	  <file>Aircraft/dhc6/Nasal/printGforce.nas</file>
+ 	  <file>Aircraft/dhc6/Nasal/t5.nas</file>
+	  <file>Aircraft/dhc6/Nasal/torque.nas</file>
+	  <file>Aircraft/dhc6/Nasal/failures.nas</file>
+	  <file>Aircraft/dhc6/Nasal/direction-gyro.nas</file>
+	  <file>Aircraft/dhc6/Nasal/earth-rate.nas</file>
+	  <file>Aircraft/dhc6/Nasal/smoothAnimate.nas</file>
+	  <file>Aircraft/dhc6/Nasal/beta-range.nas</file>
+	  <file>Aircraft/dhc6/Nasal/auto-feather.nas</file>
+	  <file>Aircraft/dhc6/Nasal/spool-downgrader.nas</file>
+	  <file>Aircraft/dhc6/Nasal/weather-effects.nas</file>
+	  <file>Aircraft/dhc6/Nasal/als-taxi-lights.nas</file>
+	  <file>Nasal/flashlight.nas</file>
+	  <file>Aircraft/dhc6/Nasal/cabin-light.nas</file>
         </dhc6>
         <dialogs>
             <file>Aircraft/dhc6/Nasal/dialogs.nas</file>

@@ -2,8 +2,43 @@
 
 <PropertyList>
 
-    <path>flightdeck.ac</path>
+  <path>flightdeck.ac</path>
+  
+  <!--lightmap-->
+  <effect>
+    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap1</inherits-from>
 
+    <object-name>Brakelever</object-name>
+    <object-name>Cube.003</object-name>
+    <object-name>Cylinder.001</object-name>
+    <object-name>Cylinder.002</object-name>
+    <object-name>Cylinder.004</object-name>
+    <object-name>Cylinder.005</object-name>
+    <object-name>Flaplever</object-name>
+    <object-name>Fuel.select</object-name>
+    <object-name>Glareshield</object-name>
+    <object-name>Glareshield.001</object-name>
+    <object-name>Indselect.toggle</object-name>
+    <object-name>LFuel.off</object-name>
+    <object-name>LHdoor.inner</object-name>
+    <object-name>LHengFire</object-name>
+    <object-name>LHengFire.001</object-name>
+    <object-name>LHpedal</object-name>
+    <object-name>RFuel.off</object-name>
+    <object-name>RHdoor.inner</object-name>
+    <object-name>RHengFire</object-name>
+    <object-name>RHengFire.001</object-name>
+    <object-name>RHpedal</object-name>
+    <object-name>Yoke</object-name>
+    <object-name>Yoke1</object-name>
+    <object-name>Yoke2</object-name>
+    <object-name>beta-range-nut-l</object-name>
+    <object-name>beta-range-nut-r</object-name>
+    <object-name>flightdeck</object-name>
+    <object-name>panel</object-name>
+    <object-name>panel.005</object-name>
+  </effect>
+  
     <!--interior shadows-->
     <effect>
       <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
