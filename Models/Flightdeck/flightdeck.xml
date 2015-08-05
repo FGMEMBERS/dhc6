@@ -38,6 +38,81 @@
     <object-name>panel</object-name>
     <object-name>panel.005</object-name>
   </effect>
+
+  <effect>
+    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap2</inherits-from>
+
+    <object-name>AftBoostPump.sw</object-name>
+    <object-name>Anticoll.sw</object-name>
+    <object-name>AutoFthr.toggle</object-name>
+    <object-name>BusTie.sw</object-name>
+    <object-name>Cyclinder.003</object-name>
+    <object-name>Fire.text</object-name>
+    <object-name>FwdBoostPump.sw</object-name>
+    <object-name>ign.guard</object-name>
+    <object-name>invtr.sw</object-name>
+    <object-name>L-Llight.sw</object-name>
+    <object-name>L-Llight.sw.001</object-name>
+    <object-name>LGen.sw</object-name>
+    <object-name>LHcondition</object-name>
+    <object-name>LHprop</object-name>
+    <object-name>LHthrottle</object-name>
+    <object-name>Plane.066</object-name>
+    <object-name>Posn.sw</object-name>
+    <object-name>R-Llight.sw</object-name>
+    <object-name>R-Llight.sw.001</object-name>
+    <object-name>RGen.sw</object-name>
+    <object-name>RHcondition</object-name>
+    <object-name>RHprop</object-name>
+    <object-name>RHthrottle</object-name>
+    <object-name>beacon.sw</object-name>
+    <object-name>caution.sw</object-name>
+    <object-name>flaplever</object-name>
+    <object-name>inst_lt.sw</object-name>
+    <object-name>intake-deflector-l</object-name>
+    <object-name>intake-deflector-r</object-name>
+    <object-name>master.sw</object-name>
+    <object-name>pitot-heat</object-name>
+    <object-name>power.sw</object-name>
+    <object-name>propdecide</object-name>
+    <object-name>smoking.sw</object-name>
+    <object-name>spot</object-name>
+    <object-name>starter.sw</object-name>
+    <object-name>stbelt.sw</object-name>
+    <object-name>sw</object-name>
+    <object-name>sw.001</object-name>
+    <object-name>sw.002</object-name>
+    <object-name>sw.003</object-name>
+    <object-name>sw.004</object-name>
+    <object-name>sw.009</object-name>
+    <object-name>sw.010</object-name>
+    <object-name>sw.011</object-name>
+    <object-name>sw.012</object-name>
+    <object-name>sw.015</object-name>
+    <object-name>sw.016</object-name>
+    <object-name>taxi.sw</object-name>
+    <object-name>throttleQ</object-name>
+    <object-name>windshield-heat</object-name>
+    <object-name>wiper.park</object-name>
+    <object-name>wiper.speed</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap3</inherits-from>
+
+    <object-name>Seatframe</object-name>
+    <object-name>Seatframe.001</object-name>
+    <object-name>Seats</object-name>
+    <object-name>Seats.001</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap4</inherits-from>
+
+    <object-name>extincteur</object-name>
+    <object-name>fuse-panel</object-name>
+    <object-name>fuse-panel-2</object-name>
+  </effect>
   
     <!--interior shadows-->
     <effect>
