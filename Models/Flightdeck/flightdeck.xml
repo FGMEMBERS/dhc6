@@ -4,10 +4,9 @@
 
   <path>flightdeck.ac</path>
   
-  <!--lightmap-->
-  <effect>
-    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap1</inherits-from>
-
+  <!--light-->
+  <animation>
+    <type>material</type>
     <object-name>Brakelever</object-name>
     <object-name>Cube.003</object-name>
     <object-name>Cylinder.001</object-name>
@@ -37,11 +36,16 @@
     <object-name>flightdeck</object-name>
     <object-name>panel</object-name>
     <object-name>panel.005</object-name>
-  </effect>
+    <emission>
+      <red>0.381924</red>
+      <green>0.30935844</green>
+      <blue>0.161171928</blue>
+      <factor-prop>/systems/electrical/outputs/cabin-lights-dim-factor</factor-prop>
+    </emission>
+  </animation>
 
-  <effect>
-    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap2</inherits-from>
-
+  <animation>
+    <type>material</type>
     <object-name>AftBoostPump.sw</object-name>
     <object-name>Anticoll.sw</object-name>
     <object-name>AutoFthr.toggle</object-name>
@@ -50,7 +54,7 @@
     <object-name>Fire.text</object-name>
     <object-name>FwdBoostPump.sw</object-name>
     <object-name>ign.guard</object-name>
-    <object-name>invtr.sw</object-name>
+    <object-name>Invtr.sw</object-name>
     <object-name>L-Llight.sw</object-name>
     <object-name>L-Llight.sw.001</object-name>
     <object-name>LGen.sw</object-name>
@@ -74,7 +78,7 @@
     <object-name>master.sw</object-name>
     <object-name>pitot-heat</object-name>
     <object-name>power.sw</object-name>
-    <object-name>propdecide</object-name>
+    <object-name>propdeice</object-name>
     <object-name>smoking.sw</object-name>
     <object-name>spot</object-name>
     <object-name>starter.sw</object-name>
@@ -95,24 +99,40 @@
     <object-name>windshield-heat</object-name>
     <object-name>wiper.park</object-name>
     <object-name>wiper.speed</object-name>
-  </effect>
+    <emission>
+      <red>0.381924</red>
+      <green>0.30935844</green>
+      <blue>0.161171928</blue>
+      <factor-prop>/systems/electrical/outputs/cabin-lights-dim-factor</factor-prop>
+    </emission>
+  </animation>
 
-  <effect>
-    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap3</inherits-from>
-
+  <animation>
+    <type>material</type>
     <object-name>Seatframe</object-name>
     <object-name>Seatframe.001</object-name>
     <object-name>Seats</object-name>
     <object-name>Seats.001</object-name>
-  </effect>
+    <emission>
+      <red>0.381924</red>
+      <green>0.30935844</green>
+      <blue>0.161171928</blue>
+      <factor-prop>/systems/electrical/outputs/cabin-lights-dim-factor</factor-prop>
+    </emission>
+  </animation>
 
-  <effect>
-    <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-lightmap4</inherits-from>
-
+  <animation>
+    <type>material</type>
     <object-name>extincteur</object-name>
     <object-name>fuse-panel</object-name>
     <object-name>fuse-panel-2</object-name>
-  </effect>
+    <emission>
+      <red>0.381924</red>
+      <green>0.30935844</green>
+      <blue>0.161171928</blue>
+      <factor-prop>/systems/electrical/outputs/cabin-lights-dim-factor</factor-prop>
+    </emission>
+  </animation>
   
     <!--interior shadows-->
     <effect>
