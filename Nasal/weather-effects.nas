@@ -1,6 +1,14 @@
+########## Initial Property Avoid Nil ##############
+
+setprop("/systems/electrical/outputs/window-heat", 0.0);
+
 ########## Global Variable Definition #########
 var fog_lvl = 0.0;
 var frost_lvl = 0.0;
+var is_warmer = 0;
+var is_warmer_counter = 1;
+var first_oat = 0;
+var second_oat = 0;
 ###############################################
 
 var rain_effects = func {
@@ -28,20 +36,34 @@ var rain_effects = func {
 
 
 ############ Fog ##########
+
+var isWarmer = func {
+    is_warmer_counter = is_warmer_counter + 1;
+    if (math.fmod(is_warmer_counter, 2) == 0) {
+        first_oat = getprop("/environment/temperature-degc");
+    } else {
+        second_oat = getprop("/environment/temperature-degc");
+        is_warmer = ((second_oat - first_oat) > 0.05);
+    }
+    settimer(isWarmer, 1.0);
+}
+
 var fog_effects = func {
     var window_heat_on = getprop("/systems/electrical/outputs/window-heat");
     var oat = getprop("/environment/temperature-degc");
     var dew_point = getprop("/environment/dewpoint-degc");
+    var relative_humidity = getprop("/environment/relative-humidity");
     
-    if (oat <= dew_point and window_heat_on < 18) {
+    if (is_warmer ==1 and window_heat_on < 18) {
         fog_lvl = fog_lvl + 0.01;
-        if (fog_lvl > (math.abs(dew_point) / 5)) {
-            fog_lvl = math.abs(dew_point) / 5;
+        if (fog_lvl > (relative_humidity / 80)) {
+            fog_lvl = relative_humidity / 80;
         }
         if (fog_lvl > 1) {
             fog_lvl = 1;
         }
-    } else {
+    } 
+    if (window_heat_on >=18 ) {
         fog_lvl = fog_lvl - 0.01;
         if (fog_lvl < 0) {
             fog_lvl = 0;
@@ -53,16 +75,16 @@ var fog_effects = func {
     settimer(fog_effects, 0.1);
 }
 
-
-
 ############ Frost ##########
 var frost_effects = func {
 
     var window_heat_on = getprop("/systems/electrical/outputs/window-heat");
     var oat = getprop("/environment/temperature-degc");
     var dew_point = getprop("/environment/dewpoint-degc");
+    var relative_humidity = getprop("/environment/relative-humidity");
 
-    if (oat <= dew_point and oat <= 0 and window_heat_on < 18){
+    if (oat <= dew_point and oat <= 0 and window_heat_on < 18 and
+        relative_humidity > 50) {
         frost_lvl = frost_lvl + 0.01;
         if (frost_lvl > (math.abs(oat) / 10)){
             frost_lvl = math.abs(oat) / 10;
@@ -70,7 +92,8 @@ var frost_effects = func {
         if (frost_lvl > 1){
             frost_lvl = 1;
         }
-    } else {
+    } 
+    if (oat > 0 or oat > dew_point or window_heat_on >= 18) {
         frost_lvl = frost_lvl - 0.01;
         if (frost_lvl < 0) {
             frost_lvl = 0;
@@ -97,5 +120,6 @@ var wipers = func {
 
 setlistener("/sim/signals/fdm-initialized", rain_effects);
 setlistener("/sim/signals/fdm-initialized", fog_effects);
+setlistener("/sim/signals/fdm-initialized", isWarmer);
 setlistener("/sim/signals/fdm-initialized", frost_effects);
 setlistener("/sim/signals/fdm-initialized", wipers);
