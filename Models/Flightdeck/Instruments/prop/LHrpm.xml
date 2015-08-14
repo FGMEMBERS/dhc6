@@ -28,6 +28,28 @@ Syd Adams
           <object-name>vitre</object-name>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Prop.ind</object-name>
+      <object-name>PropRPM.bezel</object-name>
+      <object-name>PropRPM.face</object-name>
+      <object-name>PropRPMneedle</object-name>
+      <object-name>Prpm.1</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>Prop.ind</object-name>
+      <object-name>PropRPM.bezel</object-name>
+      <object-name>PropRPM.face</object-name>
+      <object-name>PropRPMneedle</object-name>
+      <object-name>Prpm.1</object-name>
+      <object-name>backlight</object-name>
+      <object-name>vitre</object-name>
+    </effect>
+
     <effect>
        <inherits-from>Effects/model-transparent</inherits-from>
           <object-name>vitre</object-name>

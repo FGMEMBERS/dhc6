@@ -200,6 +200,13 @@
         </offsets>
     </model>
 
+<!--    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>glass_interior</object-name>
+      <object-name>LHdoor.glass_interior</object-name>
+      <object-name>RHdoor.glass_interior</object-name>
+    </effect>-->
+
 <effect>
       <inherits-from>Aircraft/dhc6/Models/Effects/skin-reflect</inherits-from>
       <object-name>fuselage</object-name>
@@ -257,13 +264,13 @@
     </effect>
 
     <effect>
-      <inherits-from>Aircraft/dhc6/Models/Effects/dhc6-interior-glass-reflection-side</inherits-from>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior-glass-reflection-side</inherits-from>
       <object-name>LHdoor.glass_interior</object-name>
       <object-name>RHdoor.glass_interior</object-name>
     </effect>
 
     <effect>
-      <inherits-from>Aircraft/dhc6/Models/Effects/dhc6-interior-glass-reflection-front</inherits-from>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior-glass-reflection-front</inherits-from>
       <object-name>glass_interior</object-name>
     </effect>
 

@@ -16,6 +16,18 @@
         </axis>
     </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>FlapLever</object-name>
+      <object-name>Flapgauge</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>FlapLever</object-name>
+      <object-name>Flapgauge</object-name>
+    </effect>
+
     <!-- TEXT OSG -->
   <text>
     <name>textosg</name>

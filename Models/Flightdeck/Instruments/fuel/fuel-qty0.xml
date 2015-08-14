@@ -27,6 +27,26 @@ Syd Adams
           <object-name>vitre</object-name>
   </animation>
 
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>FuelQTY.bezel</object-name>
+      <object-name>FuelQTY.face</object-name>
+      <object-name>FuelQTY.needle</object-name>
+      <object-name>FuelQTY.tank</object-name>
+      <object-name>backlight</object-name>
+      <!--object-name>vitre</object-name-->
+    </effect>
+
+  <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>FuelQTY.bezel</object-name>
+      <object-name>FuelQTY.face</object-name>
+      <object-name>FuelQTY.needle</object-name>
+      <object-name>FuelQTY.tank</object-name>
+      <object-name>backlight</object-name>
+      <!--object-name>vitre</object-name-->
+    </effect>
+
    <animation>
             <type>pick</type>
         <type>material</type>

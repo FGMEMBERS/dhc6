@@ -4,6 +4,20 @@
 
 <path>oat.ac</path>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>OAT</object-name>
+      <object-name>OAT.face</object-name>
+      <object-name>OAT.needle</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>OAT</object-name>
+      <object-name>OAT.face</object-name>
+      <object-name>OAT.needle</object-name>
+    </effect>
+
 	<animation>
 		<type>rotate</type>
 		<object-name>OAT.needle</object-name>
@@ -32,7 +46,7 @@
 		<property>/environment/temperature-degf</property>
             </binding>
       </hovered>
-   </animation> 
+   </animation>
 
        <!-- TEXT OSG -->
   <text>

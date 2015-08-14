@@ -1,11 +1,11 @@
 AC3Db
-MATERIAL "SwToggle" rgb 0.7 0.7 0.7  amb 0.7 0.7 0.7  emis 0.1 0.1 0.1  spec 0.0012 0.0012 0.0012  shi 50  trans 0
-MATERIAL "Matériau.000" rgb 1 1 1  amb 1 1 1  emis 0.1 0.1 0.1  spec 0 0 0  shi 50  trans 0
-MATERIAL "Material.001" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0 0 0  spec 0.25 0.25 0.25  shi 50  trans 0
-MATERIAL "chrome.002" rgb 0.4 0.4 0.4  amb 0.5 0.5 0.5  emis 0.1 0.1 0.1  spec 0.0026 0.0026 0.0026  shi 50  trans 0
-MATERIAL "Material.002" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.1 0.1 0.1  spec 0.0019 0.0019 0.0019  shi 50  trans 0
-MATERIAL "flatblack" rgb 0 0 0  amb 0 0 0  emis 0.1 0.1 0.1  spec 0 0 0  shi 50  trans 0
-MATERIAL "lit" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 0 0 0  shi 32  trans 0
+MATERIAL "SwToggle" rgb 0.7 0.7 0.7  amb 0.7 0.7 0.7  emis 0.043 0.043 0.043  spec 0.0012 0.0012 0.0012  shi 50  trans 0
+MATERIAL "Matériau.000" rgb 1 1 1  amb 1 1 1  emis 0.043 0.043 0.043  spec 0 0 0  shi 50  trans 0
+MATERIAL "Material.001" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.043 0.043 0.043  spec 0.25 0.25 0.25  shi 50  trans 0
+MATERIAL "chrome.002" rgb 0.4 0.4 0.4  amb 0.5 0.5 0.5  emis 0.043 0.043 0.043  spec 0.0026 0.0026 0.0026  shi 50  trans 0
+MATERIAL "Material.002" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.043 0.043 0.043  spec 0.0019 0.0019 0.0019  shi 50  trans 0
+MATERIAL "flatblack" rgb 0 0 0  amb 0 0 0  emis 0.043 0.043 0.043  spec 0 0 0  shi 50  trans 0
+MATERIAL "lit" rgb 1 1 1  amb 1 1 1  emis 0.043 0.043 0.043  spec 0 0 0  shi 32  trans 0
 OBJECT world
 kids 114
 OBJECT poly

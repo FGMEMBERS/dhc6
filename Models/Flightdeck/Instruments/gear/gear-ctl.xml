@@ -50,6 +50,44 @@
         </condition>
     </animation>
 
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Dim.bezel</object-name>
+      <object-name>Dim.toggle</object-name>
+      <object-name>Gearswitch</object-name>
+      <object-name>Plane</object-name>
+      <object-name>Switch.nut</object-name>
+      <object-name>Wgear.bezel</object-name>
+      <object-name>maindn1</object-name>
+      <object-name>maindn2</object-name>
+      <object-name>mainup1</object-name>
+      <object-name>mainup2</object-name>
+      <object-name>nosedn1</object-name>
+      <object-name>nosedn2</object-name>
+      <object-name>noseup1</object-name>
+      <object-name>noseup2</object-name>
+      <object-name>pump</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+      <object-name>Dim.bezel</object-name>
+      <object-name>Dim.toggle</object-name>
+      <object-name>Gearswitch</object-name>
+      <object-name>Plane</object-name>
+      <object-name>Switch.nut</object-name>
+      <object-name>Wgear.bezel</object-name>
+      <object-name>maindn1</object-name>
+      <object-name>maindn2</object-name>
+      <object-name>mainup1</object-name>
+      <object-name>mainup2</object-name>
+      <object-name>nosedn1</object-name>
+      <object-name>nosedn2</object-name>
+      <object-name>noseup1</object-name>
+      <object-name>noseup2</object-name>
+      <object-name>pump</object-name>
+    </effect>
+
 <!--  Gear Up - water -->
 
     <animation>
