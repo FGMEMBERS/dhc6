@@ -482,6 +482,16 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
         </als-secondary-lights>
     </rendering>
 
+    <flight-recorder include="systems/flightrecorder.xml"/>
+
+    <replay>
+        <buffer>
+            <hi-res-time type="double">1200</hi-res-time>
+            <medium-res-time type="double">3600</medium-res-time>
+            <low-res-time type="double">7200</low-res-time>
+        </buffer>
+    </replay>
+
 </sim>
 
 <input>
