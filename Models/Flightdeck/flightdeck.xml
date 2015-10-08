@@ -650,6 +650,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>airtemp</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Instruments/airtemp/airtemp.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.321</y-m>
+            <z-m>0.357</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
 
     <!-- GTX320A -->
     <model>
@@ -761,12 +772,12 @@
     </model>
 
     <model>
-        <name>airtemp</name>
-        <path>Aircraft/dhc6/Models/Flightdeck/Instruments/airtemp/airtemp.xml</path>
+        <name>Emergency Locator Transmitter</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Instruments/ELT/ArtexELT.xml</path>
         <offsets>
-            <x-m>-3.936</x-m>
-            <y-m>0.321</y-m>
-            <z-m>0.357</z-m>
+            <x-m>-3.93554</x-m>
+            <y-m>-0.0489615</y-m>
+            <z-m>0.0615385</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
