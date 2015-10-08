@@ -56,6 +56,7 @@
         <name>ALS Lighting Landing</name>
         <input>
             <and>
+	        <property>/sim/current-view/internal</property>
                 <less-than>
                     <property>/systems/electrical/outputs/landing-light[1]</property>
                     <value>31.5</value>
