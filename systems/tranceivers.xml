@@ -356,7 +356,7 @@
         <text>
             <row>4</row>
             <col>0</col>
-            <label>Adf1</label>
+            <label>Adf</label>
         </text>
 
         <text>
@@ -419,7 +419,7 @@
         </checkbox>
 
 <!--         ADF 2          -->
-
+<!--
         <text>
             <row>5</row>
             <col>0</col>
@@ -484,6 +484,7 @@
                 <command>dialog-apply</command>
             </binding>
         </checkbox>
+    -->
 
 <!--         Transponder (with SquawkGear/VATSIM)     -->
         <text>
