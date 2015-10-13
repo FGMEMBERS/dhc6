@@ -591,6 +591,14 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
                 <script>dhc6.toggle_flashlight()</script>
             </binding>
         </key>
+        <key n="268">
+                <name>F12</name>
+                <desc>Radio Stack</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.Radio.open()</script>
+                </binding>
+            </key>
     </keyboard>
 </input>
 
