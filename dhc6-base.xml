@@ -345,6 +345,14 @@ Jan 2008 Syd Adams
             <name>f</name>
             <desc>Toggle flashlight</desc>
         </key>
+        <key>
+            <name>F11</name>
+            <desc>Autopilot controls</desc>
+        </key>
+        <key>
+            <name>F12</name>
+            <desc>Radio Stack</desc>
+        </key>
 		<line>Tiller steering is controlled via rudder</line>
 		<line></line>
 		<line>To open/close the doors, just click on it</line>
@@ -591,14 +599,30 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
                 <script>dhc6.toggle_flashlight()</script>
             </binding>
         </key>
+         <key n="121">
+            <name>y</name>
+            <desc>Show/hide yokes</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/yokes-visible</property>
+            </binding>
+        </key>
+        <key n="267">
+            <name>F11</name>
+            <desc>Autopilot Controls</desc>
+            <binding>
+                <command>nasal</command>
+                <script>dialogs.ap_settings.open()</script>
+            </binding>
+        </key>
         <key n="268">
-                <name>F12</name>
-                <desc>Radio Stack</desc>
-                <binding>
-                    <command>nasal</command>
-                    <script>dialogs.Radio.open()</script>
-                </binding>
-            </key>
+            <name>F12</name>
+            <desc>Radio Stack</desc>
+            <binding>
+                <command>nasal</command>
+                <script>dialogs.Radio.open()</script>
+            </binding>
+        </key>
     </keyboard>
 </input>
 
