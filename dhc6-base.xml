@@ -330,6 +330,14 @@ Jan 2008 Syd Adams
 			<desc>Select both engines</desc>
 		</key>
 		<key>
+			<name>s</name>
+			<desc>Set engine starter left</desc>
+		</key>
+		<key>
+			<name>d</name>
+			<desc>Set engine starter right</desc>
+		</key>
+		<key>
 			<name>n/N</name>
 			<desc>Increase/decrease propeller</desc>
 		</key>
@@ -344,6 +352,10 @@ Jan 2008 Syd Adams
         <key>
             <name>f</name>
             <desc>Toggle flashlight</desc>
+        </key>
+        <key>
+            <name>y</name>
+            <desc>Show/hide yokes</desc>
         </key>
         <key>
             <name>F11</name>
@@ -590,6 +602,30 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
 	      <max>1</max>
             </binding>
         </key>
+        <key n="115">
+            <name>s</name>
+            <desc>Set engine starter left</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/internal-engine-starter</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </key>
+        <key n="100">
+            <name>d</name>
+            <desc>Set engine starter right</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/internal-engine-starter</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </key>
         <key n="102">
             <name>f</name>
             <desc>Toggle flashlight</desc>
@@ -599,7 +635,7 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
                 <script>dhc6.toggle_flashlight()</script>
             </binding>
         </key>
-         <key n="121">
+        <key n="121">
             <name>y</name>
             <desc>Show/hide yokes</desc>
             <binding>

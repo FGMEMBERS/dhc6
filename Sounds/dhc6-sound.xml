@@ -218,74 +218,6 @@
       </volume>
     </prop>
 
-    <prop>
-      <name>starter-loop-0</name>
-      <path>Aircraft/dhc6/Sounds/dhc6-engine-starter-loop.wav</path>
-      <mode>looped</mode>
-      <property>sim/sound/engine-starter-loop[0]</property>
-      <condition>
-	<and>
-	  <not>
-	    <equals>
-	      <property>controls/engines/internal-engine-starter</property>
-	      <value>0</value>
-	    </equals>
-	  </not>
-	  <not>
-	    <equals>
-	      <property>controls/electric/power-source</property>
-	      <value>0</value>
-	    </equals>
-	  </not>
-	  <greater-than>
-	    <property>systems/electrical/volts</property>
-	    <value>0</value>
-	  </greater-than>
-	  <greater-than>
-	    <property>engines/engine[0]/n2</property>
-	    <value>15</value>
-	  </greater-than>
-	</and>
-      </condition>
-      <volume>
-	<factor>0.16</factor>
-      </volume>
-    </prop>
-
-    <prop>
-      <name>starter-loop-1</name>
-      <path>Aircraft/dhc6/Sounds/dhc6-engine-starter-loop.wav</path>
-      <mode>looped</mode>
-      <property>sim/sound/engine-starter-loop[1]</property>
-      <condition>
-	<and>
-	  <not>
-	    <equals>
-	      <property>controls/engines/internal-engine-starter</property>
-	      <value>0</value>
-	    </equals>
-	  </not>
-	  <not>
-	    <equals>
-	      <property>controls/electric/power-source</property>
-	      <value>0</value>
-	    </equals>
-	  </not>
-	  <greater-than>
-	    <property>systems/electrical/volts</property>
-	    <value>0</value>
-	  </greater-than>
-	  <greater-than>
-	    <property>engines/engine[1]/n2</property>
-	    <value>15</value>
-	  </greater-than>
-	</and>
-      </condition>
-      <volume>
-	<factor>0.16</factor>
-      </volume>
-    </prop>
-
 <!-- Engine 1 exterior-->
 
         <prop>
@@ -672,8 +604,8 @@
                 <y>0</y>
                 <z>1</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>1.0</max-dist>
+            <reference-dist>10</reference-dist>
+            <max-dist>20</max-dist>
         </brakes>
 
         <brakes>
@@ -690,15 +622,15 @@
                 <property>sim/signals/fdm-initialized</property>
             </volume>
             <pitch>
-                <offset>0.8</offset>
+                <offset>0.7</offset>
             </pitch>
             <position>
                 <x>3</x>
                 <y>0</y>
                 <z>1</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>1.0</max-dist>
+            <reference-dist>10</reference-dist>
+            <max-dist>20</max-dist>
         </brakes>
 
                     <!-- RUDDER  -->
@@ -845,8 +777,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -866,8 +798,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
   <!-- rf DOOR  -->
@@ -891,8 +823,8 @@
                 <y>-0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -912,8 +844,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
 
@@ -938,8 +870,8 @@
                 <y>-0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -959,8 +891,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
    <!-- LR DOOR-F  -->
@@ -984,8 +916,8 @@
                 <y>-0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -1005,8 +937,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
    <!-- LR DOOR-R  -->
@@ -1030,8 +962,8 @@
                 <y>-0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -1051,8 +983,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
           <!-- BAGGAGE DOOR  -->
@@ -1075,8 +1007,8 @@
                 <y>-0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
         <doors>
@@ -1096,8 +1028,8 @@
                 <y>0.5</y>
                 <z>0.5</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>2.0</max-dist>
+            <reference-dist>5</reference-dist>
+            <max-dist>50</max-dist>
         </doors>
 
 
@@ -1116,12 +1048,12 @@
                 <offset>1.0</offset>
             </pitch>
             <position>
-                <x>3</x>
+                <x>-3</x>
                 <y>0</y>
                 <z>1</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>1.0</max-dist>
+            <reference-dist>3</reference-dist>
+            <max-dist>10</max-dist>
         </click>
         
         <click>
@@ -1140,12 +1072,12 @@
                 <offset>0.8</offset>
             </pitch>
             <position>
-                <x>3</x>
+                <x>-3</x>
                 <y>0</y>
                 <z>1</z>
             </position>
-            <reference-dist>0.5</reference-dist>
-            <max-dist>1.0</max-dist>
+            <reference-dist>3</reference-dist>
+            <max-dist>10</max-dist>
         </click>
         
     </fx>

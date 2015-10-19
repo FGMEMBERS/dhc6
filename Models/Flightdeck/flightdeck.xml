@@ -995,6 +995,18 @@
         </offsets>
     </model>
 
+<!-- Show/hide yokes -->
+
+    <animation>
+        <type>select</type>
+        <object-name>Yoke</object-name>
+        <object-name>Yoke1</object-name>
+        <object-name>Yoke2</object-name>
+        <condition>
+          <property>sim/yokes-visible</property>
+        </condition>
+      </animation>
+
 <!-- Auto Feather-->
     <animation>
         <type>select</type>
