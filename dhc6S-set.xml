@@ -8,7 +8,7 @@ Jan 2008 Syd Adams
 
 <PropertyList include="dhc6-base.xml">
     <sim>
-        <description>de Havilland Twin Otter (skis)</description>
+        <description>De Havilland Canada DHC-6 Twin Otter (skis)</description>
         <author>Syd Adams, Christian Thiriot (PATTEN), Clément de l'Hamaide, (f-jjth), PAF Team, Zdenal, Erik, abassign, primtala2, lanbo64, Jonathan Schellhase (dg-505), CaptB, Adam Swift (Mig29pilot), tauchergreg, others</author>
         <flight-model>yasim</flight-model>
         <aero>dhc6S</aero>
