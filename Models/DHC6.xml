@@ -118,6 +118,40 @@
         </offsets>
     </model>
 
+    <model>
+        <name>shadow</name>
+        <condition>
+            <not-equals>
+                <property>sim/multiplay/generic/string</property>
+                <value>dhc6F</value>
+            </not-equals>
+        </condition>
+        <path>Aircraft/dhc6/Models/shadow.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>shadowF</name>
+        <condition>
+            <equals>
+                <property>sim/multiplay/generic/string</property>
+                <value>dhc6F</value>
+            </equals>
+        </condition>
+        <path>Aircraft/dhc6/Models/shadowF.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
     <animation>
         <type>material</type>
          <object-name>Exterior</object-name>
