@@ -325,6 +325,18 @@
           </animation>
 
           <animation>
+          	<type>translate</type>
+          	<object-name>NAV1BUTT</object-name>
+          	<property>/controls/armament/station[5]/release-all</property>
+          	<factor>-0.004</factor>
+          	<axis>
+            	<x>1</x>
+            	<y>0</y>
+            	<z>0</z>
+        	</axis>
+        </animation>
+
+        <animation>
             <type>pick</type>
             <object-name>NAV2BUTT</object-name>
             <action>
@@ -344,6 +356,18 @@
               </binding>
             </action>
           </animation>
+
+          <animation>
+          	<type>translate</type>
+          	<object-name>NAV2BUTT</object-name>
+          	<property>/controls/armament/station[6]/release-all</property>
+          	<factor>-0.004</factor>
+          	<axis>
+            	<x>1</x>
+            	<y>0</y>
+            	<z>0</z>
+        	</axis>
+        </animation>
 
            <!-- TEXT OSG -->
           <text>
