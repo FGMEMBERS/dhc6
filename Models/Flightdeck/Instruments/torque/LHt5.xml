@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- torque pressure
+<!-- Exhaust temperature
 Syd Adams
 -->
 <PropertyList>
@@ -129,7 +129,7 @@ Syd Adams
   <text>
     <name>textosg</name>
     <type type="string">literal</type>
-    <text type="string">Torque pressure</text>
+    <text type="string">Exhaust temp</text>
     <draw-text type="bool">true</draw-text>
     <font>Helvetica.txf</font>
     <character-size type="double">0.014</character-size>
