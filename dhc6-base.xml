@@ -512,6 +512,11 @@ de.wikipedia.org/wiki/De_Havilland_Canada_DHC_6 (Oct 31th, 2014)
         </buffer>
     </replay>
 
+    <panel>
+        <path>Aircraft/dhc6/Panels/dhc6-panel.xml</path>
+        <visibility>false</visibility>
+    </panel>
+
 </sim>
 
 <input>
