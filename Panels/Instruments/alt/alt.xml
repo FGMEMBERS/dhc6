@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Altimeter for the DHC-6 Twin Otter
+<!-- 2D Altimeter for the DHC-6 Twin Otter
 
 Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 
@@ -231,16 +231,5 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 		</action>
 
 	</actions>
-
-
-
-
-
-
-
-
-
-
-
 
 </PropertyList>

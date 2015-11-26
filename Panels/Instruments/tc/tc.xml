@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Turn Coordinator for the DHC-6 Twin Otter
+<!-- 2D Turn Coordinator for the DHC-6 Twin Otter
 
 Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 
@@ -41,10 +41,10 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 					<type>rotation</type>
 					<property>/instrumentation/turn-indicator/indicated-turn-rate</property>
 					<interpolation>
-						<entry><ind>  -5</ind><dep>-30</dep></entry>
-						<entry><ind>-1.5</ind><dep>-30</dep></entry>
-						<entry><ind> 1.5</ind><dep> 30</dep></entry>
-						<entry><ind>   5</ind><dep> 30</dep></entry>
+						<entry><ind> -5.0 </ind><dep> -30 </dep></entry>
+						<entry><ind> -1.5 </ind><dep> -30 </dep></entry>
+						<entry><ind>  1.5 </ind><dep>  30 </dep></entry>
+						<entry><ind>  5.0 </ind><dep>  30 </dep></entry>
 					</interpolation>
 				</transformation>
 				<transformation>
@@ -91,8 +91,8 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 					<max>15</max>
 					<scale>-30</scale>
 					<interpolation>
-						<entry><ind>-2.5</ind><dep>-4.5</dep></entry>
-						<entry><ind> 2.5</ind><dep> 4.5</dep></entry>
+						<entry><ind> -2.5 </ind><dep> -4.5 </dep></entry>
+						<entry><ind>  2.5 </ind><dep>  4.5 </dep></entry>
 					</interpolation>
 				</transformation>
 			</transformations>
@@ -116,16 +116,7 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 				</transformation>
 			</transformations>
 		</layer>
-
-
-
-
-
-
-
-
-
-		
+	
 	</layers>
 
 </PropertyList>

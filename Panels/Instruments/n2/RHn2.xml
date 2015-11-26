@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
-<!-- 2D Airspeed Indicator for the DHC-6 Twin Otter
+<!-- 2D Right N2 gauge for the DHC-6 Twin Otter
 
 Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 
 <PropertyList>
 
-	<name>Airspeed Indicator</name>
+	<name>Right N2</name>
 	<w-base>512</w-base>
 	<h-base>512</h-base>
 
@@ -17,7 +17,7 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 			<w>512</w>
 			<h>512</h>
 			<texture>
-				<path>Aircraft/dhc6/Panels/Instruments/asi/asi-background.png</path>
+				<path>Aircraft/dhc6/Panels/Instruments/n2/n2-background.png</path>
 				<x1>0.0</x1>
 				<x2>1.0</x2>
 				<y1>0.0</y1>
@@ -27,10 +27,10 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 
 		<layer>
 			<name>Needle</name>
-			<w>27</w>
-			<h>230</h>
+			<w>15</w>
+			<h>252</h>
 			<texture>
-				<path>Aircraft/dhc6/Panels/Instruments/asi/needle.png</path>
+				<path>Aircraft/dhc6/Panels/Instruments/rpm/needle.png</path>
 				<x1>0.0</x1>
 				<x2>1.0</x2>
 				<y1>0.0</y1>
@@ -39,24 +39,30 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 			<transformations>
 				<transformation>
 					<type>rotation</type>
-					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<property>engines/engine[1]/n2</property>
 					<min>0.0</min>
-					<max>240.0</max>
+					<max>101.0</max>
 					<scale>1.0</scale>
 					<interpolation>
 						<entry><ind>   0 </ind><dep>   0 </dep></entry>
-						<entry><ind>  20 </ind><dep>   0 </dep></entry>
-						<entry><ind>  60 </ind><dep>  36 </dep></entry>
-						<entry><ind>  80 </ind><dep>  72 </dep></entry>
-						<entry><ind> 170 </ind><dep> 234 </dep></entry>
-						<entry><ind> 200 </ind><dep> 288 </dep></entry>
-						<entry><ind> 240 </ind><dep> 326 </dep></entry>
+						<entry><ind> 101 </ind><dep> 272 </dep></entry>
 					</interpolation>
-					<offset>0</offset>
+					<offset>-80</offset>
+				</transformation>
+				<transformation>
+					<type>rotation</type>
+					<property>engines/engine[1]/reverse</property>
+					<min>0.0</min>
+					<max>1.0</max>
+					<scale>1.0</scale>
+					<interpolation>
+						<entry><ind> 0 </ind><dep>  0 </dep></entry>
+						<entry><ind> 1 </ind><dep> 60 </dep></entry>
+					</interpolation>
 				</transformation>
 				<transformation>
 					<type>y-shift</type>
-					<offset>57</offset>
+					<offset>80</offset>
 				</transformation>
 			</transformations>
 		</layer>
