@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Heading Indicator for the DHC-6 Twin Otter
+<!-- 2D Heading Indicator for the DHC-6 Twin Otter
 
 Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 
@@ -170,14 +170,6 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 			</binding>
 		</action>
 
-
-
-
-
-
-
-
-
 		<action>
 			<name>increase heading bug coarse</name>
 			<button>1</button>
@@ -245,24 +237,6 @@ Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
 				<wrap>true</wrap>
 			</binding>
 		</action>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	</actions>
 

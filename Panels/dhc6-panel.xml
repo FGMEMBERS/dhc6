@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 		<!-- PRIMARY FLIGHT INSTRUMENTS -->
 
-		<!-- Airspeed indicator -->
+		<!-- Airspeed Indicator -->
 		<instrument include="Aircraft/dhc6/Panels/Instruments/asi/asi.xml">
 			<name>Airspeed Indicator</name>
 			<x>110</x>
@@ -69,7 +69,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<h>210</h>
 		</instrument>
 
-		<!-- Heading indicator -->
+		<!-- Heading Indicator -->
 		<instrument include="Aircraft/dhc6/Panels/Instruments/hi/hi.xml">
 			<name>Heading Indicator</name>
 			<x>325</x>
@@ -89,11 +89,177 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 		<!-- NAV INSTRUMENTS -->
 
-		<!-- VOR Indicator -->
+		<!-- KI 206 -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/ki206/ki206.xml">
+			<name>KI 206</name>
+			<x>110</x>
+			<y>105</y>
+			<w>190</w>
+			<h>190</h>
+		</instrument>
 
 		<!-- RMI -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/rmi/rmi.xml">
+			<name>RMI</name>
+			<x>325</x>
+			<y>105</y>
+			<w>190</w>
+			<h>190</h>
+		</instrument>
+
+		<instrument include="Aircraft/dhc6/Panels/Instruments/rmi/navselect.xml">
+			<name>RMI</name>
+			<x>450</x>
+			<y>105</y>
+			<w>190</w>
+			<h>190</h>
+		</instrument>
 
 		<!-- ENGINE INSTRUMENTS -->
+
+		<!-- Left Fuel Flow -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/fuelflow/LHfuelflow.xml">
+			<name>Left Fuel Flow</name>
+			<x>515</x>
+			<y>175</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Right Fuel Flow -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/fuelflow/RHfuelflow.xml">
+			<name>Right Fuel Flow</name>
+			<x>595</x>
+			<y>175</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Left Oil Temp -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/oiltemp/LHoiltemp.xml">
+			<name>Left Oil Temp</name>
+			<x>515</x>
+			<y>105</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Right Oil Temp -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/oiltemp/RHoiltemp.xml">
+			<name>Left Oil Temp</name>
+			<x>595</x>
+			<y>105</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Left Oil Pressure -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/oilpsi/LHoilpsi.xml">
+			<name>Left Oil Pressure</name>
+			<x>515</x>
+			<y>35</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Right Oil Pressure -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/oilpsi/RHoilpsi.xml">
+			<name>Left Oil Pressure</name>
+			<x>595</x>
+			<y>35</y>
+			<w>65</w>
+			<h>65</h>
+		</instrument>
+
+		<!-- Left Torque Pressure -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/torque/LHtorque.xml">
+			<name>Left Torque Pressure</name>
+			<x>740</x>
+			<y>575</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Right Torque Pressure -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/torque/RHtorque.xml">
+			<name>Left Torque Pressure</name>
+			<x>930</x>
+			<y>575</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Left RPM -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/rpm/LHrpm.xml">
+			<name>Left RPM</name>
+			<x>740</x>
+			<y>447</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Right RPM -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/rpm/RHrpm.xml">
+			<name>Left RPM</name>
+			<x>930</x>
+			<y>447</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Left T5 -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/t5/LHt5.xml">
+			<name>Left T5</name>
+			<x>740</x>
+			<y>319</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Right T5 -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/t5/RHt5.xml">
+			<name>Left T5</name>
+			<x>930</x>
+			<y>319</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Left N2 -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/n2/LHn2.xml">
+			<name>Left N2</name>
+			<x>740</x>
+			<y>191</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- Right N2 -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/n2/RHn2.xml">
+			<name>Left N2</name>
+			<x>930</x>
+			<y>191</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- FWD Fuel QTY -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/fuelqty/FWDfuelqty.xml">
+			<name>FWD Fuel QTY</name>
+			<x>740</x>
+			<y>63</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
+
+		<!-- AFT Fuel QTY -->
+		<instrument include="Aircraft/dhc6/Panels/Instruments/fuelqty/AFTfuelqty.xml">
+			<name>AFT Fuel QTY</name>
+			<x>930</x>
+			<y>63</y>
+			<w>125</w>
+			<h>125</h>
+		</instrument>
 
 	</instruments>
 
