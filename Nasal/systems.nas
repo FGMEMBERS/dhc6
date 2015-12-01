@@ -401,7 +401,7 @@ var update_throttles = func {
 
     if(RHrvr==1 and running2==0) {
         setprop("controls/engines/engine[1]/throttle-rvrs-norunning",THR2);
-    } else if (LHrvr==1 and running2==1) {
+    } else if (RHrvr==1 and running2==1) {
         setprop("controls/engines/engine[1]/throttle-rvrs",THR2);
     } else {
         setprop("controls/engines/engine[1]/throttle-fwd",THR2);
@@ -432,3 +432,20 @@ var update_systems = func {
     update_eng_sound();
     settimer(update_systems, 0);
 }
+
+
+# Thrust reverse info
+var reverse_chg = func {
+   if (getprop("/controls/engines/engine[0]/reverser")) {
+      mess_e0="Left engine active"
+   } else {
+      mess_e0="Left engine inactive"
+   }
+   if (getprop("/controls/engines/engine[1]/reverser")) {
+      mess_e1="Right engine active"
+   } else {
+      mess_e1="Right engine inactive"
+   }
+   gui.popupTip(sprintf("Thrust reverse:\n%s\n%s", mess_e0, mess_e1), 30, nil, {x: 1, y: 1});
+}
+setlistener("/controls/engines/engine[1]/reverser", reverse_chg);

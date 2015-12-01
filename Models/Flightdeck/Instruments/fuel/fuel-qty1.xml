@@ -96,8 +96,8 @@ Syd Adams
         <factor>0.0755</factor>
         <axis>
             <x>0</x>
-            <y>-1</y>
-            <z>0</z>
+            <y>0</y>
+            <z>-1</z>
         </axis>
     </animation>
 
