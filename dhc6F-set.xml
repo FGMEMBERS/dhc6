@@ -24,6 +24,15 @@ Dec 2013 http://equipe-flightgear.forumactif.com/t1195-dhc-6-300-twin-otter#2194
          <model>
             <path>Aircraft/dhc6/Models/DHC6F.xml</path>
             <blunt-nose type="bool">0</blunt-nose>
+            <equipment>
+                <left-tiedown-wheels type="bool">0</left-tiedown-wheels>
+                <right-tiedown-wheels type="bool">0</right-tiedown-wheels>
+                <rear-tiedown-wheels type="bool">0</rear-tiedown-wheels>
+                <left-chock-fwd type="bool">0</left-chock-fwd>
+                <left-chock-aft type="bool">0</left-chock-aft>
+                <right-chock-fwd type="bool">0</right-chock-fwd>
+                <right-chock-aft type="bool">0</right-chock-aft>
+            </equipment>
         </model>
     
     <hitches>
