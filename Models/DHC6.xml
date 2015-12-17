@@ -797,12 +797,6 @@
           <object-name>Lprop.1</object-name>
           <type>rotate</type>
           <property>engines/engine[0]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -822,10 +816,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[0]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
@@ -845,12 +839,6 @@
           <object-name>Lprop.2</object-name>
           <type>rotate</type>
           <property>engines/engine[0]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -870,10 +858,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[0]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
@@ -893,12 +881,6 @@
           <object-name>Lprop.3</object-name>
           <type>rotate</type>
           <property>engines/engine[0]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -918,10 +900,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[0]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[0]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
@@ -992,12 +974,6 @@
           <object-name>Rprop.1</object-name>
           <type>rotate</type>
           <property>engines/engine[1]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -1017,10 +993,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[1]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
@@ -1040,12 +1016,6 @@
           <object-name>Rprop.2</object-name>
           <type>rotate</type>
           <property>engines/engine[1]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -1065,10 +1035,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[1]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
@@ -1088,12 +1058,6 @@
           <object-name>Rprop.3</object-name>
           <type>rotate</type>
           <property>engines/engine[1]/n2</property>
-	  <condition>
-            <less-than> 
-              <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
-          </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
@@ -1113,10 +1077,10 @@
           <type>rotate</type>
           <property>controls/engines/engine[1]/propeller-pitch</property>
 	  <condition>
-            <less-than> 
+            <greater-than> 
               <property>engines/engine[1]/n2</property>
-              <value>50.0001</value>
-            </less-than>
+              <value>30</value>
+            </greater-than>
           </condition>
 	  <interpolation>
             <entry><ind>0</ind><dep>20</dep></entry>
