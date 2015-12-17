@@ -32,26 +32,6 @@
       <z-m>-2.0</z-m>
     </offsets>
   </model>
-
-  <model>
-    <path>Aircraft/dhc6/Models/Effects/LHeng-spray.xml</path>
-    <name>left-engine-spray</name>
-    <offsets>
-      <x-m>7</x-m>
-      <y-m>-2.5</y-m>
-      <z-m>-2.8</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/dhc6/Models/Effects/RHeng-spray.xml</path>
-    <name>right-engine-spray</name>
-    <offsets>
-      <x-m>7</x-m>
-      <y-m>2.5</y-m>
-      <z-m>-2.8</z-m>
-    </offsets>
-  </model>
   
     <animation>
         <type>translate</type>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Aerovias DAP</name>
+            <texture>Liveries/DAP.png</texture>
+        </livery>
+        <floats>
+		<texture>floats.png</texture>
+        </floats>   
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>
