@@ -804,7 +804,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -828,7 +828,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -852,7 +852,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -876,7 +876,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -900,7 +900,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -924,7 +924,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -968,7 +968,7 @@
         <object-name>LpropParent</object-name>
 	<object-name>SpinnerL</object-name>
         <property>engines/engine[0]/n2</property>
-        <factor>10.0</factor>
+        <factor>-10.0</factor>
         <center>
             <x-m>-2.660</x-m>
             <y-m>-2.857</y-m>
@@ -999,7 +999,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1023,7 +1023,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1047,7 +1047,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1071,7 +1071,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1095,7 +1095,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-61</dep></entry>
+            <entry><ind>0</ind><dep>61</dep></entry>
             <entry><ind>50</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1119,7 +1119,7 @@
             </less-than>
           </condition>
 	  <interpolation>
-            <entry><ind>0</ind><dep>-20</dep></entry>
+            <entry><ind>0</ind><dep>20</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
 	  <axis>
@@ -1162,7 +1162,7 @@
         <object-name>RpropParent</object-name>
 	<object-name>SpinnerR</object-name>
         <property>engines/engine[1]/n2</property>
-        <factor>10.0</factor>
+        <factor>-10.0</factor>
         <center>
             <x-m>-2.660</x-m>
             <y-m>2.857</y-m>
