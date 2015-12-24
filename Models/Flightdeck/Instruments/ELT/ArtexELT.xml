@@ -19,6 +19,55 @@ Be sure to link the Nasal in your -set file, typing:
 
 	<path>ArtexELT.ac</path>
 
+	<animation>
+	<type>material</type>
+	<object-name>Light</object-name>
+	<emission>
+		<red>  1</red>
+		<green>0</green>
+		<blue> 0</blue>
+	</emission>
+	<condition>
+		<or>
+			<property>/instrumentation/elt/test</property>
+			<property>/instrumentation/elt/armed</property>
+		</or>
+	</condition>
+</animation>
+
+	<animation>
+          <type>material</type>
+          <object-name>Base</object-name>
+          <object-name>Tornillos</object-name>
+          <object-name>Light</object-name>
+          <object-name>Switch</object-name>
+          <object-name>BaseSwitch</object-name>
+          <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>/systems/electrical/outputs/cabin-lights-dim-factor</factor-prop>
+          </emission>
+        </animation>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-interior</inherits-from>
+      <object-name>Base</object-name>
+		<object-name>Tornillos</object-name>
+		<object-name>Light</object-name>
+		<object-name>Switch</object-name>
+		<object-name>BaseSwitch</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/dhc6/Models/Effects/interior/dhc6-flashlight</inherits-from>
+		<object-name>Base</object-name>
+        <object-name>Tornillos</object-name>
+        <object-name>Light</object-name>
+        <object-name>Switch</object-name>
+        <object-name>BaseSwitch</object-name>
+    </effect>
+
 <animation>
 	<type>pick</type>
 	<object-name>Switch</object-name>
@@ -28,29 +77,41 @@ Be sure to link the Nasal in your -set file, typing:
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-toggle</command>
-			<property>/ELT/armed</property>
+			<property>/instrumentation/elt/armed</property>
 			<value type="bool">true</value>
 		</binding>
+		<binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click2</property>
+        </binding>
 	</action>
 	<action>
 		<button>1</button>
 		<repeatable>false</repeatable> 
 		<binding>
 			<command>property-assign</command>
-			<property>/ELT/test</property>
+			<property>/instrumentation/elt/test</property>
 			<value type="bool">true</value>
 		</binding>
 		<binding>
 			<command>property-assign</command>
-			<property>/ELT/armed</property>
+			<property>/instrumentation/elt/armed</property>
 			<value type="bool">false</value>
 		</binding>
+		<binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click2</property>
+        </binding>
 		<mod-up>
 			<binding>
 				<command>property-assign</command>
-				<property>/ELT/test</property>
+				<property>/instrumentation/elt/test</property>
 				<value type="bool">false</value>
 			</binding>
+			<binding>
+            <command>property-toggle</command>
+            <property>sim/sound/click2</property>
+        </binding>
 		</mod-up>
 	</action>
 </animation>
@@ -59,7 +120,7 @@ Be sure to link the Nasal in your -set file, typing:
 	<type>rotate</type>
 	<object-name>Switch</object-name>
 	<factor>15</factor>
-	<property>/ELT/test</property>
+	<property>/instrumentation/elt/test</property>
 	<center>
 		<x-m>0.003</x-m>
 		<y-m>0.000</y-m>
@@ -75,7 +136,7 @@ Be sure to link the Nasal in your -set file, typing:
 <animation>
 	<type>rotate</type>
 	<object-name>Switch</object-name>
-	<property>/ELT/armed</property>
+	<property>/instrumentation/elt/armed</property>
 	<factor>-15</factor>
 	<center>
 		<x-m>0.003</x-m>
@@ -89,21 +150,7 @@ Be sure to link the Nasal in your -set file, typing:
 	</axis>    
 </animation>
 
-<animation>
-	<type>material</type>
-	<object-name>Light</object-name>
-	<emission>
-		<red>  1</red>
-		<green>0</green>
-		<blue> 0</blue>
-	</emission>
-	<condition>
-		<or>
-			<property>/ELT/test</property>
-			<property>/ELT/armed</property>
-		</or>
-	</condition>
-</animation>
+
 
 <!-- Label Text -->
 

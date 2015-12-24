@@ -278,6 +278,11 @@
         </signal>
         <signal>
             <type>float</type>
+            <property type="string">/controls/gear/parkingbrake-lever</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
             <property type="string">/controls/lighting/beacon</property>
             <interpolation>linear</interpolation>
         </signal>
@@ -533,12 +538,132 @@
         </signal>
         <signal>
             <type>float</type>
-            <property type="string">/position/gear-agl-m</property>
+            <property type="string">/sim/model/equipment/left-pitot-cover</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>
             <type>float</type>
-            <property type="string">/position/gear-agl-ft</property>
+            <property type="string">/sim/model/equipment/right-pitot-cover</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-pitot-cover-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-pitot-cover-removable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-pitot-cover-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-pitot-cover-removable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-tiedown-wheels</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-tiedown-wheels</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/rear-tiedown-wheels</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-tiedown-wheels-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-tiedown-wheels-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/rear-tiedown-wheels-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-engine-cover</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-engine-cover-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-engine-cover-removable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-engine-cover</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-engine-cover-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-engine-cover-removable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-chock-fwd</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-chock-aft</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-chock-fwd</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-chock-aft</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-chock-fwd-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/left-chock-aft-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-chock-fwd-addable</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property type="string">/sim/model/equipment/right-chock-aft-addable</property>
             <interpolation>linear</interpolation>
         </signal>
     </config>
