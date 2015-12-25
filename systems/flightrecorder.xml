@@ -667,14 +667,14 @@
             <interpolation>linear</interpolation>
         </signal>
         <signal>
-	  <type>float</type>
-          <property type="string">/position/gear-agl-m</property>
-          <interpolation>linear</interpolation>
+            <type>float</type>
+            <property type="string">/position/gear-agl-m</property>
+            <interpolation>linear</interpolation>
         </signal>
         <signal>
-          <type>float</type>
-          <property type="string">/position/gear-agl-ft</property>
-          <interpolation>linear</interpolation>
+            <type>float</type>
+            <property type="string">/position/gear-agl-ft</property>
+            <interpolation>linear</interpolation>
         </signal>
     </config>
 </PropertyList>
