@@ -187,7 +187,6 @@
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
 			<binding>
 				<command>property-adjust</command>
 				<property>instrumentation/attitude-indicator/horizon-offset-deg</property>
@@ -197,15 +196,9 @@
 				<wrap>0</wrap>
 			</binding>
 		</action>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>AI.knob</object-name>
 		<action>
 			<button>1</button>
 			<repeatable>true</repeatable>
-			<interval-sec>0.2</interval-sec>
 			<binding>
 				<command>property-adjust</command>
 				<property>instrumentation/attitude-indicator/horizon-offset-deg</property>
@@ -215,11 +208,6 @@
 				<wrap>0</wrap>
 			</binding>
 		</action>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>AI.knob</object-name>
 		<action>
 			<button>3</button>
 			<binding>
@@ -231,11 +219,6 @@
 				<wrap>0</wrap>
 			</binding>
 		</action>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>AI.knob</object-name>
 		<action>
 			<button>4</button>
 			<binding>
