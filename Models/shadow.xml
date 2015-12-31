@@ -1,6 +1,7 @@
 <PropertyList>
 
 	<path>shadow.ac</path>
+	<nopreview/>
 
 	<animation>
 		<object-name>shadow</object-name>
@@ -18,7 +19,7 @@
 		<condition>
 			<equals>
 				<property>/sim/replay/replay-state</property>
-                                <value>0</value>
+				<value>0</value>
 			</equals>
 		</condition>
 	</effect>
@@ -69,15 +70,15 @@
 		<type>translate</type>
 		<object-name>shadow</object-name>
 		<condition>
-                   <or>
-			<not>
-				<property>/sim/rendering/shaders/skydome</property>
-			</not>
-			<equals>
-				<property>/sim/replay/replay-state</property>
-                                <value>1</value>
-			</equals>
-                   </or>
+			<or>
+				<not>
+					<property>/sim/rendering/shaders/skydome</property>
+				</not>
+				<equals>
+					<property>/sim/replay/replay-state</property>
+					<value>1</value>
+				</equals>
+			</or>
 		</condition>
 		<property>/position/gear-agl-m</property>
 		<factor>-1</factor>
@@ -92,5 +93,5 @@
 			<z>1</z>
 		</axis>
 	</animation>
- 
+
 </PropertyList>
