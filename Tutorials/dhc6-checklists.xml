@@ -487,10 +487,19 @@
 		<title>Before engines start (2/2)</title>
 		
 		<page>
+
+			<item>
+				<name>External Power</name>
+				<value>ENABLE</value>
+				<value>(via Menu -> DHC-6 -> Toggle external power)</value>
+				<condition>
+					<property>/sim/model/equipment/ground-services/external-power/enable</property>
+				</condition>
+			</item>
 		
 			<item>
 				<name>External/Battery Selector</name>
-				<value>BATTERY</value>
+				<value>EXTERNAL</value>
 				<marker>
 		    		<x-m>-3.5636</x-m>
 	    			<y-m>-0.2132</y-m>
@@ -500,7 +509,7 @@
 				<condition>
 					<equals>
 						<property>/controls/electric/power-source</property>
-						<value>1</value>
+						<value>-1</value>
 					</equals>
 				</condition>
 			</item>
@@ -1033,6 +1042,34 @@
 	<checklist>
 		
 		<title>After engines start</title>
+
+		<item>
+			<name>External/Battery Selector</name>
+			<value>BATTERY</value>
+			<marker>
+		    	<x-m>-3.5636</x-m>
+	    		<y-m>-0.2132</y-m>
+	    		<z-m>0.9190</z-m>
+		    	<scale>1.9917</scale>
+			</marker>
+			<condition>
+				<equals>
+					<property>/controls/electric/power-source</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</item>
+
+		<item>
+			<name>External Power</name>
+			<value>DISABLE</value>
+			<value>(via Menu -> DHC-6 -> Toggle external power)</value>
+			<condition>
+				<not>
+					<property>/sim/model/equipment/ground-services/external-power/enable</property>
+				</not>
+			</condition>
+		</item>
 		
 		<item>
 			<name>Posn Light</name>
@@ -1294,16 +1331,46 @@
 			<name>Elevator trim</name>
 			<value>SET FOR TAKE OFF</value>
 			<value>(that's a bit nose up)</value>
+			<marker>
+				<x-m>-3.0810</x-m>
+				<y-m>-0.1926</y-m>
+				<z-m>-0.0157</z-m>
+				<scale>0.4380</scale>
+			</marker>
 			<condition>
 				<and>
 					<less-than>
 						<property>/controls/flight/elevator-trim</property>
-						<value>-0.135</value>
+						<value>-0.19</value>
 					</less-than>
 					<greater-than>
 						<property>/controls/flight/elevator-trim</property>
-						<value>-0.145</value>
+						<value>-0.21</value>
 					</greater-than>
+				</and>
+			</condition>
+		</item>
+
+		<item>
+			<name>Rudder trim</name>
+			<value>SET FOR TAKE OFF</value>
+			<value>(that's a bit right)</value>
+			<marker>
+			    <x-m>-3.0405</x-m>
+			    <y-m>-0.2041</y-m>
+			    <z-m>-0.0157</z-m>
+			    <scale>0.4380</scale>
+			</marker>
+			<condition>
+				<and>
+					<greater-than>
+						<property>/controls/flight/rudder-trim</property>
+						<value>0.11</value>
+					</greater-than>
+					<less-than>
+						<property>/controls/flight/rudder-trim</property>
+						<value>0.13</value>
+					</less-than>
 				</and>
 			</condition>
 		</item>
@@ -2131,17 +2198,45 @@
 		<item>
 			<name>Elevator trim</name>
 			<value>RESET FOR TAKE OFF</value>
-			<value>(a bit nose up)</value>
+			<marker>
+				<x-m>-3.0810</x-m>
+				<y-m>-0.1926</y-m>
+				<z-m>-0.0157</z-m>
+				<scale>0.4380</scale>
+			</marker>
 			<condition>
 				<and>
 					<less-than>
 						<property>/controls/flight/elevator-trim</property>
-						<value>-0.135</value>
+						<value>-0.19</value>
 					</less-than>
 					<greater-than>
 						<property>/controls/flight/elevator-trim</property>
-						<value>-0.145</value>
+						<value>-0.21</value>
 					</greater-than>
+				</and>
+			</condition>
+		</item>
+
+		<item>
+			<name>Rudder trim</name>
+			<value>RESET FOR TAKE OFF</value>
+			<marker>
+			    <x-m>-3.0405</x-m>
+			    <y-m>-0.2041</y-m>
+			    <z-m>-0.0157</z-m>
+			    <scale>0.4380</scale>
+			</marker>
+			<condition>
+				<and>
+					<greater-than>
+						<property>/controls/flight/rudder-trim</property>
+						<value>0.11</value>
+					</greater-than>
+					<less-than>
+						<property>/controls/flight/rudder-trim</property>
+						<value>-0.13</value>
+					</less-than>
 				</and>
 			</condition>
 		</item>
@@ -2260,11 +2355,11 @@
 	    			<z-m>0.9471</z-m>
 	    			<scale>1.4298</scale>
 				</marker>
-					<condition>
-						<not>
-							<property>/controls/lighting/taxi-lights</property>
-						</not>
-					</condition>
+				<condition>
+					<not>
+						<property>/controls/lighting/taxi-lights</property>
+					</not>
+				</condition>
 			</item>
 							
 			<item>

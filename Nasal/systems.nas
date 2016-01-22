@@ -34,9 +34,16 @@ props.globals.initNode("controls/switches/dme-gps-slave", 0);
 ###################################
 
 var Startup = func{
+	setprop("sim/model/equipment/ground-services/external-power/enable",1);
+	setprop("sim/model/equipment/ground-services/fuel-truck/clean",0);
+	setprop("sim/model/equipment/ground-services/fuel-truck/transfer",0);
+	setprop("sim/model/equipment/ground-services/fuel-truck/connect-aft",0);
+	setprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd",0);
+	setprop("sim/model/equipment/ground-services/fuel-truck/disconnect",1);
+	setprop("sim/model/equipment/ground-services/fuel-truck/enable",0);
     setprop("controls/electric/avionics-switch",1);
     setprop("controls/electric/battery-switch",1);
-    setprop("controls/electric/power-source",1);
+    setprop("controls/electric/power-source",-1);
     setprop("controls/electric/inverter-switch",1);
     setprop("controls/electric/ammeter-switch",0);
     setprop("controls/lighting/instrument-lights",1);
@@ -89,8 +96,10 @@ var Startup = func{
             
         }
         if (getprop("engines/engine[0]/running") == 1 and getprop("engines/engine[1]/running") == 1 and getprop("engines/engine[1]/rpm") > 200) {
+			setprop("sim/model/equipment/ground-services/external-power/enable",0);
             setprop("controls/engines/internal-engine-starter",0);
             setprop("controls/electric/ammeter-switch",1);
+    		setprop("controls/electric/power-source",1);
             setprop("controls/engines/engine[0]/propeller-pitch",1);
             setprop("controls/engines/engine[1]/propeller-pitch",1);
             setprop("controls/lighting/no-smoking",1);
@@ -104,7 +113,8 @@ var Startup = func{
             setprop("controls/engines/auto-feather",1);
             setprop("controls/flight/flaps",0.25);
             setprop("controls/gear/parkingbrake-lever",0);
-            setprop("controls/flight/elevator-trim",-0.14);
+            setprop("controls/flight/elevator-trim",-0.2);
+            setprop("controls/flight/rudder-trim",0.12);
             screen.log.write("Startup procedure finished. - You are now ready for Take Off!", 1, 1, 1);
         }
         settimer(check_loop1, 1);
@@ -153,7 +163,8 @@ var Shutdown = func{
     setprop("controls/anti-ice/pitot-heat",0);
     setprop("controls/anti-ice/prop-heat",0);
     setprop("controls/anti-ice/window-heat",0);
-    setprop("controls/flight/elevator-trim",0);
+    setprop("controls/flight/elevator-trim",-0.2);
+    setprop("controls/flight/rudder-trim",0.12);
     setprop("sim/model/equipment/left-pitot-cover",1);
     setprop("sim/model/equipment/right-pitot-cover",1);
     setprop("sim/model/equipment/left-tiedown-wheels",1);
@@ -165,6 +176,7 @@ var Shutdown = func{
     setprop("sim/model/equipment/left-chock-aft",1);
     setprop("sim/model/equipment/right-chock-fwd",1);
     setprop("sim/model/equipment/right-chock-aft",1);
+    setprop("sim/model/equipment/ground-services/external-power/enable",1);
 }
 
 var Wiper = {
