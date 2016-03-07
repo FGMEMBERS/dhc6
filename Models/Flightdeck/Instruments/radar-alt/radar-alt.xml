@@ -333,18 +333,18 @@
 	</animation>
 
 	<animation>
-		<type>pick</type>
-		<object-name>RALT.face</object-name>
-		<object-name>mount</object-name>
-		<visible>true</visible>
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-        		<tooltip-id>agl-ft</tooltip-id>
-        		<label>Altitude above ground:% 3dft</label>
-				<property>position/gear-agl-ft</property>
-			</binding>
-		</hovered>
+          <type>pick</type>
+          <object-name>RALT.face</object-name>
+          <object-name>mount</object-name>
+          <visible>true</visible>
+          <hovered>
+            <binding>
+              <command>set-tooltip</command>
+              <tooltip-id>agl-ft</tooltip-id>
+              <label>Altitude above ground:% 3dft</label>
+              <property>tooltips-custom/radar-alt</property>
+            </binding>
+          </hovered>
 	</animation>
 
 	<!-- TEXT OSG -->
