@@ -4,96 +4,72 @@
 
 <PropertyList>
 
-	<default>
+    <default>
 
-		<menu n="10">
+        <menu n="10">
 
-			<label>DHC-6</label>
+            <label>DHC-6</label>
 
-			<enabled type="bool">true</enabled>
+            <enabled type="bool">true</enabled>
 
-			<item>
-				<label>Autostart</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/model/autostart</property>
-				</binding>
-			</item>
+            <item>
+                <label>Autostart</label>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/model/autostart</property>
+                </binding>
+            </item>
 
-			<item>
-				<label>Options</label>
-				<binding>
-					<command>nasal</command>
-					<script>fgcommand("dialog-show", props.Node.new({"dialog-name": "options"}));</script>
-				</binding>
-			</item>
+            <item>
+                <label>Options</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "options"}));</script>
+                </binding>
+            </item>
 
-			<item>
-				<label>Throttles</label>
-				<binding>
-					<command>nasal</command>
-					<script>fgcommand("dialog-show", props.Node.new({"dialog-name": "throttles"}));</script>
-				</binding>
-			</item>
+            <item>
+                <label>Throttles</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "throttles"}));</script>
+                </binding>
+            </item>
 
-			<item>
-				<label>Flashlight</label>
-				<binding>
-					<command>nasal</command>
-					<script>dhc6.toggle_flashlight()</script>
-				</binding>
-			</item>
+            <item>
+                <label>Nose wheel steering</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "tiller"}));</script>
+                </binding>
+            </item>
 
-			<item>
-				<name>fuel-truck</name>
-				<label>Fuel Truck Controls</label>
-				<enabled>
-					<condition>
-						<and>
-							<property>gear/gear[6]/ground-is-solid</property>
-							<property>gear/gear[6]/wow</property>
-						</and>
-					</condition>
-				</enabled>
-				<binding>
-					<command>nasal</command>
-					<script>fgcommand("dialog-show", props.Node.new({"dialog-name": "fuel-truck"}));</script>
-				</binding>
-			</item>
+            <item>
+                <label>Flashlight</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>dhc6.toggle_flashlight()</script>
+                </binding>
+            </item>
 
-			<item>
-				<name>external-power</name>
-				<label>Toggle external power</label>
-				<enabled>
-					<condition>
-						<or>
-							<and>
-								<property>gear/gear[1]/ground-is-solid</property>
-								<property>gear/gear[1]/wow</property>
-							</and>
-							<and>
-								<property>gear/gear[6]/ground-is-solid</property>
-								<property>gear/gear[6]/wow</property>
-							</and>
-						</or>
-					</condition>
-				</enabled>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/model/equipment/ground-services/external-power/enable</property>
-				</binding>
-			</item>
+            <item>
+                <label>Select Livery</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>aircraft.livery.dialog.open()</script>
+                </binding>
+            </item>
 
-			<item>
-				<label>Select Livery</label>
-				<binding>
-					<command>nasal</command>
-					<script>aircraft.livery.dialog.open()</script>
-				</binding>
-			</item>
+            <item>
+                <label>DHC-6 wiki page</label>
+                <binding>
+                    <command>open-browser</command>
+                    <path>http://wiki.flightgear.org/De_Havilland_Canada_DHC-6_Twin_Otter</path>
+                </binding>
+            </item>
 
-		</menu>
+        </menu>
 
-	</default>
+    </default>
 
 </PropertyList>

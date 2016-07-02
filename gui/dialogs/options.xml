@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
+
     <name>options</name>
     <layout>vbox</layout>
 
@@ -62,12 +63,13 @@
         <halign>center</halign>
         <label>Open/Lock tow-hook</label>
         <property>sim/hitches/aerotow/open</property>
+        <live>true</live>
         <binding>
             <command>dialog-apply</command>
         </binding>
     </checkbox>
 
-	<checkbox>
+    <checkbox>
         <halign>center</halign>
         <label>Show Garmin 196 GPS</label>
         <property>sim/model/show-garmin-196</property>
@@ -75,6 +77,15 @@
             <command>dialog-apply</command>
         </binding>
       </checkbox>
+
+    <button>
+        <legend>Ground Services</legend>
+        <padding>5</padding>
+        <binding>
+            <command>nasal</command>
+            <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "ground-services"}));</script>
+        </binding>
+    </button>
 
       <group>
         <layout>hbox</layout>

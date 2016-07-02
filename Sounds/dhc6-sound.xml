@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- created by ??
-   January 2015:Modified By PAF Team Christian Thiriot "PATTEN") -->
+<!--
+    created by ??
+    January 2015:Modified By PAF Team Christian Thiriot "PATTEN")
+-->
 
 <PropertyList>
 
@@ -57,7 +59,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>1</factor>
+                <factor>0.5</factor>
             </volume>
             <position>
                 <x>-2.8</x>
@@ -89,7 +91,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>1</factor>
+                <factor>0.5</factor>
             </volume>
             <position>
                 <x>-2.8</x>
@@ -121,7 +123,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>1</factor>
+                <factor>0.5</factor>
             </volume>
             <position>
                 <x>-2.8</x>
@@ -153,7 +155,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>1</factor>
+                <factor>0.5</factor>
             </volume>
             <position>
                 <x>-2.8</x>
@@ -171,6 +173,7 @@
             <name>stall-warning</name>
             <mode>looped</mode>
             <path>Aircraft/dhc6/Sounds/stall.wav</path>
+            <property>sim/sound/stall-warning</property>
             <condition>
                 <and>
                     <greater-than>
@@ -179,7 +182,7 @@
                     </greater-than>
                     <greater-than>
                         <property>sim/sound/stall-warning</property>
-                        <value>5</value>
+                        <value>4</value>
                     </greater-than>
                     <less-than>
                         <property>sim/sound/stall-warning</property>
@@ -193,13 +196,16 @@
                         <property>velocities/airspeed-kt</property>
                         <value>30</value>
                     </greater-than>
+                    <property>sim/current-view/internal</property>
                 </and>
             </condition>
             <volume>
-                <factor>1</factor>
+                <property>sim/sound/stall-warning</property>
+                <factor>0.05</factor>
             </volume>
             <pitch>
-                <factor>1</factor>
+                <property>sim/sound/stall-warning</property>
+                <factor>0.05</factor>
             </pitch>
             <reference-dist>3.0</reference-dist>
             <max-dist>10.0</max-dist>
@@ -730,13 +736,13 @@
             <path>Aircraft/dhc6/Sounds/dhc6-rudder.wav</path>
             <property>controls/flight/rudder</property>
             <condition>             
-                    <less-than>
-                        <property>controls/engines/internal-engine-starter</property>
-                        <value>0.001</value>
-                    </less-than>
-                   <not>
-                        <property>sim/current-view/internal</property>
-                   </not>            
+                <less-than>
+                    <property>controls/engines/internal-engine-starter</property>
+                    <value>0.001</value>
+                </less-than>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>            
                 <or>
                     <property>gear/gear[0]/wow</property>
                     <property>gear/gear[1]/wow</property>
@@ -770,13 +776,13 @@
             <path>Aircraft/dhc6/Sounds/dhc6-rudder.wav</path>
         <property>controls/flight/aileron</property>
             <condition>             
-                    <less-than>
-                        <property>controls/engines/internal-engine-starter</property>
-                        <value>0.001</value>
-                    </less-than>
-                   <not>
-                        <property>sim/current-view/internal</property>
-                   </not>
+                <less-than>
+                    <property>controls/engines/internal-engine-starter</property>
+                    <value>0.001</value>
+                </less-than>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
                 <or>
                     <property>gear/gear[0]/wow</property>
                     <property>gear/gear[1]/wow</property>
@@ -810,13 +816,13 @@
             <path>Aircraft/dhc6/Sounds/dhc6-rudder.wav</path>
             <property>controls/flight/elevator</property>
             <condition>             
-                    <less-than>
-                        <property>controls/engines/internal-engine-starter</property>
-                        <value>0.001</value>
-                    </less-than>
-                   <not>
-                        <property>sim/current-view/internal</property>
-                   </not>
+                <less-than>
+                    <property>controls/engines/internal-engine-starter</property>
+                    <value>0.001</value>
+                </less-than>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
                 <or>
                     <property>gear/gear[0]/wow</property>
                     <property>gear/gear[1]/wow</property>
@@ -873,10 +879,10 @@
             <name>lfdoor open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/LF-door/open</property>
-                    <value>1</value>
-                </condition>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+                <value>1</value>
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -896,10 +902,10 @@
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_close.wav</path>
             <condition>
-                    <not>
+                <not>
                     <property>/controls/doors/RF-door/open</property>
                     <value>1</value>
-                    </not>
+                </not>
             </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
@@ -918,10 +924,10 @@
             <name>rfdoor open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/RF-door/open</property>
-                    <value>1</value>
-                </condition>
+            <condition>
+                <property>/controls/doors/RF-door/open</property>
+                <value>1</value>
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -941,10 +947,10 @@
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_close.wav</path>
             <condition>
-                   <not> 
+                <not> 
                     <property>/controls/doors/RR-door/open</property>
                     <value>1</value>
-                   </not>
+                </not>
             </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
@@ -963,10 +969,10 @@
             <name>rrdoor open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/RR-door/open</property>
-                    <value>1</value>
-                </condition>
+            <condition>
+                <property>/controls/doors/RR-door/open</property>
+                <value>1</value>
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -986,10 +992,10 @@
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_close.wav</path>
             <condition>
-                  <not>
+                <not>
                     <property>/controls/doors/LR-door-F/open</property>
                     <value>1</value>
-                  </not>
+                </not>
             </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
@@ -1008,10 +1014,10 @@
             <name>lrdoorf open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/LR-door-F/open</property>
-                    <value>1</value> 
-                </condition>
+            <condition>
+                <property>/controls/doors/LR-door-F/open</property>
+                <value>1</value> 
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -1031,10 +1037,10 @@
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_close.wav</path>
             <condition>
-                  <not>
+                <not>
                     <property>/controls/doors/LR-door-R/open</property>
                     <value>1</value>
-                  </not>
+                </not>
             </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
@@ -1053,10 +1059,10 @@
             <name>lrdoorr open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/LR-door-R/open</property>
-                    <value>1</value>
-                </condition>
+            <condition>
+                <property>/controls/doors/LR-door-R/open</property>
+                <value>1</value>
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -1076,10 +1082,10 @@
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_close.wav</path>
             <condition>
-                  <not>
+                <not>
                     <property>/controls/doors/Baggage.door/open</property>
                     <value>1</value>
-                  </not>
+                </not>
             </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
@@ -1098,10 +1104,10 @@
             <name>baggdoor open</name>
             <mode>once</mode>
             <path>Aircraft/dhc6/Sounds/dhc6-door_open.wav</path>
-                <condition>
-                    <property>/controls/doors/Baggage.door/open</property>
-                    <value>1</value>
-                </condition>
+            <condition>
+                <property>/controls/doors/Baggage.door/open</property>
+                <value>1</value>
+            </condition>
             <volume>
                 <property>sim/signals/fdm-initialized</property>
                 <factor>1</factor>
@@ -1307,6 +1313,31 @@
                 <offset>2</offset>
             </volume>
         </thunder3>
+
+        <!-- hydraulic pump -->
+        <hydraulic-pump>
+            <name>hydraulic-pump</name>
+            <path>Aircraft/dhc6/Sounds/hydraulic-pump.wav</path>
+            <property>sim/sound/hyd-pump</property>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>systems/hydraulic/indicated-pressure</property>
+                        <value>0.001</value>
+                    </greater-than>
+                    <property>sim/current-view/internal</property>
+                </and>
+            </condition>
+            <mode>looped</mode>
+            <volume>
+                <property>sim/sound/hyd-pump</property>
+                <factor>0.0007</factor>
+            </volume>
+            <pitch>
+                <property>sim/sound/hyd-pump</property>
+                <factor>0.0007</factor>
+            </pitch>
+        </hydraulic-pump>
         
     </fx>
 
