@@ -190,19 +190,7 @@
         <object-name>Seatframe.001</object-name>
         <object-name>Seats</object-name>
         <object-name>Seats.001</object-name>
-        <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
-        </emission>
-    </animation>
-
-    <animation>
-        <type>material</type>
         <object-name>extincteur</object-name>
-        <object-name>fuse-panel</object-name>
-        <object-name>fuse-panel-2</object-name>
         <emission>
             <red>0.381924</red>
             <green>0.30935844</green>
@@ -306,8 +294,6 @@
         <object-name>extincteur</object-name>
         <object-name>flaplever</object-name>
         <object-name>flightdeck</object-name>
-        <object-name>fuse-panel</object-name>
-        <object-name>fuse-panel-2</object-name>
         <object-name>fwdfuel.lit</object-name>
         <object-name>inst_lt.sw</object-name>
         <object-name>intake-deflector-l</object-name>
@@ -445,8 +431,6 @@
         <object-name>extincteur</object-name>
         <object-name>flaplever</object-name>
         <object-name>flightdeck</object-name>
-        <object-name>fuse-panel</object-name>
-        <object-name>fuse-panel-2</object-name>
         <object-name>fwdfuel.lit</object-name>
         <object-name>inst_lt.sw</object-name>
         <object-name>intake-deflector-l</object-name>
@@ -1174,15 +1158,41 @@
     </model>
 
     <model>
-      <name>Hydraulic pressure</name>
-      <path>Aircraft/dhc6/Models/Flightdeck/Instruments/hyd/hydpress.xml</path>
-      <offsets>
+        <name>Hydraulic pressure</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Instruments/hyd/hydpress.xml</path>
+        <offsets>
             <x-m>-3.936</x-m>
             <y-m>-0.184</y-m>
             <z-m>0.070</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
-      </model>
+    </model>
+
+    <!-- Circuit breaker panels -->
+    <!-- Main -->
+    <model>
+        <name>main-circuit-breaker</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Circuit-breakers/main-breaker-panel.xml</path>
+        <offsets>
+            <x-m>-2.98247</x-m>
+            <y-m>-0.82317</y-m>
+            <z-m>0.543809</z-m>
+            <roll-deg>-5</roll-deg>
+            <heading-deg>-5</heading-deg>
+        </offsets>
+    </model>
+
+    <!-- Center console -->
+    <model>
+        <name>center-circuit-breaker</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Circuit-breakers/center-breaker-panel.xml</path>
+    </model>
+
+    <!-- Overhead breaker panel -->
+    <model>
+        <name>overhead-circuit-breakers</name>
+        <path>Aircraft/dhc6/Models/Flightdeck/Circuit-breakers/overhead-breaker-panel.xml</path>
+    </model>
 
     <!-- No smoking -->
     <model>
@@ -1213,21 +1223,21 @@
         <type>select</type>
         <object-name>autofeather.sel.lit</object-name>
         <condition>
-        <and>
-            <property>controls/engines/auto-feather</property>
-            <or>
-          <not>
-              <property>engines/engine[0]/running</property>
-          </not>
-          <not>
-              <property>engines/engine[1]/running</property>
-          </not>
-       </or>
-      <greater-than>
-          <property>systems/electrical/volts</property>
-      <value>1</value>
-      </greater-than>
-    </and>
+            <and>
+                <property>controls/engines/auto-feather</property>
+                <or>
+                    <not>
+                        <property>engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>engines/engine[1]/running</property>
+                    </not>
+                </or>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
         </condition>
     </animation>
     
@@ -1235,43 +1245,45 @@
         <type>material</type>
         <object-name>autofeather.sel.lit</object-name>
         <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-        <and>
-              <property>controls/engines/auto-feather</property>
-          <or>
-        <not>
-          <property>engines/engine[0]/running</property>
-        </not>
-        <not>
-          <property>engines/engine[1]/running</property>
-        </not>
-          </or>
-          <greater-than>
-        <property>systems/electrical/volts</property>
-        <value>1</value>
-          </greater-than>
-        </and>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/engines/auto-feather</property>
+                <or>
+                    <not>
+                        <property>engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>engines/engine[1]/running</property>
+                    </not>
+                </or>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
         </condition>
-    <emission>
-      <red>   0.7 </red>
-      <green> 0.6 </green>
-      <blue>  0.6 </blue>
-    </emission>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
     </animation>
        
     <animation>
         <type>select</type>
         <object-name>autofeather.arm.lit</object-name>
         <condition>
-        <and>
-              <property>controls/engines/auto-feather</property>
-          <property>engines/engine[0]/running</property>
-          <property>engines/engine[1]/running</property>
-          <greater-than>
-        <property>systems/electrical/volts</property>
-        <value>1</value>
-          </greater-than>
-        </and>
+            <and>
+                <property>controls/engines/auto-feather</property>
+                <property>engines/engine[0]/running</property>
+                <property>engines/engine[1]/running</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
         </condition>
     </animation>
     
@@ -1279,23 +1291,25 @@
         <type>material</type>
         <object-name>autofeather.arm.lit</object-name>
         <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-        <and>
-              <property>controls/engines/auto-feather</property>
-          <property>engines/engine[0]/running</property>
-          <property>engines/engine[1]/running</property>
-          <greater-than>
-        <property>systems/electrical/volts</property>
-        <value>1</value>
-          </greater-than>
-        </and>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/engines/auto-feather</property>
+                <property>engines/engine[0]/running</property>
+                <property>engines/engine[1]/running</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>1</value>
+                </greater-than>
+            </and>
         </condition>
-    <emission>
-      <red>   0.7 </red>
-      <green> 0.6 </green>
-      <blue>  0.6 </blue>
-    </emission>
-     </animation>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
+    </animation>
      
      <!--Thrust reverse lights-->
      <animation>
@@ -2442,55 +2456,49 @@
     </animation>
 
     <animation>
-        <type>slider</type>
+        <type>pick</type>
         <object-name>LHcondition</object-name>
-        <drag-direction>horizontal</drag-direction>
         <action>
+            <button>0</button>
             <binding>
-                <command>property-adjust</command>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[0]/condition</property>
-                <factor>-0.1</factor>
-                <min>0</min>
-                <max>1</max>
-                <wrap>0</wrap>
+                <value type="double">1</value>
+                <time>1</time>
             </binding>
         </action>
-        <hovered>
+        <action>
+            <button>1</button>
             <binding>
-                <command>set-tooltip</command>
-                <label>LH Condition: %3d%%</label>
-                <measure-text>LH Condition: 100%</measure-text>
-                <tooltip-id>lh-condition</tooltip-id>
-                <mapping>percent</mapping>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[0]/condition</property>
+                <value type="double">0</value>
+                <time>1</time>
             </binding>
-        </hovered>
+        </action>
     </animation>
 
     <animation>
-        <type>slider</type>
+        <type>pick</type>
         <object-name>RHcondition</object-name>
-        <drag-direction>horizontal</drag-direction>
         <action>
-                <binding>
-                <command>property-adjust</command>
+            <button>0</button>
+            <binding>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[1]/condition</property>
-                <factor>-0.1</factor>
-                <min>0</min>
-                <max>1</max>
-                <wrap>0</wrap>
+                <value type="double">1</value>
+                <time>1</time>
             </binding>
         </action>
-        <hovered>
+        <action>
+            <button>1</button>
             <binding>
-                <command>set-tooltip</command>
-                <label>RH Condition: %3d%%</label>
-                <measure-text>RH Condition: 100%</measure-text>
-                <tooltip-id>rh-condition</tooltip-id>
-                <mapping>percent</mapping>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[1]/condition</property>
+                <value type="double">0</value>
+                <time>1</time>
             </binding>
-        </hovered>
+        </action>
     </animation>
 
     <animation>
@@ -2515,7 +2523,6 @@
         </hovered>
     </animation>
 
-
     <!--  overhead switches and animations -->
     <!-- rear -->
     <animation>
@@ -2524,33 +2531,24 @@
         <action>
             <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>controls.flapsDown(1)</script>
+                <command>property-adjust</command>
+                <property>controls/flight/flaplever</property>
+                <step>0.125</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
             </binding>
-            <mod-up>
-                <binding>
-                    <command>nasal</command>
-                    <script>controls.flapsDown(0)</script>
-                </binding>
-            </mod-up>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>flaplever</object-name>
         <action>
             <button>1</button>
             <binding>
-                <command>nasal</command>
-                <script>controls.flapsDown(-1)</script>
+                <command>property-adjust</command>
+                <property>controls/flight/flaplever</property>
+                <step>-0.125</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
             </binding>
-            <mod-up>
-                <binding>
-                    <command>nasal</command>
-                    <script>controls.flapsDown(0)</script>
-                </binding>
-            </mod-up>
         </action>
     </animation>
 
@@ -2967,6 +2965,12 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
+                <property>sim/sound/stall-warning</property>
+                <value>0</value>
+                <value>10</value>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
                 <property>sim/sound/click</property>
             </binding>
         </action>
@@ -2985,7 +2989,7 @@
     <animation>
         <type>translate</type>
         <object-name>flaplever</object-name>
-        <property>controls/flight/flaps-pos</property>
+        <property>controls/flight/flaplever-pos</property>
         <factor>0.0975</factor>
         <axis>
             <x>-0.956</x>

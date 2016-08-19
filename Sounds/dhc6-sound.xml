@@ -175,29 +175,36 @@
             <path>Aircraft/dhc6/Sounds/stall.wav</path>
             <property>sim/sound/stall-warning</property>
             <condition>
-                <and>
+                <or>
+                    <and>
+                        <greater-than>
+                            <property>systems/electrical/volts</property>
+                            <value>0</value>
+                        </greater-than>
+                        <greater-than>
+                            <property>sim/sound/stall-warning</property>
+                            <value>4</value>
+                        </greater-than>
+                        <less-than>
+                            <property>sim/sound/stall-warning</property>
+                            <value>20</value>
+                        </less-than>
+                        <greater-than>
+                            <property>sim/time/elapsed-sec</property>
+                            <value>15</value>
+                        </greater-than>
+                        <greater-than>
+                            <property>velocities/airspeed-kt</property>
+                            <value>30</value>
+                        </greater-than>
+                        <property>sim/current-view/internal</property>
+                    </and>
+                    <!-- caution test activates stall horn -->
                     <greater-than>
-                        <property>systems/electrical/volts</property>
+                        <property>systems/electrical/outputs/caution-test</property>
                         <value>0</value>
                     </greater-than>
-                    <greater-than>
-                        <property>sim/sound/stall-warning</property>
-                        <value>4</value>
-                    </greater-than>
-                    <less-than>
-                        <property>sim/sound/stall-warning</property>
-                        <value>20</value>
-                    </less-than>
-                    <greater-than>
-                        <property>sim/time/elapsed-sec</property>
-                        <value>15</value>
-                    </greater-than>
-                    <greater-than>
-                        <property>velocities/airspeed-kt</property>
-                        <value>30</value>
-                    </greater-than>
-                    <property>sim/current-view/internal</property>
-                </and>
+                </or>
             </condition>
             <volume>
                 <property>sim/sound/stall-warning</property>
@@ -1214,6 +1221,52 @@
             <reference-dist>3</reference-dist>
             <max-dist>10</max-dist>
         </click2>
+
+        <doubleclick>
+            <name>doubleclick-on</name>
+            <mode>once</mode>
+            <path>Sounds/doubleclick.wav</path>
+            <condition>
+                <property>sim/sound/doubleclick</property>
+            </condition>
+            <volume>
+                <property>sim/signals/fdm-initialized</property>
+            </volume>
+            <pitch>
+                <offset>1</offset>
+            </pitch>
+            <position>
+                <x>-3</x>
+                <y>0</y>
+                <z>1</z>
+            </position>
+            <reference-dist>3</reference-dist>
+            <max-dist>10</max-dist>
+        </doubleclick>
+
+        <doubleclick>
+            <name>doubleclick-off</name>
+            <mode>once</mode>
+            <path>Sounds/doubleclick.wav</path>
+            <condition>
+                <not>
+                    <property>sim/sound/doubleclick</property>
+                </not>
+            </condition>
+            <volume>
+                <property>sim/signals/fdm-initialized</property>
+            </volume>
+            <pitch>
+                <offset>1</offset>
+            </pitch>
+            <position>
+                <x>-3</x>
+                <y>0</y>
+                <z>1</z>
+            </position>
+            <reference-dist>3</reference-dist>
+            <max-dist>10</max-dist>
+        </doubleclick>
 
         <!-- rain sound -->
         <rain>

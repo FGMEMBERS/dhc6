@@ -64,15 +64,14 @@
             <desc>Push the left condition</desc>
             <repeatable type="bool">true</repeatable>
             <binding>
-                <command>property-adjust</command>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[0]/condition</property>
-                <step>0.05</step>
-                <min>0</min>
-                <max>1</max>
+                <value type="double">1</value>
+                <time>1</time>
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>gui.popupTip(sprintf("Left condition: %0.1f", getprop("/controls/engines/engine[0]/condition")), 5);</script>
+                <script>gui.popupTip("Left condition ON", 5);</script>
             </binding>
         </key>
 
@@ -81,15 +80,14 @@
             <desc>Push the right condition</desc>
             <repeatable type="bool">true</repeatable>
             <binding>
-                <command>property-adjust</command>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[1]/condition</property>
-                <step>0.05</step>
-                <min>0</min>
-                <max>1</max>
+                <value type="double">1</value>
+                <time>1</time>
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>gui.popupTip(sprintf("Right condition: %0.1f", getprop("/controls/engines/engine[1]/condition")), 5);</script>
+                <script>gui.popupTip("Right condition ON", 5);</script>
             </binding>
         </key>
 
@@ -98,15 +96,14 @@
             <desc>Pull the left condition</desc>
             <repeatable type="bool">true</repeatable>
             <binding>
-                <command>property-adjust</command>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[0]/condition</property>
-                <step>-0.05</step>
-                <min>0</min>
-                <max>1</max>
+                <value type="double">0</value>
+                <time>1</time>
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>gui.popupTip(sprintf("Left condition: %0.1f", getprop("/controls/engines/engine[0]/condition")), 5);</script>
+                <script>gui.popupTip("Left condition OFF", 5);</script>
             </binding>
         </key>
 
@@ -115,15 +112,14 @@
             <desc>Pull the right condition</desc>
             <repeatable type="bool">true</repeatable>
             <binding>
-                <command>property-adjust</command>
+                <command>property-interpolate</command>
                 <property>controls/engines/engine[1]/condition</property>
-                <step>-0.05</step>
-                <min>0</min>
-                <max>1</max>
+                <value type="double">0</value>
+                <time>1</time>
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>gui.popupTip(sprintf("Right condition: %0.1f", getprop("/controls/engines/engine[1]/condition")), 5);</script>
+                <script>gui.popupTip("Right condition OFF", 5);</script>
             </binding>
         </key>
 
@@ -322,13 +318,27 @@
             <repeatable type="bool">true</repeatable>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/flight/flaps</property>
-                <step type="double">-0.005</step>
+                <property>controls/flight/flaplever</property>
+                <step>-0.01</step>
                 <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
             </binding>
             <binding>
+                <condition>
+                    <property>controls/flight/flaps-serviceable</property>
+                </condition>
                 <command>nasal</command>
-                <script>gui.popupTip(sprintf("Flaps: %3.1f deg", 37.5*getprop("/controls/flight/flaps")), 5);</script>
+                <script>gui.popupTip(sprintf("Flaps: %3.1f deg", 37.5*getprop("/controls/flight/flaps")));</script>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/flight/flaps-serviceable</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip("Flap operation requires hydraulic pressure!");</script>
             </binding>
         </key>
 
@@ -338,13 +348,27 @@
             <repeatable type="bool">true</repeatable>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/flight/flaps</property>
-                <step type="double">0.005</step>
+                <property>controls/flight/flaplever</property>
+                <step>0.01</step>
+                <min>0</min>
                 <max>1</max>
+                <wrap>false</wrap>
             </binding>
             <binding>
+                <condition>
+                    <property>controls/flight/flaps-serviceable</property>
+                </condition>
                 <command>nasal</command>
                 <script>gui.popupTip(sprintf("Flaps: %3.1f deg", 37.5*getprop("/controls/flight/flaps")));</script>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/flight/flaps-serviceable</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip("Flap operation requires hydraulic pressure!");</script>
             </binding>
         </key>
 
@@ -443,6 +467,36 @@
                     interpolate("/controls/flight/rudder", 0, 0.25);
                     interpolate("/controls/gear/tiller", 0, 0.25);
                 </script>
+            </binding>
+        </key>
+
+        <key n="60">
+            <name>&gt;</name>
+            <desc>Center aileron trim</desc>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/flight/aileron-trim</property>
+                <value type="double">0</value>
+                <time>0.25</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Aileron trim centered");</script>
+            </binding>
+        </key>
+
+        <key n="62">
+            <name>&lt;</name>
+            <desc>Center rudder trim</desc>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/flight/rudder-trim</property>
+                <value type="double">0</value>
+                <time>0.25</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Rudder trim centered");</script>
             </binding>
         </key>
 
