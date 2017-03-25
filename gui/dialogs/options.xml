@@ -76,18 +76,9 @@
         <binding>
             <command>dialog-apply</command>
         </binding>
-      </checkbox>
+    </checkbox>
 
-    <button>
-        <legend>Ground Services</legend>
-        <padding>5</padding>
-        <binding>
-            <command>nasal</command>
-            <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "ground-services"}));</script>
-        </binding>
-    </button>
-
-      <group>
+    <group>
         <layout>hbox</layout>
         <hrule>
             <stretch>true</stretch>
@@ -101,7 +92,16 @@
         </hrule>
     </group>
 
-      <checkbox>
+    <checkbox>
+        <halign>center</halign>
+        <label>Show shadow</label>
+        <property>sim/rendering/show-shadow</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <checkbox>
         <halign>center</halign>
         <label>Enable engine spray on water</label>
         <property>sim/model/effects/engine-spray-enabled</property>
