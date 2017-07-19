@@ -2,6 +2,8 @@
 
 <PropertyList>
 
+	<!-- Joshua Davidson (it0uchpods) -->
+
     <!-- =============================== -->
     <!-- ======== Lateral Modes ======== -->
     <!-- =============================== -->
@@ -104,8 +106,8 @@
             <property>autopilot/internal/target-roll-deg</property>
         </output>
         <config>
-            <Kp>-0.5</Kp>
-            <Ki>0.0</Ki>
+            <Kp>-2.0</Kp>
+            <Ki>0.000001</Ki>
             <u_min>-27.0</u_min>
             <u_max>27.0</u_max>
         </config>
