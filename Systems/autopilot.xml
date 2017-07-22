@@ -27,7 +27,7 @@
             <property>controls/flight/aileron</property>
         </output>
         <config>
-            <Kp>0.12</Kp>
+            <Kp>0.16</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -57,8 +57,8 @@
         <config>
             <Kp>-0.5</Kp>
             <Ki>0.0</Ki>
-            <u_min>-27.0</u_min>
-            <u_max>27.0</u_max>
+            <u_min>-20.0</u_min>
+            <u_max>20.0</u_max>
         </config>
     </pi-simple-controller>
 
@@ -78,14 +78,14 @@
             <property>controls/flight/aileron</property>
         </output>
         <config>
-            <Kp>0.12</Kp>
+            <Kp>0.16</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>5.0</Ti>
             <Td>0.0001</Td>
-            <u_min>-0.5</u_min>
-          <u_max>0.5</u_max>
+            <u_min>-1.0</u_min>
+          <u_max>1.0</u_max>
         </config>
     </pid-controller>
 
@@ -106,10 +106,10 @@
             <property>autopilot/internal/target-roll-deg</property>
         </output>
         <config>
-            <Kp>-2.0</Kp>
+            <Kp>-1.5</Kp>
             <Ki>0.000001</Ki>
-            <u_min>-27.0</u_min>
-            <u_max>27.0</u_max>
+            <u_min>-15.0</u_min>
+            <u_max>15.0</u_max>
         </config>
     </pi-simple-controller>
  
@@ -129,7 +129,7 @@
             <property>controls/flight/aileron</property>
         </output>
         <config>
-            <Kp>0.12</Kp>
+            <Kp>0.16</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -292,8 +292,8 @@
             <gamma>0.0</gamma>
             <Ti>5.0</Ti>
             <Td>0.0001</Td>
-            <u_min>-0.25</u_min>
-            <u_max>0.25</u_max> 
+            <u_min>-0.45</u_min>
+            <u_max>0.45</u_max> 
         </config>
     </pid-controller>
 	
